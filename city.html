@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+
+    <link rel="shortcut icon" type="image/x-icon" href="style/img/favicon.ico">
+  <title>Kavinsky</title>
+  <style>
+   body {
+    background: url(style/img/city.png) repeat-x 0 100% fixed,
+                linear-gradient(to top, #5080b1, #004e8c) fixed;
+    animation: city 18s linear infinite;
+    -webkit-animation: city 18s linear infinite;
+   }
+   @keyframes city {
+    from { background-position: -1000px 100%, 0 0;}
+    to { background-position: 0 100%, 0 0; }
+   }
+   @-webkit-keyframes city {
+    from { background-position: -1000px 100%, 0 0;}
+    to { background-position: 0 100%, 0 0; }
+   }
+   main {
+    width: 80%;
+    min-height: 800px;
+    display: block;
+    margin: auto;
+    background: rgba(255,255,255,0.6);
+    padding: 20px;
+   }
+  </style>
+ </head>
+ <body>
+  <audio src="music\city.mp3" autoplay>
+ </body>
+</html>

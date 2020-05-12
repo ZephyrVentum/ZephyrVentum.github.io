@@ -1,0 +1,571 @@
+body {
+	cursor: url(cursor/cursor.cur), pointer;
+	margin: 0;
+	padding: 0;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background: url(img/background.png) repeat-x 0 100% fixed;
+    background-size: cover;
+   }
+
+}
+a {
+	cursor: url(cursor/hand.cur), pointer;
+}
+#container {
+	max-width: 1024px;
+	width: 60%;
+	margin: 0 auto;
+	background-image: url(img/background_alfa.png);
+	height: 100%;
+	border-right: solid 1px #67d3fd;
+	border-left: solid 1px #67d3fd;
+}
+#header {
+	background-image: url(img/header2.png);
+	background-size: 100% 100%;
+	width: 100%;
+	text-align: center;
+	padding-top: 50px;
+	height: 277px;
+}
+#content {
+	border-top: 4px dashed #67d3fd;	
+	margin-top: 5px;
+	border-bottom: 4px dashed #67d3fd;
+		
+}
+.img_names {
+	padding-top: 15px;
+}
+#col1 {
+	width: 32%;
+	text-align: center;	
+	float: right;
+		
+	
+}
+#col2 {
+	width: 33%;
+	text-align: center;	
+	float: right;
+	
+	
+}
+#col3 {
+	width: 33%;
+	text-align: center;	
+	
+	
+}
+#midlle_block {
+border-right: 4px dashed #67d3fd;
+	border-left: 4px dashed #67d3fd;
+}
+
+.about_text {
+	text-align: center;
+	padding: 10px;
+	font-size: 16px;
+	color: #075e80;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.resource:link {
+    color: #075e80;; /* Цвет ссылок */
+}
+.resource:visited {
+    color: #075e80;; /* Цвет посещенных ссылок */
+}
+#android {
+	position: fixed;
+	top: 0;
+	left: 81%;
+}
+.donate_text{
+	visibility: hidden;
+	font-family: monospace;
+	margin: 0;
+}.donate:hover p{
+	visibility: visible;
+}
+.donate {
+    border-radius: 0px 0px 10px 10px;
+    width: 150px;
+    height: 90px;
+    background: #333; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    position: fixed; /* Фиксируем на одном месте  */
+    min-height: 100px; /* Минимальная высота */
+    top: -121px; 
+    border-bottom: 20px solid #000; /* Оранжевая граница справа */
+    padding: 10px;
+    right: 82%;
+    transition: top 0.5s; /* Анимация */
+   }
+   .donate::after {
+    content: 'D o n a t e'; /* Выводим текст */
+    color: #fff; /* Цвет надписи */
+    position: absolute; /* Абсолютное позиционирование */
+    right:55px; bottom: -19px;
+   }
+   .donate:hover {
+    top: 0px; /* При наведении сдвигаем вправо */
+   }
+#footer {
+	background-image: url(img/footer.png);
+	background-size: 100% 100%;
+	margin-top: 10px;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	
+}
+#footer_copyright {
+ color: #075e80;
+ margin: 2px;
+ text-align: center;
+ font-family: arial;
+ font-size: 11px;
+}
+.webs {
+	
+	//left: 81%;
+   // top: 10px;
+    //position: fixed;
+}
+.webs_ico {
+	margin-right: 10px;
+}
+#game {
+	position: fixed;
+	top: 35%;
+}
+#resourse {
+	position: fixed;
+	right: 0;
+	top: 15%;
+}
+#timetable {
+	position: fixed;
+	right: 0;
+	top: 57%;
+}
+#right_bottom_rainbow{
+	background-image: url(img/rainbow.png);
+	background-size: 100% 100%;
+	padding: 10px;
+	line-height: 1.5;
+	width: 15px;
+	right: 0;
+	bottom: 0;
+	text-align: right;
+	height: 15px;
+	position: fixed;
+	vertical-align: bottom;
+}
+#right_bottom_kavinsky{
+	background-image: url(img/kavinsky.png);
+	background-size: 100% 100%;
+	padding: 10px;
+	line-height: 1.5;
+	width: 15px;
+	right: 45px;
+	bottom: 0;
+	text-align: right;
+	height: 15px;
+	position: fixed;
+
+	vertical-align: bottom;
+}
+#last_version{
+	width: 100%;
+	text-align: center;
+	border-bottom: 4px dashed #67d3fd;
+}
+#reclama{
+	width: 100%;
+	text-align: center;
+	border-bottom: 4px dashed #67d3fd;
+}
+.block_reclama{
+	width: 125px;
+	float: right;
+}
+.about_text_version {	
+	padding: -4px;
+	letter-spacing: 9px;	
+	font-weight: bold;
+	font-size: 19px;
+	color: #075e80;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.version{
+	letter-spacing: 2px;
+	color: #2eb6eb;
+	text-decoration: none;
+}
+.version:link {
+   color: #2eb6eb; /* Цвет ссылок */
+    text-decoration: none;
+}
+.version:visited {
+    color: #2eb6eb; /* Цвет посещенных ссылок */
+    text-decoration: none;
+}
+/*________________________________LIGHT BOX_________________________________________________________________________________________________*/
+
+.gallery {
+	padding-top: 10px;
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	border-bottom: 4px dashed #67d3fd;
+	padding-bottom: 10px;
+}
+#galleryBOX{
+	width: 100%;
+	margin: 0 auto;
+}
+.aGallery{
+	margin-right: 30px;
+	text-decoration: none
+}
+.little_img {
+	border-radius: 10px;
+}
+/*___________________________________GAME___________________________________________________________________________________________________*/
+.body_game {
+	background-image: url(img/background.png);
+	margin: 0;
+	padding: 0;
+	cursor: none;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	-webkit-user-select: none;
+	background: url(img/background.png) repeat-x 0 100% fixed;
+    animation: city 30s linear infinite;
+    -webkit-animation: city 30s linear infinite;
+    background-size: cover;
+	height: 100%;
+}
+.body_scream {
+	margin: 0;
+	padding: 0;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	height: 100%;
+}
+#container_game {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+#html_game {
+    height: 100%;
+}
+#click{
+	width: 50px;
+	cursor: none;
+}
+#left_cloud{
+	background-image: url(img/top_left_cloud.png);
+	background-size: cover;
+	padding: 10px;
+	line-height: 1.5;
+	width: 250px;
+	height: 250px;
+	position: fixed;
+}
+#center_cloud{
+	position: fixed;
+	top: 0;
+	left: 42%;
+}
+#right_cloud{
+	background-image: url(img/top_right_cloud.png);
+	background-size: 100% 100%;
+	padding: 10px;
+	line-height: 1.5;
+	width: 250px;
+	right: 0;
+	text-align: right;
+	height: 250px;
+	position: fixed;
+}
+.header_game{
+	color: #028fc6;
+}
+.about_text_game {
+	text-align: justify;
+	font-style: italic;
+	padding: 10px;
+	font-size: 16px;
+	color: #075e80;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/*___________________________________RESOURSE___________________________________________________________________________________________________*/
+.body_resourse {
+	background-image: url(img/background.png);
+	margin: 0;
+	padding: 0;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	text-align: center;
+	background: url(img/background.png) repeat-x 0 100% fixed;
+    background-size: cover;
+	height: 100%;
+}
+#container_resourse {
+	margin: 0 auto;
+	text-align: right;
+    width: 86%;
+}
+.colorRowRes {
+	background-image: url(img/background_alfa_hpb.png);
+}
+.res_table {
+	width: 100%;
+	border: 4px dashed #67d3fd;
+	border-radius: 15px;
+	background-image: url(img/background_alfa.png);
+	border-spacing: 0;
+	margin-bottom: 10px;
+}
+
+.res_table  td {
+	height: 60px;
+	text-align: center;
+	padding: 3px;
+	font-size: 16px;
+	color: #075e80;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.numberTD {
+	width: 6%;
+}
+.nameTD {
+	width: 15%;
+}
+.moreTD {
+	width: 70%;
+}
+.sizeTD {
+	width:9%;
+}
+/*___________________________________TIMETABLE___________________________________________________________________________________________________*/
+.body_timetable {
+	background-image: url(img/background.png);
+	margin: 0;
+	padding: 0;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	text-align: center;
+	background: url(img/background.png) repeat-x 0 100% fixed;
+    animation: city 30s linear infinite;
+    -webkit-animation: city 30s linear infinite;
+    background-size: cover;
+	height: 100%;
+}
+#container_timetable {
+	margin: 0 auto;
+	text-align: right;
+    width: 86%;
+}
+.time_table {
+	width: 100%;
+	border: 4px dashed #67d3fd;
+	border-radius: 15px;
+	background-image: url(img/background_alfa.png);
+	border-spacing: 0;
+	margin-bottom: 10px;
+}
+
+.time_table  td {
+	height: 60px;
+	width: 16%;
+	text-align: center;
+	padding: 3px;
+	font-size: 16px;
+	color: #075e80;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.time_table  tr {
+	height: 60px;
+	width: 16%;
+	text-align: center;
+}
+.colorRow {
+	background-image: url(img/background_alfa_hpb.png);
+}
+.img_weeks_first {
+	float: left;
+	border: 4px dashed #67d3fd;
+	border-radius: 15px;
+	background-image: url(img/background_alfa.png);
+}
+.img_weeks_second {
+	border: 4px dashed #67d3fd;
+	border-radius: 15px;
+	background-image: url(img/background_alfa.png);
+}
+#secondWeek{
+	display: none;
+}
+.mainpage{
+	text-align: center;
+
+}
+#volleyball_shedule{
+	
+}
+/*___________________________________FUNZONE___________________________________________________________________________________________________*/
+.body_funzone {
+	background-image: url(img/background.png);
+	margin: 0 auto;
+	padding: 0;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	text-align: center;
+	background: url(img/background.png) repeat-x 0 100% fixed;
+    animation: city 30s linear infinite;
+    -webkit-animation: city 30s linear infinite;
+    background-size: cover;
+	width: 100%;
+}
+#container_funzone {
+    width: 60%;
+	margin: 0 auto;
+}
+#hostinger1 {
+	position: fixed;
+	left: 0;
+	top:0;
+}
+#table_fun{
+	width: 100%;
+	border-radius: 15px;
+	border: 4px dashed #67d3fd;
+	border-spacing: 0;
+	background-image: url(img/background_alfa.png);
+	    border-bottom: 0;
+}
+#table_fun td{
+	padding-left: 25px;
+	padding-right: 10px;
+	border-bottom: 4px dashed #67d3fd;
+}
+.lable {
+	width: 20%;
+}
+.text{
+	width: 80%;
+}
+#right_bottom_cloud{
+	background-image: url(img/bottom_right_cloud.png);
+	background-size: 100% 100%;
+	padding: 10px;
+	line-height: 1.5;
+	width: 245px;
+	right: 0;
+	bottom: 0;
+	text-align: right;
+	height: 245px;
+	position: fixed;
+	vertical-align: bottom;
+}
+/*___________________________________666___________________________________________________________________________________________________*/
+
+#container666 {
+	width: 60%;
+	margin: 0 auto;
+	background-image: url(img/background_alfa_666.png);
+	height: 100%;
+	border-right: solid 1px #a90b0b;
+	border-left: solid 1px #a90b0b;
+}
+#content666 {
+	border-top: 4px dashed #a90b0b;	
+	margin-top: 5px;
+	border-bottom: 4px dashed #a90b0b;
+		
+}
+#midlle_block666 {
+border-right: 4px dashed #c00707;
+	border-left: 4px dashed #c00707;
+}
+.about_text666 {
+	text-align: center;
+	padding: 10px;
+	font-size: 16px;
+	color: #671717;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#header666 {
+	background-image: url(img/header2666.png);
+	background-size: 100% 100%;
+	width: 100%;
+	text-align: center;
+	padding-top: 50px;
+	height: 277px;
+}
+#footer666 {
+	background-image: url(img/footer666.png);
+	background-size: 100% 100%;
+	margin-top: 10px;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	
+}
+#android666 {
+	position: fixed;
+	top: 0;
+	right: 81%;
+}
+#last_version666{
+	width: 100%;
+	color: #671717;
+	text-align: center;
+	border-bottom: 4px dashed #671717;
+}
+.about_text_version666 {	
+	padding: -4px;
+	letter-spacing: 9px;	
+	font-weight: bold;
+	font-size: 19px;
+	color: #671717;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.version666{
+	letter-spacing: 2px;
+	color: #c00707;
+	text-decoration: none;
+}
+#footer_copyright666 {
+ color: #671717;
+ margin: 2px;
+ text-align: center;
+ font-family: arial;
+ font-size: 11px;
+}
+.resource666:link {
+    color: #671717; /* Цвет ссылок */
+}
+.resource666:visited {
+    color: #671717; /* Цвет посещенных ссылок */
+}
+.gallery666 {
+	padding-top: 10px;
+	height: 218px;
+	text-align: center;
+	background-image: url(img/add.jpg);
+	background-size: 100% 100%;
+	border-bottom: 4px dashed #671717;
+	padding-bottom: 10px;
+}

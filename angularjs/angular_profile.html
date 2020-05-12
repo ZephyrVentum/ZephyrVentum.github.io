@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>Настройки</title>
+		<link rel="stylesheet" type="text/css" href="style/style.css">
+		 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+	</head>
+	<body class="body" id="body_info">
+		<div id="navigation_bar">
+			<a href="angular_info.html"><img src="img/logo_black_mini.png" class="img_logo_info"></a>
+			<span class="settings"><a href="angular_start.html" id="exit">Выход</a></span>
+			<img src="img/exit.png" class="img_exit_info">
+			<a href="angular_profile.html" id="settings"><span class="settings">Настройки</span></a>
+			<img src="img/cogs.png" class="img_cogs_info">
+			<span class="settings">ikytosan0@gmail.com</span>
+			<img src="img/mail.png" class="img_email_info">	
+			<div>
+				<p class="page_name_settings">
+					Редактированиe профиля
+				</p>
+			</div>
+		</div>
+		<div id="container_profile">
+			<div id="content_settings">
+				
+				<div id="profile_edit">
+				<img src="img/noname.jpg" alt="your foto" id="foto">
+					<table id="table_prifile">
+						<tr>
+							<td class="profile_names">
+								<span>Ваше имя:</span><br>
+							</td>
+							<td>
+								<input id="email" class="input_text_profile" type="email" placeholder="Введите свое имя" required><br>
+								<span class="status_input" id="status"></span>
+							</td>
+						</tr>
+						<tr>
+							<td class="profile_names">
+								<span>Ваша фамилия:</span><br>
+							</td>
+							<td>
+								<input id="email" class="input_text_profile" type="email" placeholder="Введите свою фамилию" required><br>
+								<span class="status_input" id="status"></span>
+							</td>
+						</tr>
+						<tr>
+							<td class="profile_names">
+								<span>Ваш email:</span><br>
+							</td>
+							<td>
+								<input id="email" class="input_text_profile" type="email" placeholder="Введите свой email" required><br>
+								<span class="status_input" id="status"></span>
+							</td>
+						</tr>
+						<tr>
+							<td class="profile_names">
+								<span>Ваш номер телефона:</span><br>
+							</td>
+							<td>
+								<input id="email" class="input_text_profile" type="email" placeholder="Введите свой номер телефона" required><br>
+								<span class="status_input" id="status"></span>
+							</td>
+						</tr>
+					</table>
+					<input class="bottom_save" type="image" src="img/save.png" onclick="isSave()">
+					<input class="bottom_save" type="image" src="img/change.png" onclick="isChange()">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

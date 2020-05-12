@@ -1,0 +1,23 @@
+body {
+	margin: auto 0;
+}
+#container {
+	width: 80%;
+	margin: 0 auto;
+	background-image: url(img/background_alfa_hpb.png);
+	height: 100%;
+	border-right: solid 1px #67d3fd;
+	border-left: solid 1px #67d3fd;
+}
+#headers {
+	background-image: url(img/hpb_top.png);
+	background-size: 100% 100%;
+	width: 100%;
+	text-align: center;
+	padding-top: 50px;
+	height: 277px;
+}
+#hbp_text {
+	text-align: center;
+	font-size: 19px;
+}

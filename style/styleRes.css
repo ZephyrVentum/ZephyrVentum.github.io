@@ -1,0 +1,82 @@
+/*___________________________________RESOURSE___________________________________________________________________________________________________*/
+body {
+cursor: url(cursor/cursor.cur), pointer;
+background: url(img/background.png);
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	
+}
+
+#tableRes{
+	width: 100%;
+}
+
+#tableRes a {
+	display: inline-block;
+	text-decoration: none;
+}
+
+#tableRes div{
+	background-image: url(img/background_alfa.png);
+	border: 4px dashed #67d3fd;
+}
+#tableRes tr {
+}
+#tableRes td{
+	padding: 30px;
+	height: 100px;
+	width: 33%;
+	vertical-align: top;
+	font-size: 16px;
+	color: #075e80;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.about_text_chapter {	
+	padding: -4px;
+	letter-spacing: 9px;	
+	font-weight: bold;
+	font-size: 22px;
+	color: #075e80;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#container_resourse {
+	margin: 0 auto;
+	text-align: center;
+    width: 86%;
+}
+
+
+#resourse {
+	position: fixed;
+	right: 0;
+	top: 15%;
+}
+
+#tableRes a:link {
+    color: #075e80; /* Цвет ссылок */
+}
+
+a:first-letter {
+    color: #ff00a8;
+}
+
+#tableRes a span:hover{
+	color: #2eb6eb;
+}
+
+#tableRes a:visited {
+    color: #075e80; /* Цвет посещенных ссылок */
+}
+#footer_copyright {
+ color: #075e80;
+ margin: 2px;
+ text-align: center;
+ font-family: arial;
+ font-size: 11px;
+}

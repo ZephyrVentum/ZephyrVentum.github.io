@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html id="html_game">
+	<head>
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<title>YourSchedule</title>
+		<link rel="stylesheet" type="text/css" href="style/style.css">
+		<link rel="shortcut icon" type="image/x-icon" href="style/img/favicon.ico">
+		<link href="jQuery_light_box/css/jquery.lightbox-0.5.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="jQuery_light_box/js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="jQuery_light_box/js/jquery.lightbox-0.5.pack.js"></script>
+		<script>
+		var isHide = true;
+			function firstWeek()
+			{		
+				var weekFirst = document.getElementById("firstWeek");
+				var weekSecond = document.getElementById("secondWeek");
+				weekFirst.style.display = "block";
+				weekSecond.style.display = "none";
+			}
+			function secondWeek()
+			{		
+				var weekFirst = document.getElementById("firstWeek");
+				var weekSecond = document.getElementById("secondWeek");
+				weekFirst.style.display = "none";
+				weekSecond.style.display = "block";
+			}
+			function showVolleyball()
+			{	
+				var valleyBall = document.getElementById("valleyball");
+				if (!isHide){
+					valleyBall.style.display = "inline-block";
+					isHide = true;
+				}else{
+					valleyBall.style.display = "none";
+					isHide = false;
+				}
+			}
+		</script>
+	</head>
+	<body class="body_timetable">
+		<div id="container_timetable">
+			<div class="mainpage"><a href="index.html"><img src="style/img/main.png" height="65px" alt="На главную"></a></div>
+<!--
+			<input type="image" class="img_weeks_first"  src="style/img/week1.png" alt="First Week?" onclick="firstWeek()" >
+			<input type="image" class="img_weeks_second"  src="style/img/week2.png" alt="Second Week?" onclick="secondWeek()">
+			<br><br>
+			<table class="time_table" id="firstWeek">
+				<tbody>
+					<tr class="colorRow">
+						<td >
+							&nbsp
+						</td>
+						<td>
+							Понедельник
+						</td>
+						<td>
+							Вторник
+						</td>
+						<td>
+							Среда
+						</td>
+						<td>
+							Четверг
+						</td>
+						<td>
+							Пятница
+						</td>
+					</tr>
+					<tr>
+						<td>
+							8.30 — 10.05
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+					</tr>
+					<tr class="colorRow">
+						<td>
+							10.25 — 12.00
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							<span>Компьютерная Схемотехника<br>(Лекция)<br>
+							307 У1 </span>
+						</td>
+						<td>
+							<span>Компьютерная Схемотехника<br>(Практика)<br>
+							310 ВК </span>
+						</td>
+						<td>
+							&nbsp
+						</td>
+					</tr>
+					<tr>
+						<td>
+							12.35 — 14.10
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							<span>Системное Программное Обеспечение<br>(Лекция)<br>
+							401 У1 </span>
+						</td>
+						<td>
+							<span>Организация Баз Данных<br>(Лекция)<br>
+							104 ЭК </span>
+						</td>
+						<td>
+							&nbsp
+						</td>
+					</tr>
+					<tr class="colorRow">
+						<td>
+							14.30 — 16.05
+						</td>
+						<td>
+							<span>Основы Экономической Теории<br>(Лекция)<br>
+							401 У1 </span>
+						</td>
+						<td>
+							<span>Теория Вероятности<br>(Лекция)<br>
+							302 ЭК </span>
+						</td>
+						<td>
+							<span>Организация Баз Данных<br>(Практика)<br>
+							21 ВК </span>
+						</td>
+						<td>
+							<span>Украинский Язык<br>(Семинар)<br>
+							У3 </span>
+						</td>
+						<td>
+							<span>Компьютерная Графика<br>(Лекция)<br>
+							104 ЭК </span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							16.25 — 18.00
+						</td>
+						<td>
+							<span>История Украинской Культуры<br>(Семинар)<br>
+							1404 У1 </span>
+						</td>
+						<td>
+							<span>Системное Программное Обеспечение<br>(Лабораторная)<br>
+							308 ВК </span>
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							<span>Основы Экономической Теории<br>(Практика)<br>
+							У4 </span>
+						</td>
+						<td>
+							<span>Управление IT-Проектами(нет)<br>(Лекция)<br>
+							104 ЕК </span>
+						</td>
+					</tr>
+					<tr class="colorRow">
+						<td>
+							18.10 — 19.45
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="time_table" id="secondWeek">
+				<tbody>
+					<tr class="colorRow">
+						<td >
+							&nbsp
+						</td>
+						<td>
+							Понедельник
+						</td>
+						<td>
+							Вторник
+						</td>
+						<td>
+							Среда
+						</td>
+						<td>
+							Четверг
+						</td>
+						<td>
+							Пятница
+						</td>
+					</tr>
+					<tr>
+						<td>
+							8.30 — 10.05
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+					</tr>
+					<tr class="colorRow">
+						<td>
+							10.25 — 12.00
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							<span>Компьютерная Схемотехника<br>(Лабораторная)<br>
+							310 ВК </span>
+						</td>
+						<td>
+							&nbsp
+						</td>
+					</tr>
+					<tr>
+						<td>
+							12.35 — 14.10
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							<span>Системное Программное Обеспечение<br>(Лекция)<br>
+							401 У1 </span>
+						</td>
+						<td>
+							<span>Организация Баз Данных<br>(Лекция)<br>
+							104 ЭК </span>
+						</td>
+						<td>
+							<span>Управление IT-Проектами<br>(Практика)<br>
+							313 ВК </span>
+						</td>
+					</tr>
+					<tr class="colorRow">
+						<td>
+							14.30 — 16.05
+						</td>
+						<td>
+							<span>История Украинской Культуры<br>(Лекция)<br>
+							1104 У1 </span>
+						</td>
+						<td>
+							<span>Теория Вероятности<br>(Лекция)<br>
+							302 ЭК </span>
+						</td>
+						<td>
+							<span>Организация Баз Данных<br>(Лабораторная)<br>
+							21 ВК </span>
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							<span>Теория Вероятности<br>(Практика)<br>
+							303 ВК </span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							16.25 — 18.00
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							<span>Системное Программное Обеспечение<br>(Лабораторная)<br>
+							308 ВК </span>
+						</td>
+						<td>
+							<span>Компьютерная Графика<br>(Лабораторная)<br>
+							25 ВК </span>
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							<span>Управление IT-Проектами(нет)<br>(Лекция)<br>
+							104 ЕК </span>
+						</td>
+					</tr>
+					<tr class="colorRow">
+						<td>
+							18.10 — 19.45
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+						<td>
+							&nbsp
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+-->
+		<div id="volleyball_shedule" style="text-align: center">
+			<br><a href="http://schedule.kpi.kharkov.ua/Schedule/9381/" class="version" target="_blank" style="font-size: 25px">→ Рассписание курильщика тут ←</a> <br>
+			<h3 class="version">↓ Нормальное рассписание ↓</h3>
+			<img width="100%" src="style/img/3_2course.png">
+			<input type="image" width="70px" src="style/img/vIcon.png" onclick="showVolleyball()"  > <br>
+			<h3 class="version">↓ Волейбол ↓</h3>
+			<img width="100%" src="style/img/valleyball.png">
+		</div>
+		<p id="footer_copyright">
+			<!--LiveInternet counter-->
+				<script type="text/javascript">document.write("<a href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t24.6;r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' border=0 width=88 height=15 alt='' title='LiveInternet: показано число посетителей за сегодня'><\/a>")
+				</script>
+			<!--/LiveInternet-->
+			 Александр Клименко 2017 <a class="resource" href="http://freelance.ua/user/Zi_Fir/portfolio/">freelance.uа</a>
+			 при поддержке <a class="resource" href="https://vk.com/id38230616">Доктора Попова
+			 <img src="style/img/popov.png" alt="cucumber" width="62px" height="25px">
+			 </a>
+		</p>
+	</body>
+</html>
