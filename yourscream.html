@@ -8,31 +8,10 @@
 		<script type="text/javascript" src="jQuery_light_box/js/jquery-2.0.3.min.js"></script>
 		<script type="text/javascript" src="jQuery_light_box/js/jquery.lightbox-0.5.pack.js"></script>
 		<script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
-		<script type="text/javascript">
-						function func() {
-  var scream = document.getElementById("screambody");
-  scream.style.backgroundImage = "url(style/img/scream.jpg)";
-}
-
-setTimeout(func, 900);
-			$$r(function() {
-				$$i({
-					create:'script',
-					attribute: {
-						'type':'text/javascript',
-						'src':'http://nagon.net/modules/NRMSLib/NRMSLib.js'
-					},
-					insert:$$().body,
-					onready:function() {//выполняю только после загрузки скрипта
-						//запукаю из загруженного скрипта
-						modules.sound.start({'music': 'http://yourviews.zz.mu/music/scream.mp3'});
-						$$('sound_s_el_m').$$('width','1px').$$('height','1px').$$('overflow','hidden');//эти параметры трогать не нужно
-					}
-				});
-			}); 
-		</script>
+	
 	</head>
-	<body class="body_scream" id="screambody">
+	<body class="body_scream" id="screambody" style="background-image:url(style/img/scream.jpg) ">
 		&nbsp
+		<audio src="music\scream.mp3" autoplay>
 	</body>
 </html>

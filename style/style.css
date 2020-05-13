@@ -569,3 +569,8 @@ border-right: 4px dashed #c00707;
 	border-bottom: 4px dashed #671717;
 	padding-bottom: 10px;
 }
+.site_div {
+	display: inline-block;
+	margin: 10px;
+	border: 2px dashed #67d3fd;
+}
