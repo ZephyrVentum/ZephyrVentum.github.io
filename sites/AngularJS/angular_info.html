@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>Список товаров</title>
+		<link rel="stylesheet" type="text/css" href="style/style.css">
+		 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+		<script>
+			function param(Name){
+				var Params = location.search.substring(1).split("&");
+				var variable = "";
+				for (var i = 0; i < Params.length; i++){
+					if(Params[i].split("=")[0] == Name){
+						if (Params[i].split("=").length > 1)
+							variable = Params[i].split("=")[1];
+						return variable;
+					}
+				}
+			return "";
+			}
+			var select = param("str");
+			//alert(select);
+			
+		</script>
+	</head>
+	<body class="body" id="body_info">
+		<div id="navigation_bar">
+			<a href="angular_info.html"><img src="img/logo_black_mini.png" class="img_logo_info"></a>
+			<a href="../../index.html"><img src="img/home.png" class="img_logo_info"></a>
+			<span class="settings"><a href="angular_start.html" id="exit">Выход</a></span>
+			<img src="img/exit.png" class="img_exit_info">
+			<a href="angular_profile.html" id="settings"><span class="settings">Настройки</span></a>
+			<img src="img/cogs.png" class="img_cogs_info">
+			<span class="settings">{{yourName}}</span>
+			<img src="img/mail.png" class="img_email_info">	
+			<div>
+				<img src="img/delete.png" class="img_delete_info">	
+				<div class="table_settings">Удалить</div>
+				<img src="img/add.png" class="img_add_info">
+				<div class="table_settings">Добавить</div>	
+				<select name="select" id="table_select">
+					<option selected="selected">10</option>
+					<option>20</option>
+					<option>50</option>
+				</select>
+			</div>
+		</div>
+		<div id="container">
+			<table id="table_info">
+				<tbody>
+					<tr id="table_header">
+						<td class="checkbox">
+							<span class="table_names">&nbsp</span>
+						</td>
+						<td class="count">
+							<span class="table_names">№п/п</span>
+						</td>
+						<td class="name">
+							<span class="table_names">Наименование</span>
+						</td>
+						<td class="description">
+							<span class="table_names">Описание</span>
+						</td>
+						<td class="price">
+							<span class="table_names">Цена</span>
+						</td>
+					</tr>
+					<tr id="table_content">
+						<td class="checkbox">
+							<input class="check_box" type="checkbox">
+							<input class="edit" type="image" src="img/edit.png" alt="edit" onclick="isEdit()">
+						</td>
+						<td class="count" id="table_count">
+							<span class="table_data">1</span>
+						</td>
+						<td class="name">
+							<span class="table_data">Игрушка "My Little Pony"</span>
+						</td>
+						<td class="description">
+							<span class="table_data">Мягкая игрушка из популярного детского мультсериала. </span>
+							<input type="checkbox" ng-model="ShowCheck" value="Подробнее...">
+							<span class="table_data" ng-show="ShowCheck">Мягкая игрушка из популярного детского мультсериала. </span>
+						</td>
+						<td class="price" id="table_price">
+							<span class="table_data">22,8 грн.</span>
+						</td>
+					</tr>
+					<tr id="table_content">
+						<td class="checkbox">
+							<input class="check_box" type="checkbox">
+							<input class="edit" type="image" src="img/edit.png" alt="edit" onclick="isEdit()">
+						</td>
+						<td class="count" id="table_count">
+							<span class="table_data">2</span>
+						</td>
+						<td class="name">
+							<span class="table_data">Черные Найки</span>
+						</td>
+						<td class="description">
+							<span class="table_data">Кросовки по стилю известного рэпера "PHARAON".</span>
+							<span class="details" id="details" onclick="isDetails()">Подробнее...</span>
+						</td>
+						<td class="price" id="table_price">
+							<span class="table_data">322,0 грн.</span>
+						</td>
+					</tr>
+					<tr id="table_content">
+						<td class="checkbox">
+							<input class="check_box" type="checkbox">
+							<input class="edit" type="image" src="img/edit.png" alt="edit" onclick="isEdit()">
+						</td>
+						<td class="count" id="table_count">
+							<span class="table_data">3</span>
+						</td>
+						<td class="name">
+							<span class="table_data">Штаны синие</span>
+						</td>
+						<td class="description">
+							<span class="table_data">Недорогие штаны встречаются на просторах Барабашки.</span>
+							<span class="details" id="details" onclick="isDetails()">Подробнее...</span>
+						</td>
+						<td class="price" id="table_price">
+							<span class="table_data">40,0 грн.</span>
+						</td>
+					</tr>
+					<tr id="table_content">
+						<td class="checkbox">
+							<input class="check_box" type="checkbox">
+							<input class="edit" type="image" src="img/edit.png" alt="edit" onclick="isEdit()">
+						</td>
+						<td class="count" id="table_count">
+							<span class="table_data">4</span>
+						</td>
+						<td class="name">
+							<span class="table_data">Принтер Cannon Ip491</span>
+						</td>
+						<td class="description">
+							<span class="table_data">Цветной офисный принтер. Имеет 8 различных цветов.</span>
+							<span class="details" id="details" onclick="isDetails()">Подробнее...</span>
+						</td>
+						<td class="price" id="table_price">
+							<span class="table_data">2048,0 грн.</span>
+						</td>
+					</tr>
+					<tr id="table_content">
+						<td class="checkbox">
+							<input class="check_box" type="checkbox">
+							<input class="edit" type="image" src="img/edit.png" alt="edit" onclick="isEdit()">
+						</td>
+						<td class="count" id="table_count">
+							<span class="table_data">5</span>
+						</td>
+						<td class="name">
+							<span class="table_data">Жвачка Dirol</span>
+						</td>
+						<td class="description">
+							<span class="table_data">Новый Dirol без сахара. Намного лучше Orbit.</span>
+							<span class="details" id="details" onclick="isDetails()">Подробнее...</span>
+						</td>
+						<td class="price" id="table_price">
+							<span class="table_data">9,5 грн.</span>
+						</td>
+					</tr>
+					<tr id="table_content">
+						<td class="checkbox">
+							<input class="check_box" type="checkbox">
+							<input class="edit" type="image" src="img/edit.png" alt="edit" onclick="isEdit()">
+						</td>
+						<td class="count" id="table_count">
+							<span class="table_data">6</span>
+						</td>
+						<td class="name">
+							<span class="table_data">Напиток "Байкал"</span>
+						</td>
+						<td class="description">
+							<span class="table_data">Акция. Напиток безалкогольный, сильногазированный.</span>
+							<span class="details" id="details" onclick="isDetails()">Подробнее...</span>
+						</td>
+						<td class="price" id="table_price">
+							<span class="table_data">14,5 грн.</span>
+						</td>
+					</tr>
+					<tr id="table_content">
+						<td class="checkbox">
+							<input class="check_box" type="checkbox">
+							<input class="edit" type="image" src="img/edit.png" alt="edit" onclick="isEdit()">
+						</td>
+						<td class="count" id="table_count">
+							<span class="table_data">7</span>
+						</td>
+						<td class="name">
+							<span class="table_data">Футболка "Gravity Falls"</span>
+						</td>
+						<td class="description">
+							<span class="table_data">Стильная футболка с героями популярного мультсериала.</span>
+							<span class="details" id="details" onclick="isDetails()">Подробнее...</span>
+						</td>
+						<td class="price" id="table_price">
+							<span class="table_data">140,0 грн.</span>
+						</td>
+					</tr>
+					<tr id="table_content">
+						<td class="checkbox">
+							<input class="check_box" type="checkbox">
+							<input class="edit" type="image" src="img/edit.png" alt="edit" onclick="isEdit()">
+						</td>
+						<td class="count" id="table_count">
+							<span class="table_data">8</span>
+						</td>
+						<td class="name">
+							<span class="table_data">Игра "Каркасон"</span>
+						</td>
+						<td class="description">
+							<span class="table_data">Стратегическая игра. Хорошое развлечение в компании друзей.</span>
+							<span class="details" id="details" onclick="isDetails()">Подробнее...</span>
+						</td>
+						<td class="price" id="table_price">
+							<span class="table_data">459,9 грн.</span>
+						</td>
+					</tr>
+					<tr id="table_content">
+						<td class="checkbox">
+							<input class="check_box" type="checkbox">
+							<input class="edit" type="image" src="img/edit.png" alt="edit" onclick="isEdit()">
+						</td>
+						<td class="count" id="table_count">
+							<span class="table_data">9</span>
+						</td>
+						<td class="name">
+							<span class="table_data">Статуетка Холмса</span>
+						</td>
+						<td class="description">
+							<span class="table_data">Металическая статуэтка. Высота 14см. Курит трубку.</span>
+							<span class="details" id="details" onclick="isDetails()">Подробнее...</span>
+						</td>
+						<td class="price" id="table_price">
+							<span class="table_data">50,0 грн.</span>
+						</td>
+					</tr>
+					<tr id="table_content">
+						<td class="checkbox">
+							<input class="check_box" type="checkbox">
+							<input class="edit" type="image" src="img/edit.png" alt="edit" onclick="isEdit()">
+						</td>
+						<td class="count" id="table_count">
+							<span class="table_data">10</span>
+						</td>
+						<td class="name">
+							<span class="table_data">Статуэтка "Оскар"</span>
+						</td>
+						<td class="description">
+							<span class="table_data">Металическая статуэтка. По праву принадлежит Леонардо Ди Каприо.</span>
+							<span class="details" id="details" onclick="isDetails()">Подробнее...</span>
+						</td>
+						<td class="price" id="table_price">
+							<span class="table_data">228,0 грн.</span>
+						</td>
+					</tr>					
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

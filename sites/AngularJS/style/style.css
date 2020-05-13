@@ -1,0 +1,277 @@
+﻿#html_start{
+	height: 97%;
+}
+body {
+	height: 100%;
+	font-family: verdana;
+	background-color: #141414
+}
+#body_info{
+	margin: 0 auto;
+}
+.page_name{
+	color: #b0b0b0;
+	letter-spacing: 6px;
+	font-size: 24px;
+	font-style: bold;
+	text-align: center;
+}
+.page_name_settings{
+	color: #333333;
+	letter-spacing: 3px;
+	font-size: 20px;
+	font-style: bold;
+	text-align: center;
+	margin: 6px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 0px;
+}
+#input_date{
+	text-align: center;
+}
+.text_remember{
+	color: #b0b0b0;
+	font-size: 14px;
+	margin-right: 4px;
+}
+.check_box{
+	padding: 0;
+	margin: 0;
+	vertical-align: bottom;
+}
+.bottom_login{
+	width: 110px;
+	margin-top: 20px;
+}
+.bottom_save{
+	width: 100px;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+.input_text{
+	width: 250px;
+	margin-top: 10px;
+	border-radius: 6px;
+	text-align: center;
+	font-size: 14px;
+}
+.status_input{
+	color: #b20c24;
+	font-size: 12px;
+}
+#content {
+	text-align: center;
+}
+#container{
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+#container_profile{
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 40px;
+
+}
+#container_start {
+
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+#navigation_bar{
+	height: 40px;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	width: 100%;
+	background-color: #a6a19e;
+	top: 0;
+	text-align: center;
+	position: fixed;	
+}
+.img_logo_info{
+	height: 33px;
+	padding-right: 26px;
+	float: left;
+	margin: 3px;
+	
+}
+.img_cogs_info{
+	width: 25px;
+	margin: 9px;
+	margin-right: 4px;
+	float: right
+}
+.img_email_info{
+	width: 21px;
+	margin: 9px;
+	margin-right: 4px;
+	margin-left: 14px;
+	float: right
+}
+.img_delete_info{
+	width: 21px;
+	margin: 9px;
+	margin-right: 4px;
+	
+}
+.img_add_info{
+	width: 21px;
+	margin: 9px;
+	margin-right: 4px;
+	
+}
+.edit{
+	width: 17px;
+	float: right;
+}
+.img_exit_info{
+	width: 18px;
+	margin: 9px;
+	margin-right: 4px;
+	float: right
+}
+.settings{
+	float: right;
+	margin: 9px;
+	margin-left: 0px;
+	font-size: 15px;
+}
+.table_settings
+{
+	margin: 9px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 0px;
+	font-size: 15px;
+}
+#table_select{
+	margin: 9px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 0px;
+	font-size: 14px;
+	border-radius: 8px;
+}
+
+#exit{
+	color: black;
+	text-decoration: none;
+}
+#exit:hover{
+	color: #b01018;
+}
+#settings{
+	color: black;
+	text-decoration: none;
+}
+#settings:hover{
+	color: #b01018;
+}
+.settings:hover{
+	color: #b01018;
+	text-decoration: underline;
+}
+.table_settings:hover{
+	color: #b01018;
+	text-decoration: underline;
+}
+.table_names{
+	color: #a6a19e;
+	font-weight: bold;
+}
+.table_data{
+	color: #a6a19e;
+}
+.details{
+	color: #a6a19e;
+	cursor: pointer;
+	font-size: 14px;
+}
+.details:hover{
+	color: #b01018;
+	cursor: pointer;
+	font-size: 14px;
+}
+#table_count{
+	text-align: center;
+}
+#table_price{
+	text-align: center;
+}
+#table_info{
+	width: 100%;
+	border-left: 2px solid #a6a19e;
+	border-right: 2px solid #a6a19e;
+	border-bottom: 2px solid #a6a19e;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+#table_header{
+	text-align: center;
+	vertical-align: middle;
+}
+#table_content{
+	text-align: justify;
+	padding: 10px;
+	vertical-align: middle;
+	
+}
+.checkbox{
+	width: 7%;
+	padding: 8px;
+}
+.count{
+	width: 9%;
+	padding: 8px;
+}
+.name{
+	width: 29%;
+	padding: 8px;
+}
+.description{
+	width: 40%;
+	padding: 8px;
+}
+.price{
+	width: 21%;
+	padding: 8px;
+}
+#content_settings{
+	float: left;
+	width: 100%;
+	border-left: 2px solid #a6a19e;
+	border-right: 2px solid #a6a19e;
+	border-bottom: 2px solid #a6a19e;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	
+}
+#foto{
+	float: left;
+	width: 120px;
+	border-radius: 15px;
+	margin-left: 20px;
+}
+#profile_edit{
+
+	margin-top: 20px;
+	float: left;
+	color: #a6a19e;
+	text-align: center;
+}
+.input_text_profile{
+	width: 230px;
+	border-radius: 6px;
+	text-align: center;
+
+	font-size: 15px;
+}
+.profile_names{
+	text-align: center;
+}
+#table_prifile{
+	border-spacing: 15px;
+}

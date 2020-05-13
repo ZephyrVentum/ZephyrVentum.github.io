@@ -1,0 +1,50 @@
+1.Подключаем CSS и библиотеки. Между тегами <head></head> добавьте строки подключения:
+
+<link href="css/jquery.lightbox-0.5.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.lightbox-0.5.pack.js"></script>
+
+
+2. В необходимом месте html документа вставляем код для фотографий. Фото (img), обернутое ссылкой на увеличенную версию этого же фото:
+
+<div id="gallery">
+
+        <a href="image/1.jpg">
+		<img src="image/1s.jpg" height="120px" width="160px" alt=""/>
+	</a>
+	<a href="image/2.jpg">
+		<img src="image/2s.jpg" height="120px" width="160px" alt=""/>
+	</a>
+		<a href="image/3.jpg">
+		<img src="image/3s.jpg" height="120px" width="160px" alt=""/>
+	</a>
+	<a href="image/4.jpg">
+		<img src="image/4s.jpg" height="120px" width="160px" alt=""/>
+	</a>
+	<a href="image/5.jpg">
+		<img src="image/5s.jpg" height="120px" width="160px" alt=""/>
+	</a>
+	<a href="image/6.jpg">
+		<img src="image/6s.jpg" height="120px" width="160px" alt=""/>
+	</a>
+	<a href="image/7.jpg">
+		<img src="image/7s.jpg" height="120px" width="160px" alt=""/>
+	</a>
+	<a href="image/8.jpg">
+		<img src="image/8s.jpg" height="120px" width="160px" alt=""/>
+	</a>
+</div>
+
+
+3.Инициализируем галерею:
+
+<script type="text/javascript">
+$(function() {
+        $('#gallery a').lightBox();
+    });
+</script>
+
+
+
+
+4. Источник: http://www.xiper.net/collect/js-plugins/gallery/jquery-lightbox.html
