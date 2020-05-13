@@ -1,0 +1,171 @@
+﻿html, body 
+{ 
+	padding: 0;
+	margin: 0;
+}
+#container
+{
+	width: 80%;
+	margin: 0 auto;
+	border-left: thin solid #920f17;
+	border-right: thin solid #920f17
+}
+#woman
+{
+	float: right
+}
+#img1
+{
+	height: 236px;
+	text-align: right;
+	float: right
+}
+#ul
+{
+	padding-top: 66px;
+	margin: 0;
+	list-style-image: none;
+	list-style-type: none;
+	line-height: 28px
+}
+.ul
+{
+	color: #545a5f;
+	font-family: arial;
+	font-weight: bold
+}
+#header
+{
+	background-image: url(bgtop.jpg);
+	background-repeat: no-repeat;
+	height: 240px ;
+	background-size: 100% 240px
+}
+a:hover
+{
+	color: #920f17
+}
+a
+{
+	text-decoration: none;
+	color: #545a5f 
+}
+a:active
+{
+    color: #920f17
+}
+#left
+{
+	background-color: #e8e8e8;
+	width: 22%;
+	float: left;
+	margin-top: 1px;
+	border-top: thin solid #b8b8b8;
+	border-right: thin solid #b8b8b8
+}
+#left1
+{
+	background-image: url(left.jpg);
+	background-repeat: no-repeat;
+	border-bottom: thin solid #b8b8b8;
+	padding-left: 40px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-size: 100%;
+	color: #6d6d6d;
+	font-family: Verdana;
+	font-size: 14px;
+	letter-spacing: 2px
+}
+#image1
+{
+	width: 91%;
+	padding: 10px;
+	text-align: center;
+	margin-bottom: -3px;
+	border-radius: 20px
+}
+.left2
+{
+	color: #626262;
+	padding: 10px;
+	padding-top: 0;
+	margin-top: 0;
+	font-family: Verdana;
+	font-size: 13px;
+	text-align: justify
+}
+#ppp
+{
+	font-family: verdana;
+	font-size: 10px;
+	font-weight: bold;
+	color: #e32c30;
+	text-decoration: underline;
+	text-align: right;
+	padding-right: 10px
+}
+#content
+{
+	width: 78%;
+	margin-left: 22%;
+	background-image: url(bgmenu.jpg);
+	background-repeat: repeat-x
+}
+#content1
+{
+	color: #df1f2e;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 20px;
+	margin-top: 0;
+	padding-top: 10px;
+	letter-spacing: 2px;
+	margin-bottom: -10px;
+	padding-bottom: 0;
+	margin-left: 35px
+}
+.line
+{
+	margin-top:0;
+	margin-left: 15px;
+	margin-bottom: 0
+}
+.textmenu
+{
+	margin-top: 7px;
+	text-align: justify;
+	margin-right: 15px;
+	margin-left: 15px;
+	color: #626262;
+	font-family: verdana;
+	font-size: 13px;
+	line-height: 18px
+}
+.image2
+{
+	float: left;
+	width: 250px;
+	border-radius: 10px;
+	margin-right: 15px
+}
+#content, #left
+{
+	height: 590px;
+	margin-bottom: 0
+}
+#footer
+{
+	background-color: #465262;
+	margin-top: 2px;
+	height: 25px
+}
+#footer1
+{
+	margin-top: 0px;
+	text-align: center;
+	font-family: verdana;
+	font-size: 10px;
+	padding-top: 10px;
+	color: white
+}

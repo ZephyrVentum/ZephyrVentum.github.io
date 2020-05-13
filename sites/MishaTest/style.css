@@ -1,0 +1,106 @@
+body, html
+{
+	padding: 0;
+	margin: 0;
+	background-image: url(bg1.jpg);
+}
+#container 
+{
+	width: 70%;
+	margin: 0 auto
+}
+.header 
+{
+	margin-top: 30px
+}
+#top
+{
+	width: 100%;
+	background-image: url(bgtop.jpg);
+	padding-top: 5px;
+	height: 40px;
+	border-radius: 5px 5px 0 0;
+	margin-bottom: 0
+}
+.img1
+{
+	float: right;
+	height: 35px;
+	margin-right: 10px;
+}
+#top2
+{
+	background-image: url(bgtop1.jpg.);
+	height: 330px;
+	margin-top: 0;
+	width: 100%
+}
+#vizitka123
+{
+	color: white;
+	float: left;
+	margin-top: 0;
+	font-family: calibri;
+	padding-left: 30px;
+	padding-top: 10px
+}
+.viz
+{
+	border-bottom: thin solid white;
+	font-size: 31px;
+	
+}
+.viz2
+{
+	font-size: 17px;
+	letter-spacing: 2px
+}
+#nomer
+{
+	margin-top: 0;
+	padding-top: 5px;
+	width: 64%;
+	text-align: right;
+	float: left;
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+	font-family: arial
+}
+#sait
+{
+	margin-top: 0;
+	padding-top: 5px;
+	margin-left: 85%;
+	padding-left: 25px;
+	color: white;
+	line-height: 21px;
+	font-family: Tahoma;
+	font-size: 15px
+}
+.korzina
+{
+	height: 19px;
+}
+.munu
+{c
+	display: inline;
+	background-image: url(menu.jpg)
+	
+}
+#home
+{
+	height: 20px
+}
+#menuli
+{
+	text-align: center;
+	width: 100%;
+}
+.amenu
+{
+	color: white;
+	font-family: arial;
+	font-weight: bold;
+	text-decoration: none
+}

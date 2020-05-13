@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScriptHelper</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<img src="text.gif" alt=" " class="logo">
+		</div>
+		<div id="menu">
+			<ul id="menu1">
+				<li class="l1"><span class="span1">:: </span><a class="a1" href="index.html"> Главная</a></li>
+				<li class="l1"><span class="span1">:: </span><a class="a1" href="index4.html"> JavaScript</a></li>
+				<li class="l1"><span class="span1">:: </span><a class="a1" href="index6.html"> Функции</a></li>
+				<li class="l1"><span class="span1">:: </span><a class="a1" href="index2.html"> Циклы</a></li>
+				<li class="l1"><span class="span1">:: </span><a class="a1" href="index3.html"> Масивы</a></li>
+				<li class="l1"><span class="span1">:: </span><a class="a1" href="index5.html"> jQuery</a></li>
+				<li class="l1"><span class="span1">:: </span><a class="a1" href="index7.html"> Помощь</a></li>
+			</ul>
+		</div>
+		<div id="content"><a name="mass2"></a>
+		<p class="p1"><span class="span2">Создание массива.</span><br><br> Приведем пример простого массива. При изменении номера массива в Mass1 будет соответственно меняться значение в Mass2</p>
+			<pre id="pre1">
+<span class="var">var</span> Mass1, Mass2, Str, Mass3;
+Mass1 = [<span class="num">0</span>, <span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>, <span class="num">6</span>];
+Mass2 = ["", "Март", "Апрель", "Май", "Июнь", "Июль", "Август"];
+Mass3 = [<span class="num">6</span>, <span class="num">7</span>, <span class="num">8</span>];
+Mass1[<span class="num">0</span>] = Mass3;
+document.write(Mass1[<span class="num">0</span>][<span class="num">2</span>] + " месяц " + Mass2[<span class="num">1</span>]);
+			</pre>
+			<pre id="pre1">
+<span class="var">var</span> Mass1, Mass2, Str, Mass3;
+Mass1 = [<span class="num">0</span>, <span class="num">11</span>, <span class="num">12</span>, <span class="num">13</span>, <span class="num">14</span>, <span class="num">15</span>, <span class="num">16</span>];
+Mass2 = ["", "Март", "Апрель", "Май", "Июнь", "Июль", "Август"];
+Mass3 = [<span class="num">13</span>, <span class="num">14</span>, <span class="num">15</span>];
+Mass1[<span class="num">4</span>] = Mass3;
+document.write(Mass1[<span class="num">2</span>][<span class="num">3</span>] + " месяц " + Mass2[<span class="num">3</span>]);
+			</pre>
+			<pre id="pre1">
+<span class="var">var</span> Mass1, Mass2, Str, Mass3;
+Mass1 = [<span class="num">0</span>, <span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>];
+Mass2 = ["", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница"];
+Mass3 = [<span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>];
+Mass1[<span class="num">4</span>] = Mass3;
+document.write(Mass1[<span class="num">1</span>][<span class="num">1</span>] + " месяц " + Mass2[<span class="num">1</span>]);
+			</pre>
+			</p>
+			</p>
+		</div>
+		<div id="right">
+			<ul>
+				<li><a href="index3.html#mass" class="a111">Что такое Массив?</a></li><br>
+				<li><a href="index33.html#mass2" class="a111">Создание массива</a></li><br>
+				<li><a href="index333.html#mass3" class="a111">Усложняем массив. Slice</a></li><br>
+			</ul>
+		</div>
+		<div id="footer">
+		<p class="a13">Клименко Александр 16МА119</p>
+		</div>
+	</div>	
+</body>
+</html>
