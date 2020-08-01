@@ -1,0 +1,15 @@
+ganesha7: ganesha7.o elephant7.o curtime.o
+	gcc -o ganesha7 ganesha7.o curtime.o
+	gcc -o elephant7 elephant7.o curtime.o
+
+curtime.o: ../common/curtime.c ../common/curtime.h
+	gcc -c ../common/curtime.c -o curtime.o
+
+ganesha7.o: ganesha7.c ../common/ganesha.h ../common/elephant.h ../common/curtime.h
+	gcc -c ganesha7.c
+
+elephant7.o: elephant7.c ../common/elephant.h ../common/curtime.h 
+	gcc -c elephant7.c
+
+clean:
+	rm -f elephant7 ganesha7 elephant7.o ganesha7.o curtime.o 

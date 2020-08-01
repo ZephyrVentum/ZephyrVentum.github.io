@@ -1,0 +1,62 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>PIPE system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>pipe (2)</samp></b></big><br>
+    &nbsp;&nbsp; создание неименованного программного канала&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    int pipe(int fd[2]);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>pipe</samp> создает неименованный программный канал и возвращает два файловых дескриптора: <samp>fd[0]</samp> - для чтения из канала и <samp>fd[1]</samp> - для заниси в канал.
+<p>Дальнейшая работа с каналом происходит так же, как с открытым файлом.
+</td></tr></table>
+
+<p><b>Возвращаемое значение</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При нормальном выполнении возвращает 0. При ошибках
+выполнения возвращает -1 и устанавливает
+<samp><a href=_errno.html>errno</a></samp>.
+</td></tr></table>
+
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_close.html>close</a>,
+<a href=_read.html>read</a>,
+<a href=_write.html>write</a>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#pipe>Список системных вызовов</a>
+</body>
+</html>
+

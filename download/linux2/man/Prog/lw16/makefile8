@@ -1,0 +1,11 @@
+ganesha8: ganesha8.o  curtime.o
+	gcc -o ganesha8 ganesha8.o curtime.o -lpthread
+
+curtime.o: ../common/curtime.c ../common/curtime.h
+	gcc -c ../common/curtime.c -o curtime.o
+
+ganesha8.o: ganesha8.c ../common/ganesha.h ../common/elephant.h ../common/curtime.h
+	gcc -c ganesha8.c -lpthread
+
+clean:
+	rm -f ganesha8 ganesha8.o curtime.o 

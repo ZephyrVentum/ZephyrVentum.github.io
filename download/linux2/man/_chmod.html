@@ -1,0 +1,89 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>CHMOD system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>chmod, fchmod (2)</samp></b></big><br>
+    &nbsp;&nbsp;изменение прав доступа к файлу&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;sys/types.h&gt;
+    #include &lt;sys/stat.h&gt;
+
+    int chmod(char *fname, mode_t mode);
+    int fchmod(int fd, mode_t mode);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+Изменяет права доступа к файлу, заданному именем 
+<samp>fname</samp> (<samp>chmod</samp>) или файловым дескриптором 
+<samp>fd</samp> (<samp>chmod</samp>).
+Режимы  задаются параметром  <samp>mask</samp> как результат логической  
+операции OR к следующим константам:
+<table width=100%>
+<tr><td colspan=2><samp>S_ISUID&nbsp;&nbsp;&nbsp;&nbsp;04000<sub>8</sub></samp></td></tr>
+<tr><td width=15%>&nbsp;</td><td>при выполнении  установить идентификатор пользователя</td></tr>
+<tr><td colspan=2><samp>S_ISGID&nbsp;&nbsp;&nbsp;&nbsp;02000<sub>8</sub></samp></td></tr>
+<tr><td width=15%>&nbsp;</td><td>при выполнении установить идентификатор группы</td></tr>
+<tr><td colspan=2><samp>S_IRUSR (S_IREAD)&nbsp;&nbsp;&nbsp;&nbsp;00400<sub>8</sub></samp></td></tr>
+<tr><td width=15%>&nbsp;</td><td>владелец может читать</td></tr>
+<tr><td colspan=2><samp>S_IWUSR (S_IWRITE)&nbsp;&nbsp;&nbsp;&nbsp;00200<sub>8</sub></samp></td></tr> 
+<tr><td width=15%>&nbsp;</td><td>владелец может писать</td></tr>
+<tr><td colspan=2><samp>S_IXUSR (S_IEXEC)&nbsp;&nbsp;&nbsp;&nbsp;00100<sub>8</sub></samp></td></tr>
+<tr><td width=15%>&nbsp;</td><td>владелец  может выполнять файл или искать в каталоге</td></tr>
+<tr><td colspan=2><samp>S_IRGRP&nbsp;&nbsp;&nbsp;&nbsp;00040<sub>8</sub></samp></td></tr>
+<tr><td width=15%>&nbsp;</td><td>группа-владелец может читать</td></tr>
+<tr><td colspan=2><samp>S_IWGRP&nbsp;&nbsp;&nbsp;&nbsp;00020<sub>8</sub></samp></td></tr>
+<tr><td width=15%>&nbsp;</td><td>группа-владелец может писать</td></tr>
+<tr><td colspan=2><samp>S_IXGRP&nbsp;&nbsp;&nbsp;&nbsp;00010<sub>8</sub></samp></td></tr>
+<tr><td width=15%>&nbsp;</td><td>группа-владелец  может   выполнять файл или искать в каталоге</td></tr>
+<tr><td colspan=2><samp>S_IROTH&nbsp;&nbsp;&nbsp;&nbsp;00004<sub>8</sub></samp></td></tr>
+<tr><td width=15%>&nbsp;</td><td>все остальные могут читать</td></tr>
+<tr><td colspan=2><samp>S_IWOTH&nbsp;&nbsp;&nbsp;&nbsp;00002<sub>8</sub></samp></td></tr>
+<tr><td width=15%>&nbsp;</td><td>все остальные могут писать</td></tr>
+<tr><td colspan=2><samp>S_IXOTH&nbsp;&nbsp;&nbsp;&nbsp;00001<sub>8</sub></samp></td></tr>
+<tr><td width=15%>&nbsp;</td><td>все остальные могут выполнять файл или искать в каталоге</td></tr>
+</table>
+</td></tr></table>
+
+<p><b>Возвращаемое значение</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При нормальном выполнении <samp>chmod</samp> возвращает 0. При ошибках
+выполнения возвращает -1 и устанавливает
+<samp><a href=_errno.html>errno</a></samp>.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_open.html>open</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#chmod>Список системных вызовов</a>
+</body>
+</html>

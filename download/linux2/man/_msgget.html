@@ -1,0 +1,72 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>MSGGET system call.</TITLE>
+</head>
+<body     
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>msgget (2)</samp></b></big><br>
+    &nbsp;&nbsp; получение идентификатора очереди сообщение&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;sys/ipc.h&gt;
+    # include &lt;sys/msg.h&gt;
+
+    int msgget ( key_t key, int msgflg )
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>msgget</samp> возвращает идентификатор очереди сообщений,
+связанной с ключом, значение которого задано аргументом 
+<samp>key</samp>. Если очереди, связанной с таким ключом, нет и в параметре 
+<samp>msgflg</samp> имеется значение <samp>IPC_CREATE</samp> или значение 
+ключа задано <samp>IPC_PRIVATE</samp>, создается 
+новая очередь. Значение ключа <samp>IPC_PRIVATE</samp> гарантирует уникальность 
+идентификации новой очереди.
+<p>Значение параметра <samp>msgflg</samp> формируется как логическое ИЛИ 
+одного из значений: <samp>IPC_CREATE</samp> (создать новую очередь) или 
+<samp>IPC_EXCL</samp> (получить идентификатор существующей очереди) и 9 бит прав 
+доступа (см. <samp><a href=_chmod.html>chmod</a></samp>).
+</td></tr></table>
+
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении возвращается неотрицательное целое число - идентификатор 
+очереди. В случае ошибки возвращается -1 и устанавливается код ошибки в <samp><a href=_errno.html>errno</a>. 
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_msgctl.html>msgctl</a>,
+<a href=_msgrcv.html>msgrcv</a>,
+<a href=_msgsnd.html>msgsnd</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#msgget>Список системных вызовов</a>
+</body>
+</html>
+

@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Transitional//EN">
+<HTML>
+<HEAD>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>curtime</TITLE>
+</head>
+<body>
+<hr>
+
+<h3 align=center>Функция curtime</h3>
+<p>Функция curtime создана специально для данного лабораторного практикума и 
+обеспечивает формирование символьной строки, содержащей представление текущего
+времени с точностью до миллисекунд в формате:
+<pre>    HH:MM:SS.mmm</pre>
+Синтаксис:
+<pre>    char *curtime();</pre>
+<p>Функция возвращает указатель на символьную строку, содержащую представление
+даты. 
+Выполнение функции включает в себя:
+<ul>
+<li>определение текущего времени (системный вызов <a href=./man/_gettimeofday.html>gettimeofday</a>; 
+<li>приведение параметров времени к локальному часовому поясу (системный вызов <a href=./man/_localtime.html>localtime</a>); 
+<li>преобразование даты в строку символов (системный вызов <a href=./man/_strftime.html>strftime</a>); 
+<li>добавление к строке времени миллисекунд.
+</ul>
+<p>Текст функции находится в файле <samp>curtime.c</samp> и может 
+включаться в Вашу программу. Рекомендуется оператор 
+<pre> #include "../common/curtime.h"</pre> 
+включать в начало Вашей программы, до 
+определения функций, вызывающих <samp>curtime</samp>. Здесь ../common/curtime.h  означает что файл curtime.h находится на один каталог 
+выше относительно текущего в каталоге common.
+
+<h3 align=center>Файл curtime.c</h3>
+<table border align=center><tr><td><pre>
+  /********************************************************/&nbsp;&nbsp;
+  /* Получене символьного представления текущего времени  */
+  /********************************************************/
+  /* Функция возвращает указатель на строку, содержащую   */
+  /* текущее время в формате:  HH:MM:SS.mmm               */
+  /* Функция возвращает указатель на строку, содержащую   */
+  #include "curtime.h"
+
+  char *curtime() {
+   /* переменные для выделения текущего времени */
+   struct timeval tv;  /* структура представления времени */
+   struct tm *tmptr;   /* структура представления времени */
+   char ts1[40];       /* промежуточная строка */
+   static char ts[40]; /* результирующая строка */
+   long ms;            /* миллисекунды */
+    /* определение текущего времени */
+    <a href=./man/_gettimeofday.html>gettimeofday</a>(&amp;tv,NULL); 
+    /* приведение параметров времени к локальному поясу */
+    tmptr=<a href=./man/_localtime.html>localtime</a>(&amp;tv.tv_sec);
+    /* преобразование даты в строку */
+    <a href=./man/_strftime.html>strftime</a>(ts1,sizeof(ts1),"%H:%M:%S",tmptr);
+    /* добавление к строке времени миллисекунд */
+    ms=tv.tv_usec/1000;
+    sprintf(ts,"%s.%03ld",ts1,ms);
+    return ts;
+  }                      
+</td></tr></table>
+
+<h3 align=center>Файл curtime.h</h3>
+<table border align=center><tr><td><pre>
+ #ifndef _curtimeH_
+ #define _curtimeH_
+ #include &lt;stdio.h&gt;
+ #include &lt;sys/time.h&gt;
+ #include &lt;time.h&gt;
+ #include &lt;unistd.h&gt;>
+ 
+ char* curtime();
+ 
+ #endif
+</pre> 
+</td></tr></table>
+
+<p>&nbsp;</p>
+<hr>
+</body>
+</html>

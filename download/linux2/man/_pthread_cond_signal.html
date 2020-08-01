@@ -1,0 +1,61 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>PHTREAD_COND_SIGNAL function.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>phtread_cond_signal (3)</samp></b></big><br>
+    &nbsp;&nbsp; освобождение нити &nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;pthread.h&gt;
+
+    int pthread_cond_signal(pthread_cond_t *cond);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<p>Функция <samp>pthread_cond_signal</samp> разблокирует одну из нитей, ожидающих на сигнальном семафоре, на идентификатор которого указывает аргумент <samp>cond</samp>. Если ожидают несколько нитей, разблокируются несколько из них, но не определено, какая именно.
+<p>Освобождение нити эквивалентен выполнению на семафоре V-операции.
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении <samp>pthread_cond_signal</samp> возвращает  0.
+В случае ошибки возвращается ненулевое значение.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_pthread_cond_broadcast.html>pthread_cond_ broadcast</a>,
+<a href=_pthread_cond_init.html>pthread_cond_init</a>,
+<a href=_pthread_cond_wait.html>pthread_cond_wait</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#pthread_cond_signal>Список системных вызовов</a>
+</body>
+</html>
+

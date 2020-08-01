@@ -1,0 +1,84 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>MSGRCV system call.</TITLE>
+</head>
+<body>    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>msgrcv (2)</samp></b></big><br>
+    &nbsp;&nbsp;прием сообщения из очереди&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;sys/ipc.h&gt;
+    # include &lt;sys/msg.h&gt;
+
+    int msgrcv (int msgid, struct msgbuf * msgp, 
+       int msgzs, long msgtype, int msgflg)    
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>msgrcv</samp> получает выполняет сообщение из очереди, задаваемой 
+аргументом <samp>msgid</samp> - идентификатором очереди - и записывает его 
+в буфер, адрес которого задается аргументом <samp>msgp</samp>. Cтруктура, 
+содержащая сообщение:
+
+<pre>
+     struct msgbuf {
+         long mtype;     /* Тип сообщения */
+         char mtext [];  /* Текст сообщения */
+         };
+</pre>
+<p>Аргумент <samp>msgsz</samp> задает размер принимаемого сообщения; сообщения 
+большего размера усекаются.
+<p>Аргумент <samp>msgtype</samp> задает тип принимаемого сообщения:
+<ul>
+<li>Если значение <samp>msgtyp</samp> равно 0, требуется первое сообщение в очереди. 
+<li>Если значение <samp>msgtyp</samp> больше 0, требуется первое сообщение типа <samp>msgtyp</samp>. 
+<li>Если значение <samp>msgtyp</samp> меньше 0, требуется первое сообщение наименьшего из типов, которые меньше или равны абсолютной величине аргумента <samp>msgtyp</samp>. 
+</ul>
+<p>Аргумент <samp>msgflg</samp> может принимать значение 0 или <samp>IPC_NOWAIT</samp>.
+<ul>
+<li>Если <samp>IPC_NOWAIT</samp> не задано, то при отсутствии в очереди сообщения требуемого типа процесс, вызвавший <samp>msgrcv</samp>, переводится в состояние ожидания, вывести из которого его может приход сообщения или сигнал.
+<li>Если <samp>IPC_NOWAIT</samp> задано, то при отсутствии в очереди сообщения  возврат из вызова <samp>msgrcv</samp> происходит немедленно,  при этом вызов возвращает -1.
+</ul>
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении возвращает количество байт в принятом сообщении. В случае ошибки возвращается -1 и 
+устанавливается код ошибки в <samp><a href=_errno.html>errno</a>. 
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_msgctl.html>msgctl</a>,
+<a href=_msgget.html>msgget</a>,
+<a href=_msgsnd.html>msgsnd</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#msgrcv>Список системных вызовов</a>
+</body>
+</html>

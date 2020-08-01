@@ -1,0 +1,73 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>SHMAT system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>shmat, shmdt (2)</samp></b></big><br>
+    &nbsp;&nbsp; присоединение / отсоединение общего сегмента памяти&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;sys/types.h&gt;
+    # include &lt;sys/shm.h&gt;
+
+    void *shmat ( int shmid, void *shmaddr, int shmflg )
+    int shmdt (  void *shmaddr )
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>shmat</samp> присоединяет разделяемый сегмент памяти, определяемый идентификатором 
+<samp>shmid</samp> к адресному пространству процесса. Если значение аргумента  
+<samp>shmaddr</samp> равно нулю, то сегмент присоединяется по виртуальному адресу,
+выбираемому системой. Если значение аргумента <samp>shmaddr</samp> ненулевое, то 
+оно задает виртуальный адрес, по которому сегмент присоединяется.
+<p>Если в параметре <samp>shmflg</samp> указано <samp>SHM_RDONLY</samp>, то
+присоединенный сегмент будет доступен только для чтения.
+<p>При выполнении системного вызова <samp><a href=_fork.html>fork</a></samp>
+присоединенные сегменты наследуются дочерним процессом. При выполнении системных вызовов
+<samp><a href=_exec.html>exec</a></samp> и <samp><a href=_exit.html>exit</a></samp>
+присоединенные сегменты отсоединются, но не уничтожаются.
+<samp>shmdt</samp> отсоединяет от адресноог пространства процесса разделяемый 
+сегмент памяти, присоединенный ранее по виртуальному адресу <samp>shmaddr</samp>.
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении <samp>shmat</samp> возвращается виртуальный
+адрес присоединенного сегмента, а <samp>shmdt</samp> возвращает 0.
+В случае ошибки оба вызова возвращают -1 и устанавливают код ошибки в <samp><a href=_errno.html>errno</a>. 
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_shmctl.html>shmctl</a>,
+<a href=_shmget.html>shmget</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#shmat>Список системных вызовов</a>
+</body>
+</html>

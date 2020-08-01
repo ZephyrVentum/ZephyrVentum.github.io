@@ -1,0 +1,63 @@
+<html>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <TITLE> pstree command.</TITLE>
+</head>
+
+<body >
+<a name=top>
+
+<p>
+<table width=100%>
+  <tr>
+    <td width=20%>&nbsp;</td>
+    <td>
+      <table border> 
+        <tr><td align=center><big><b>pstree</b></big><br>
+            &nbsp;&nbsp;Показывает дерево процессов.
+ &nbsp;&nbsp;
+        </tr></td>
+      </table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+  <tr><td width=10%>&nbsp;</td>
+  <td>
+    <pre>
+         pstree [опции] [ PID | ПОЛЬЗОВАТЕЛЬ ]
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+  <p>Команда <samp>pstree</samp>  отображает все запущенные процессы в виде иерархии, по которой можно определить
+ взаимосвязь между процессами
+
+</td></tr></table>
+<p><b>ОПЦИИ</b>
+<p>
+<pre>
+  -a, --arguments     показывать содержимое командной строки
+  -A, --ascii         использовать ASCII-символы рисования линий
+  -c, --compact       не сжимать одинаковые поддеревья
+  -h, --highlight-all выделять цветом текущий процесс и его предков
+  -H PID,
+  --highlight-pid=PID выделять цветом процесс PID и его предков
+  -G, --vt100         использовать символы рисования линий терминала VT100
+  -l, --long          не обрезать длинные строки
+  -n, --numeric-sort  сортировать вывод по PID
+  -p, --show-pids     показывать идентификаторы процессов (PID); включает -c
+  -u, --uid-changes   показывать переходы идентификаторов пользователей
+  -U, --unicode       использовать символы рисования линий UTF-8 (юникод)
+  -V, --version       показать информацию о версии
+  PID                 начинать от указанного PID; по умолчанию 1 (init)
+  ПОЛЬЗОВАТЕЛЬ        показать только дерево процессов указанного пользователя
+</pre>
+<p><hr>
+<a href=mind.html#pstree>Список команд</a>
+</body>
+</html>

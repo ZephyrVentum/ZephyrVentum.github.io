@@ -1,0 +1,49 @@
+<html>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <TITLE> eval command.</TITLE>
+</head>
+
+<body >
+<a name=top>
+
+<p>
+<table width=100%>
+  <tr>
+    <td width=20%>&nbsp;</td>
+    <td>
+      <table border> 
+        <tr><td align=center><big><b>eval</b></big><br>
+            &nbsp;Транслирует список аргументов, из списка, в команды &nbsp;
+        </tr></td>
+      </table>
+</td></tr></table>
+
+
+<table>
+<tr>
+<td colspan=2><b><br>СИНТАКСИС</b></td>
+</tr><tr><td width=10%>&nbsp;</td>
+  <td><pre>
+   eval arg1 [arg2] ... 
+  </pre>
+</td></tr>
+
+<tr>
+<td colspan=2><b><br>ОПИСАНИЕ</b></td>
+</tr><tr><td width=10%>&nbsp;</td>
+<td>
+<p>Внутренняя команда <samp>eval</samp>,  производит конструирование команды на лету, из указанных аргументов, и 
+отправку ее на выполнение.
+</table>
+<p>Например:
+<pre>
+y=`eval ls -l`  # Подобно y=`ls -l`
+echo $y         # но символы перевода строки не выводятся, поскольку имя переменной не в кавычках.
+echo
+echo "$y"       # Если имя переменной записать в кавычках -- символы перевода строки сохраняются.
+</pre>
+
+<p><hr>
+<a href=mind.html#eval>Список команд</a>
+</body>
+</html>

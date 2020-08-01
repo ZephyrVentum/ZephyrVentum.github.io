@@ -1,0 +1,104 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>SETITIMER system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table align=center border>
+  <tr><td align=center><big><b><samp>getitimer, setitimer
+(2)</samp></b></big>
+<br>&nbsp;&nbsp; интервальный таймер&nbsp;&nbsp;
+</tr></td> </table>
+
+
+<p><b>Синтаксис</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;sys/time.h&gt;
+
+    int getitimer(int which, struct itimerval *value);
+    int setitimer(int which, const  struct  itimerval  *value,
+           struct itimerval *ovalue);
+</pre>
+</td></tr></table>
+
+
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+Операционная система обеспечивает для каждого процесса три интервальных
+таймера, работающих в разных областях.
+<p><samp>settitimer</samp> устанавливает временной интервал для
+заданного таймера.
+<p><samp>gettitimer</samp> показывает устанавки для
+заданного таймера.
+</td></tr></table>
+
+<p><b>Параметры</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<table>
+<tr><td valign=top width=10%><samp>who</samp></td>
+<td>Тип таймера, к которому относится системный вызов:
+<table>
+   <tr><td valign=top width=15%><samp>ITIMER_REAL</samp></td>
+   <td>Таймер реального времени. При истечении временного интервала
+   процессу посылается сигнал <samp>SIGALRM</samp>.</td>
+   <tr><td valign=top width=15%><samp>ITIMER_VIRTUAL</samp></td>
+   <td>Таймер виртуального времени, его значение увеличивается только,
+   когда процесс выполняется. При истечении временного интервала
+   процессу посылается сигнал <samp>SIGVALRM</samp>.</td>
+   <tr><td valign=top width=15%><samp>ITIMER_PROF</samp></td>
+   <td>Таймер профилирования времени, его значение увеличивается
+   только, когда выполняется процесс или выполняется система для
+   обслуживания данного процесса. При истечении временного интервала
+   процессу посылается сигнал <samp>SIGPROF</samp>.</td>
+</table></td></tr>
+<tr><td valign=top width=10%><samp>value</samp></td>
+<td>Указатель на структуру, в которой <samp>setitimer</samp>
+   задает временной интервал, а <samp>getitimer</samp> -
+   возвращает временной интервал. Эта структура описывается как:
+<pre>
+     struct itimerval {
+         struct timeval it_interval; /* следующее значение */
+         struct timeval it_value;    /* текущее значение */
+     };
+     struct timeval {
+         long tv_sec;                /* секунды */
+         long tv_usec;               /* микросекунды */
+     };
+</pre></td></tr>
+<tr><td valign=top width=10%><samp>value</samp></td>
+<td>Указатель на структуру, в которой <samp>setitimer</samp>
+   возвращает старый временной интервал.</td></tr>
+</table>
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При нормальном завершении вызов возвращает 0,
+при ненормальном -1 и устанавливает
+<a href=_errno.html><samp>errno</samp></a>.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_alarm.html>alarm</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#settimer>Список системных вызовов</a>
+</body>
+</html>

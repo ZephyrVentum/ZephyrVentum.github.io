@@ -1,0 +1,64 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>SLEEP system call.</TITLE>
+</head>
+<body>
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>sleep (3)</samp></b></big><br>
+    &nbsp;&nbsp; приостанов процесса &nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>       #include &lt;unistd.h&gt;
+
+       unsigned int sleep(unsigned int sec); </pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>sleep</samp> приостанавливает выполнение процесса на
+<samp>seс</samp> секунд. Приостанов переводит процесс в состояние
+ожидания, в котором он не требует использования центрального процессора.
+</td></tr></table>
+
+<p><b>Параметры</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>seс</samp> - число секунд ожидания.
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>0 - если заданный интервал ожидания отработан полностью,
+остаток интервала - в противном случае.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_nanosleep.html>nanosleep</a>,
+<a href=_usleep.html>usleep</a>,
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#sleep>Список системных вызовов</a>
+</body>
+</html>

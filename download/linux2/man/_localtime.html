@@ -1,0 +1,89 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>CTIME system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp> asctime,  ctime,  gmtime,  localtime,  mktime (3)</samp></b></big><br>
+    &nbsp;&nbsp; преобразование времени и даты в цепочку символов &nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>       
+       #include &lt;time.h&gt;
+
+       char *asctime(const struct tm *timeptr);
+
+       char *ctime(const time_t *timep);
+
+       struct tm *gmtime(const time_t *timep);
+
+       struct tm *localtime(const time_t *timep);
+
+       time_t mktime(struct tm *timeptr);
+
+       extern char *tzname[2];
+       long int timezone;
+       extern int daylight;
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+Аргументом функций <samp>ctime</samp>, <samp>localtime</samp> и <samp>gmtime</samp> служит указатель на значение типа <samp>time_t<samp>, описанного во включаемом файле. Это значение интерпретируется как число секунд, отсчитываемое от 00:00:00 1 января 1970г. всемирного времени. 
+<p>Функция <samp>ctime</samp> возвращает указатель на цепочку из 26 символов вида:
+<pre>
+        Sun Jan 16 01:03:52 1987\n\0</pre>
+
+<p>Функции <samp>localtime</samp> и <samp>gmtime</samp> возвращают указатели на структуру <samp>tm</samp> (см. ниже). Функции <samp>localtime</samp> вносит также поправку на часовой пояс и, возможно, на летнее время; <samp>gmtime</samp> осуществляет преобразование непосредственно ко всемирному времени. 
+
+<p>Функция <samp>asctime<.samp> преобразует структуру <samp>tm</samp>в цепочку из 26 символов (подобную приведенной выше) и возвращает указатель на эту цепочку. 
+
+<p>Описание структуры <samp>tm</samp> выглядит так: 
+<pre>
+        struct tm {
+          int tm_sec;   /* Секунды (0-59) */
+          int tm_min;   /* Минуты (0-59) */
+          int tm_hour;  /* Часы (0-23) */
+          int tm_mday;  /* День месяца (1-31) */
+          int tm_mon;   /* Месяц года (0-11) */
+          int tm_year;  /* Год - 1900 */
+          int tm_wday;  /* День недели (Воскресенье = 0) */
+          int tm_yday;  /* День года (0-365) */
+          int tm_isdst;
+        };
+</pre>
+</td></tr></table>
+
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_gettimeofday.html>gettimeofday </a>,
+<a href=_strftime.html>strftime</a>,
+<a href=_time.html>time</a>.
+</samp>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#ctime>Список системных вызовов</a>
+</body>
+</html>
+

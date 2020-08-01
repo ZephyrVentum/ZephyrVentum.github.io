@@ -1,0 +1,68 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>ALARM system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>alarm (2)</samp></b></big><br>
+    &nbsp;&nbsp; посылка сигнала - будильника текущему процессу&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;signal.h&gt;
+
+    unsigned int alarm(unsigned int sec);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>alarm</samp> посылает текущему процессу сигнал
+<samp>SIGALRM</samp> по истечении
+заданного интервала времени.
+</td></tr></table>
+
+<p><b>Параметры</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>sec</samp> - временной интервал в секундах.
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>Временной интервал, установленный при предыдущем обращении к
+<samp>alarm</samp>.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_kill.html>kill</a>,
+<a href=_raise.html>raise</a>,
+<a href=_setitimer.html>setitimer</a>.
+<a href=_signal.html>signal</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#alarm>Список системных вызовов</a>
+</body>
+</html>

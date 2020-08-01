@@ -1,0 +1,74 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>GETTIMEOFDAY system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>gettimeofday (2)</samp></b></big><br>
+&nbsp;&nbsp; получение времени дня&nbsp;&nbsp;
+</tr></td> </table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>       
+    #include &lt;sys/time.h&gt;
+    #include &lt;unistd.h&gt;
+
+    int gettimeofday(struct timeval *tm, struct timezone *tz);
+</pre> </td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>gettimeof</samp> записывает время дня в структуру, на которую
+указывает аргумент <samp>tm</samp>. Аргумент <samp>tz</samp> может
+задаваться равным <samp>NULL</samp>. Описание структуры
+<samp>timeval</samp> следующее:
+<pre>
+    struct timeval {
+           long tv_sec;        /*  секунды */
+           long tv_usec;  /* микросекунды */
+       };
+</pre>
+</td></tr></table>
+
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>0 - при успешном выполнениие, -1 - при ошибке,
+в последнем
+случае устанавливается <samp><a href=_errno.html>errno</a></samp>.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_asctime.html>asctime</a>,
+<a href=_ctime.html>ctime</a>,
+<a href=_gmtime.html>gmtime</a>,
+<a href=_mktime.html>mktime</a>,
+<a href=_strftime.html>strftime</a>,
+<a href=_time.html>time</a>.
+</samp>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#gettimeofday>Список системных вызовов</a>
+</body>
+</html>
+

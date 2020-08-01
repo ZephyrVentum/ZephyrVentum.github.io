@@ -1,0 +1,61 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>PHTREAD_MUTEX_INIT function.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>phtread_mutex_init (3)</samp></b></big><br>
+    &nbsp;&nbsp; инициализация исключающего семафора&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;pthread.h&gt;
+
+    int pthread_mutex_init(pthread_mutex_t *mutex, pthread_mutex_attr_t *attr);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<p>Функция <samp>pthread_mutex_init</samp> инициализирует исключающий семафор, на идентификатор которого указывает аргумент <samp>mutex</samp>. Аргумент <samp>attr</samp> указывает на объект атрибутов исключающего семафора. При использовании стандартных атрибутов его значение может задаваться NULL. 
+
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении <samp>pthread_mutex_init</samp> возвращает  0.
+В случае ошибки возвращается ненулевое значение.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_pthread_mutex_lock.html>pthread_mutex_lock</a>,
+<a href=_pthread_mutex_lock.html>pthread_mutex_trylock</a>,
+<a href=_pthread_mutex_unlock.html>pthread_mutex_unlock</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#pthread_mutex_init>Список системных вызовов</a>
+</body>
+</html>
+

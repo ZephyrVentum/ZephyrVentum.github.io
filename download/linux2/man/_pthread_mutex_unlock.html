@@ -1,0 +1,59 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>PHTREAD_MUTEX_UNLOCK function.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>phtread_mutex_unlock (3)</samp></b></big><br>
+    &nbsp;&nbsp; освобождение исключающего семафора&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;pthread.h&gt;
+
+    int pthread_mutex_unlock(pthread_mutex_t *mutex);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<p>Функция <samp>pthread_mutex_unlock</samp> освобождает исключающий семафор, на идентификатор которого указывает аргумент <samp>mutex</samp>. Освобождение семафора эквивалентен выполнению на нем V-операции. </td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении <samp>pthread_mutex_unlock</samp> возвращает  0.
+В случае ошибки возвращается ненулевое значение.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_pthread_mutex_init.html>pthread_mutex_init</a>,
+<a href=_pthread_mutex_lock.html>pthread_mutex_lock</a>,
+<a href=_pthread_mutex_lock.html>pthread_mutex_trylock</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#pthread_mutex_unlock>Список системных вызовов</a>
+</body>
+</html>
+

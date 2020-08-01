@@ -1,0 +1,64 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>EXIT system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>exit (3)</samp></b></big><br>
+&nbsp;&nbsp; нормальное завершение процесса &nbsp;&nbsp;
+</tr></td> </table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;unistd.h&gt;
+
+    void exit(int status);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+  <p><samp>exit</samp> немедленно завершает текущий процесс.
+  <p>При завершении закрываются все открытые процессом файлы,
+  все дочерние процессы завершившегося процесса становятся
+  наследниками процесса 1 (процесса <samp>init</samp>),
+</td></tr>
+</table>
+
+<p><b>Параметры</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<p>Параметр <samp>status</samp> определяет, код завершения
+   процесса, этот код может быть прочитан родительским процессом
+   в системном вызове <samp><a href=_wait.html>wait</a></samp>.
+   </td></tr>
+</table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_wait.html>wait</a>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#exit>Список системных вызовов</a>
+</body>
+</html>

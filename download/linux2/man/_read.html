@@ -1,0 +1,73 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>READ system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>read (2)</samp></b></big><br>
+    &nbsp;&nbsp; чтение из файла&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    int read (int fd, void *buf, int nbyte);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>read</samp> читает <samp>nbyte</samp> байтов из файла (устройства, канала), определяемого файловым дескриптором <samp>fd</samp> в область памяти, адрес которой задается указателем <samp>buf</samp>.
+<p>На некоторые случаи выполнения <samp>read</samp> влияет флаг <samp>O_NDELAY</samp>, установленный в системном вызове <samp><a href=_open.html>open</a></samp>:
+<ul>
+  <li>При попытке чтения из заблокированного файла:
+  <ul>
+    <li>если флаг <samp>O_NDELAY</samp> установлен, вызов <samp>read</samp> завершается и возвращает -1;
+    <li>если флаг <samp>O_NDELAY</samp> не установлен, вызов <samp>read</samp> приостанавливает процесс до разблокирования файла.
+  </ul>
+  <li>При попытке чтения из пустого канала:
+  <ul>
+    <li>если флаг <samp>O_NDELAY</samp> установлен, вызов <samp>read</samp> завершается и возвращает 0;
+    <li>если флаг <samp>O_NDELAY</samp> не установлен, вызов <samp>read</samp> приостанавливает процесс до появления данных в канале.
+  </ul>
+</ul>
+</td></tr></table>
+
+<p><b>Возвращаемое значение</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При нормальном выполнении <samp>read</samp> возвращает число прочитанных байтов. Это число может быть меньше, чем значение параметра <samp>nbyte</samp>, если конец файла встретится раньше, чем будет прочитано <samp>nbyte</samp> байтов. Возвращаемое значение 0 обычно означает попытку чтения после конца файла. 
+<p>При ошибках выполнения <samp>read</samp> возвращает -1 и устанавливает
+<samp><a href=_errno.html>errno</a></samp>.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_open.html>open</a>,
+<a href=_close.html>close</a>,
+<a href=_write.html>write</a>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#read>Список системных вызовов</a>
+</body>
+</html>
+

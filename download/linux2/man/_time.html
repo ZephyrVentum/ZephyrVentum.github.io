@@ -1,0 +1,68 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>TIME system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>time (2)</samp></b></big><br>
+&nbsp;&nbsp; получение системного времени &nbsp;&nbsp;
+</tr></td> </table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>       
+    #include &lt;time.h&gt;
+
+    time_t time(time_t *t);
+</pre> </td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>time</samp> возвращает время в секундах, прошедшее
+относительно 00:00:00 1 января 1970 года по Гринвичу.
+Если аргумент <samp>t</samp> не равен <samp>NULL</samp>,
+<samp>time</samp> помещает результат также и в слово, на которое
+указывает <samp>t</samp>.
+</td></tr></table>
+
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>Время в секундах - при успешном выполнениие, -1 - при ошибке,
+в последнем
+случае устанавливается <samp><a href=_errno.html>errno</a></samp>.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_gettimeofday.html>gettimeofday</a>,
+<a href=_asctime.html>asctime</a>,
+<a href=_ctime.html>ctime</a>,
+<a href=_gmtime.html>gmtime</a>,
+<a href=_mktime.html>mktime</a>,
+<a href=_strftime.html>strftime</a>,
+</samp>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#time>Список системных вызовов</a>
+</body>
+</html>
+

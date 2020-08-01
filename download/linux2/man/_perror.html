@@ -1,0 +1,65 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>PERROR system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>perror (3)</samp></b></big><br>
+&nbsp;&nbsp; получение сообщение об ошибке&nbsp;&nbsp;
+</tr></td> </table> </td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;stdio.h&gt;
+
+    void perror(const char *s);
+
+    #include &lt;errno.h&gt;
+
+    const char *sys_errlist[];
+    int sys_nerr;
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+  <p>Функция <samp>perror</samp> заносит в символьную строку, указатель на
+  которую является аргументом функции <samp>s</samp>, диагностическое
+  сообщение об ошибке, код которой задается значением переменной
+  <a href=_errno.html><samp>errno</samp></a>.
+  <p>Чтобы получить текст диагностического сообщения без перевода строки,
+  может быть использован глобальный массив - список ошибок
+  <samp>sys_errlist</samp>. Переменная <samp>sys_nerr</samp>
+  содержит размер этого массива. Переменная
+  <a href=_errno.html><samp>errno</samp></a> может использоваться
+  как индекс в этом массиве.
+</td></tr>
+</table>
+
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_errno.html>errno</a>,
+<a href=_strerror.html>strerror</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#perror>Список системных вызовов</a>
+</body>
+</html>

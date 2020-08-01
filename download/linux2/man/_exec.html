@@ -1,0 +1,91 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>EXEC system calls.</TITLE>
+</head>
+<body>    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>execl, execv, execle, execve, execlp,
+execvp (3)</samp></b></big><br>     &nbsp;&nbsp;выполнение файла&nbsp;&nbsp;   </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>    #include &lt;unistd.h&gt;
+
+    extern char **environ;
+
+    int execl( const char *path, const char *arg, ...);
+    int execlp( const char *file, const char *arg, ...);
+    int execle( const char *path, const char *arg , ..., char * const envp[]);
+    int execv( const char *path, char *const argv[]);
+    int execvp( const char *file, char *const argv[]);</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+  <p>Системные вызовы семейства <samp>exec</samp> заменяют текущий
+     образ процесса на новый образ, считываемый из заданного файла.
+</td></tr></table>
+
+<p><b>Параметры</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><p>Первый аргумент всех функций является указателем на
+символьную строку, содержащую полное имя исполняемого файла
+(<samp>path</samp>). Для функций <samp>execlp</samp> и <samp>execvp</samp>
+имя файла может задаваться без пути (<samp>file</samp>). Если первый
+аргумент этих функций не содержит символа "<samp>/</samp>", то
+файл ищется в каталогах, определенных в переменной окружения
+<samp>PATH</samp>.
+<p>Аргументы <samp>arg,...</samp> функций <samp>execl</samp>,
+<samp>exelp</samp>, <samp>execle</samp> составляют список указателей
+на символьные строки, содержащие параметры, передаваемые программе.
+По соглашениям первый элемент этого списка должен содержать имя
+программного файла. Список параметров должен заканчиваться пустым
+указателем - <samp>NULL</samp> или <samp>(char *)0</samp>.
+<p>В функциях <samp>execv</samp> и <samp>execvp</samp> параметры,
+передаваемые программе, передаются через массив символьных строк.
+Аргумент <samp>argv</samp> является указателем на этот массив.
+<p>Аpгyмeнт <samp>envp</samp> функции функций <samp>execle</samp>
+также являeтcя мaccивoм yкaзaтeлeй нa cимвoльныe cтpoки. Эти стpoки
+пpeдcтaвляют coбoй окружение cpeдy для нoвoгo oбpaзa пpoцecca.
+Пocлeдний элeмeнт мaccивa <samp>envp</samp> дoлжeн быть пустым
+yкaзaтeлeм.
+</td></tr></table>
+
+<p><b>Возвращаемое значение</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При нормальном выполнении функции возвращают 0. При ошибках
+выполнения функции возвращают -1 и устанавливают
+<samp><a href=_errno.html>errno</a></samp>.
+</td></tr></table>
+
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_fork.html>fork</a>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#exec>Список системных вызовов</a>
+</body>
+</html>

@@ -1,0 +1,2 @@
+gcc -o ganesha6 ganesha6.c ../common/curtime.c
+gcc -o elephant6 elephant6.c ../common/curtime.c

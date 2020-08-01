@@ -1,0 +1,84 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>KILL system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>kill (2)</samp></b></big><br>
+&nbsp;&nbsp; посылка сигнала процессу&nbsp;&nbsp;
+</tr></td> </table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;sys/types.h&gt;
+    #include &lt;signal.h&gt;
+
+    int kill(pid_t pid, int sig);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+  <p><samp>kill</samp> посылает заданному процессу определенный
+     сигнал
+</td></tr>
+</table>
+
+<p><b>Параметры</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+  <table>
+  <tr><td valign=top width=10%><samp>&nbsp;pid</samp></td>
+    <td>Если <samp>pid &gt; 0</samp>, то он задает PID процесса,
+    которому посылается сигнал.
+    <br>Если <samp>pid = 0</samp>, то сигнал посылается всем процессам
+    той группы, к которой принадлежит текущий процесс.
+    <br>Если <samp>pid &lt; 0</samp>, то сигнал посылается всем процессам
+    группы, идентификатор которой равен <samp>-pid</samp>.
+    </td></tr>
+  <tr><td valign=top width=10%><samp>&nbsp;sig</samp></td>
+  <td>Тип посылаемого сигнала (см. <samp><a
+        href=_signal.html>signal</a></samp>).
+    </td></tr>
+  </table>
+   </td></tr>
+</table>
+
+<p><b>Возвращаемое значение</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При нормальном выполнении функция возвращает 0. При ошибках
+выполнения возвращает -1 и устанавливает
+<samp><a href=_errno.html>errno</a></samp>.
+   </td></tr>
+</table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_signal.html>signal</a>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#kill>Список системных вызовов</a>
+</body>
+</html>

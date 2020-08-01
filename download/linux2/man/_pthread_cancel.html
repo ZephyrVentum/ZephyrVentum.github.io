@@ -1,0 +1,59 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>PHTREAD_CANCEL function.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>phtread_cancel (3)</samp></b></big><br>
+    &nbsp;&nbsp; прекращение нити&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;pthread.h&gt;
+
+    int pthread_cancel(pthread_t threadid);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+Функция <samp>pthread_cancel</samp> прекращает нить, определяемую идентификатором <samp>threadid</samp>. 
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении <samp>pthread_cancel</samp> возвращает  0.
+В случае ошибки возвращается ненулевой код.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_pthread_create.html>pthread_create</a>,
+<a href=_pthread_exit.html>pthread_exit</a>,
+<a href=_pthread_join.html>pthread_join</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#pthread_cancel>Список системных вызовов</a>
+</body>
+</html>

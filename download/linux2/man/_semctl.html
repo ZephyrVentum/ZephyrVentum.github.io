@@ -1,0 +1,112 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>SEMCTL system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>semctl (2)</samp></b></big><br>
+    &nbsp;&nbsp; управляющие операции над семафорами&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;sys/types.h&gt;
+    # include &lt;sys/ipc.h&gt;
+    # include &lt;sys/sem.h&gt;
+
+    #if defined(__GNU_LIBRARY__) &amp;&amp; !defined(_SEM_SEMUN_UNDEFINED)
+    /* union semun определен включением <sys/sem.h> */
+    #else
+    /* в соответствии с X/OPEN мы должны определить его сами */
+    union semun {
+            int val;                    /* значение для SETVAL */
+            struct semid_ds *buf;       /* буфер для IPC_STAT, IPC_SET */
+            unsigned short int *array;  /* массив для GETALL, SETALL */
+            struct seminfo *__buf;      /* буфер для IPC_INFO */
+    };
+    #endif
+
+    int semctl  (int  semid, int semnum, int cmd, union semun
+       arg)    
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>semctl</samp> выполняет управляющие операции над семафорами. Семафор задается аргументами <samp>semid</samp> - идентификатор массива семафоров и <samp>semnum</samp> - номер семафора в массиве (нумерация начинается с 0). Выполняемая операция задается аргументом <samp>cmd</samp>. Аргумент <samp>arg</samp> служит для передачи параметров операции.
+<p>Операции, выполняемые системным вызовом <samp>semctl</samp>, следующие:
+<table width=100%>
+<tr><td valign=top width=20%>&nbsp;<samp>IPC_STAT</samp>&nbsp;</td>
+<td>Копировать информацию из структуры данных массива семафоров в структуру, на которую указывает <samp>arg.buf</samp>.</td></tr>
+<tr><td valign=top width=20%>&nbsp;<samp>IPC_SET</samp>&nbsp;</td>
+<td>Присвоить следующим полям структуры данных массива семафоров  соответствующие значения, находящиеся в структуре, на которую указывает <samp>arg.buf</samp>: 
+<pre>
+   sem_perm.uid
+   sem_perm.gid
+   sem_perm.mode  /* Только младшие 9 бит */
+</pre></td></tr>
+<tr><td valign=top width=20%>&nbsp;<samp>IPC_RMID</samp>&nbsp;</td>
+<td>Удалить массив семафоров.</td></tr>
+<tr><td valign=top width=20%>&nbsp;<samp>GETVAL</samp>&nbsp;</td>
+<td>Получить значение определенного семафора.</td></tr>
+<tr><td valign=top width=20%>&nbsp;<samp>SETVAL</samp>&nbsp;</td>
+<td>Установить значение определенного семафора. Значение задается в <samp>arg.buf</samp>.</td></tr>
+<tr><td valign=top width=20%>&nbsp;<samp>GETALL</samp>&nbsp;</td>
+<td>Получить значения всех семафоров массива в <samp>arg.buf</samp>. Аргумент <samp>semnum</samp> игнорируется</td></tr>
+<tr><td valign=top width=20%>&nbsp;<samp>SETALL</samp>&nbsp;</td>
+<td>Установить значения всех семафоров массива. Значения задаются в <samp>arg.buf</samp>. Аргумент <samp>semnum</samp> игнорируется</td></tr>
+<tr><td valign=top width=20%>&nbsp;<samp>GETNCNT</samp>&nbsp;</td>
+<td>Получить значение числа процессов, ожидающих, увеличения значения определенного семафора.</td></tr>
+<tr><td valign=top width=20%>&nbsp;<samp>GETZNCNT</samp>&nbsp;</td>
+<td>Получить значение числа процессов, ожидающих, когда значение определенного семафора станет 0.</td></tr>
+<tr><td valign=top width=20%>&nbsp;<samp>GETPID</samp>&nbsp;</td>
+<td>Получить значение идентификатора определенного семафора.</td></tr>
+</table>
+</td></tr></table>
+
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>В случае ошибки возвращается -1 и устанавливается код ошибки d <samp><a href=_errno.html>errno</a>. 
+<p>При успешном завершении возвращается:
+<table width=100%>
+<tr><td width=20%>&nbsp;<samp>GETVAL</samp>&nbsp;</td>
+<td>значение семафора</td></tr>
+<tr><td width=20%>&nbsp;<samp>GETVAL</samp>&nbsp;</td>
+<td>идентификатор семафора</td></tr>
+<tr><td width=20%>&nbsp;<samp>GETNCNT</samp>&nbsp;</td>
+<td>число процессов</td></tr>
+<tr><td width=20%>&nbsp;<samp>GETZCNT</samp>&nbsp;</td>
+<td>число процессов</td></tr>
+</table>
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_semget.html>semget</a>,
+<a href=_semop.html>semop</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#semctl>Список системных вызовов</a>
+</body>
+</html>

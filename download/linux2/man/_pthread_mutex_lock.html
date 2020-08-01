@@ -1,0 +1,61 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>PHTREAD_MUTEX_LOCK function.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>phtread_mutex_lock, phtread_mutex_trylock (3)</samp></b></big><br>
+    &nbsp;&nbsp; захват исключающего семафора&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;pthread.h&gt;
+
+    int pthread_mutex_lock(pthread_mutex_t *mutex);
+    int pthread_mutex_trylock(pthread_mutex_t *mutex);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<p>Функции <samp>pthread_mutex_lock</samp> и <samp>pthread_mutex_trylock</samp> 
+захватывают исключающий семафор, на идентификатор которого указывает аргумент <samp>mutex</samp>. Захват семафора эквивалентен выполнению на нем P-операции. При невозмодности захватить семафор функция  <samp>pthread_mutex_lock</samp> переводит вызвавшую ее нить в ожидание, а функция <samp>pthread_mutex_trylock</samp> завершается немедленно с признаком ошибки.
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении <samp>pthread_mutex_lock</samp> и <samp>pthread_mutex_trylock</samp> возвращают  0.
+В случае ошибки возвращается ненулевое значение.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_pthread_mutex_init.html>pthread_mutex_init</a>,
+<a href=_pthread_mutex_unlock.html>pthread_mutex_unlock</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#pthread_mutex_lock>Список системных вызовов</a>
+</body>
+</html>
+

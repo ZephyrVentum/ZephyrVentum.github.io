@@ -1,0 +1,799 @@
+<html>
+
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>system call index.</TITLE>
+
+</HEAD>
+<body >
+<a name=top>
+<p><a href=../index.htm>Оглавление лабораторного практикума</a>
+<hr>
+</td></tr></table>
+
+<p><b><big>Процессы</big></b><br>
+<samp>
+<A href=#exec>exec</a>,
+<A href=#exit>exit</a>,
+<A href=#fork>fork</a>,
+<A href=#getpriority>getpriority</a>,
+<A href=#getpid>getpid</a>,
+<A href=#getpid>getppid</a>,
+<A href=#nice>nice</a>,
+<A href=#getpriority>setpriority</a>,
+<A href=#wait>wait</a>,
+<A href=#wait>waitpid</a>.
+</samp>
+
+<p><b><big>Сигналы и временные задержки</big></b><br>
+<samp>
+<A href=#alarm>alarm</a>,
+<A href=#setitimer>getitimer</a>,
+<A href=#kill>kill</a>,
+<A href=#nanosleep>nanosleep</a>,
+<A href=#raise>raise</a>,
+<A href=#setitimer>setitimer</a>,
+<A href=#signal>signal</a>.
+<A href=#sleep>sleep</a>,
+<A href=#usleep>usleep</a>.
+</samp>
+
+<p><b><big>Средства взаимодействия процессов</big></b><br>
+<samp>
+<A href=#msgctl>msgctl</a>,
+<A href=#msgget>msgget</a>,
+<A href=#msgrcv>msgrcv</a>,
+<A href=#msgsnd>msgsnd</a>,
+<A href=#semctl>semctl</a>,
+<A href=#semget>semget</a>,
+<A href=#semop>semop</a>,
+<A href=#shmat>shmat</a>,
+<A href=#shmat>shmdt</a>,
+<A href=#shmctl>shmctl</a>,
+<A href=#shmget>shmget</a>.
+</samp>
+
+<p><b><big>Нити и их взаимодействие</big></b><br>
+<samp>
+<A href=#pthread_cancel>pthread_cancel</a>,
+<A href=#pthread_create>pthread_create</a>,
+<A href=#pthread_exit>pthread_exit</a>,
+<A href=#pthread_join>pthread_join</a>,
+<A href=#pthread_mutex_init>pthread_mutex_init</a>,
+<A href=#pthread_mutex_lock>pthread_mutex_lock</a>,
+<A href=#pthread_mutex_lock>pthread_mutex_trylock</a>,
+<A href=#pthread_mutex_unlock>pthread_mutex_unlock</a>,
+<A href=#pthread_cond_broadcast>pthread_cond_broadcast</a>,
+<A href=#pthread_cond_init>pthread_cond_init</a>,
+<A href=#pthread_cond_signal>pthread_cond_signal</a>,
+<A href=#pthread_cond_wait>pthread_cond_wait</a>,
+<A href=#sem_getvalue>sem_getvalue</a>,
+<A href=#sem_init>sem_init</a>,
+<A href=#sem_post>sem_post</a>,
+<A href=#sem_wait>sem_wait</a>.
+</samp>
+
+<p><b><big>Файлы и каналы</big></b><br>
+<samp>
+<A href=#chmod>chmod</a>,
+<A href=#close>close</a>,
+<A href=#creat>creat</a>,
+<A href=#chmod>fchmod</a>,
+<A href=#lseek>lseek</a>,
+<A href=#mknod>mknod</a>,
+<A href=#read>read</a>,
+<A href=#open>open</a>,
+<A href=#pipe>pipe</a>,
+<A href=#umask>umask</a>,
+<A href=#unlink>unlink</a>,
+<A href=#write>write</a>.
+<A href=#fopen>fopen</a>
+</samp>
+
+
+<p><b><big>Время и дата</big></b><br>
+<samp>
+<A href=#date>date</a>,
+<A href=#gettimeofday>gettimeofday</a>,
+<A href=#ctime>asctime</a>,
+<A href=#ctime>ctime</a>,
+<A href=#ctime>gmtime</a>,
+<A href=#ctime>localtime</a>,
+<A href=#ctime>mttime</a>,
+<A href=#strftime>strftime</a>,
+<A href=#time>time</a>,
+</samp>
+
+
+<p><b><big>Обработка ошибок</big></b><br>
+<samp>
+<A href=#errno>errno</a>,
+<A href=#perror>perror</a>,
+<A href=#strerror>strerror</a>.
+</samp>
+
+<p><b><big>Разное</big></b><br>
+<samp>
+<A href=#longjmp>longjmp</a>,
+<A href=#rand>rand</a>,
+<A href=#longjmp>setjmp</a>,
+<A href=#rand>srand</a>.
+<A href=#ftok>ftok</a>.
+</samp>
+
+
+
+
+  <p align=right>
+  <br><a href=#top>в начало</a>
+
+
+<p></p>
+<hr>
+<p><b><big>Процессы</big></b>
+<hr>
+<p><table width=100%>
+<tr>
+  <td colspan=2><a name=exec>
+  <samp>execl</samp><br>
+  <samp>execv</samp><br>
+  <samp>execle</samp><br>
+  <samp>execve</samp><br>
+  <samp>execlp</samp><br>
+  <samp>execvp</samp> - выполнение файла</td>
+</tr>
+<tr>
+  <td align=right><a href=_exec.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=exit>
+  <samp>exit</samp> - нормальное завершение процесса</td>
+</tr>
+<tr>
+  <td align=right><a href=_exit.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=fork>
+  <samp>fork</samp> - порождение нового процесса</td>
+</tr>
+<tr>
+  <td align=right><a href=_fork.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=getpid>
+  <samp>getpid</samp><br> <samp>getppid</samp> - получение идентификатора
+процесса</td> </tr> <tr>
+  <td align=right><a href=_getpid.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+
+<tr>
+  <td colspan=2><a name=nice>
+  <samp>nice</samp> - изменение приоритета процесса</td> </tr>
+  <tr>
+  <td align=right><a href=_nice.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=getpriority>
+  <samp>getpriority</samp><br>
+  <samp>setpriority</samp> - чтение/установка приоритета процесса</td>
+  </tr> <tr>
+  <td align=right><a href=_getpriority.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=wait>
+  <samp>wait</samp><br>
+  <samp>waitpid</samp> - ожидание завершения процесса</td>
+  </tr> <tr>
+  <td align=right><a href=_wait.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+</table>
+
+
+<p></p>
+<p><b><big>Сигналы и временные задержки</big></b><br>
+<hr>
+<p><table width=100%>
+
+<tr>
+  <td colspan=2><a name=alarm>
+  <samp>alarm</samp> - посылка сигнала - будильника</td>
+</tr>
+<tr>
+  <td align=right><a href=_alarm.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=kill>
+  <samp>kill</samp> - посылка сигнала процессу</td>
+</tr>
+<tr>
+  <td align=right><a href=_kill.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=nanosleep>
+  <samp>nanosleep</samp> - точный приостанов процесса</td>
+</tr>
+<tr>
+  <td align=right><a href=_nanosleep.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=raise>
+  <samp>raise</samp> - посылка сигнала текущему процессу</td>
+</tr>
+<tr>
+  <td align=right><a href=_raise.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=setitimer>
+  <samp>getitimer</samp><br>
+  <samp>setitimer</samp> -  интервальный таймер </td>
+</tr>
+<tr>
+  <td align=right><a href=_setitimer.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=signal>
+  <samp>signal</samp> - обработка сигнала </td>
+</tr>
+<tr>
+  <td align=right><a href=_signal.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=sleep>
+  <samp>sleep</samp> - приостанов процесса</td>
+</tr>
+<tr>
+  <td align=right><a href=_sleep.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=usleep>
+  <samp>usleep</samp> - приостанов процесса на микросекунды</td>
+</tr>
+<tr>
+  <td align=right><a href=_usleep.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+</table>
+
+
+<p></p>
+<p><b><big>Средства взаимодействия процессов</big></b><br>
+<hr>
+<p><table width=100%>
+<tr>
+  <td colspan=2><a name=msgctl>
+  <samp>msgctl</samp> - управление очередью сообщений</td>
+</tr>
+<tr>
+  <td align=right><a href=_msgctl.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=msgget>
+  <samp>msgget</samp> - получение идентификатора очереди сообщений</td>
+</tr>
+<tr>
+  <td align=right><a href=_msgget.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=msgrcv>
+  <samp>msgrcv</samp> - прием сообщений</td>
+</tr>
+<tr>
+  <td align=right><a href=_msgrcv.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=msgsnd>
+  <samp>msgsnd</samp> - отправка сообщений</td>
+</tr>
+<tr>
+  <td align=right><a href=_msgsnd.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=semctl>
+  <samp>semctl</samp> - управляющие операции для семафоров процессов</td>
+</tr>
+<tr>
+  <td align=right><a href=_semctl.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=semget>
+  <samp>semget</samp> - получение идентификатора для семафоров процессов</td>
+</tr>
+<tr>
+  <td align=right><a href=_semget.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=semop>
+  <samp>semop</samp> - семафорные операции для семафоров процессов</td>
+</tr>
+<tr>
+  <td align=right><a href=_semop.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=shmat>
+  <samp>shmat</samp><br>
+  <samp>shmdt</samp> - присоединение/отсоединение разделяемого сегмента</td>
+</tr>
+<tr>
+  <td align=right><a href=_shmat.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=shmctl>
+  <samp>shmctl</samp> - получение идентификатора разделяемого сегмента</td>
+</tr>
+<tr>
+  <td align=right><a href=_shmctl.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=shmget>
+  <samp>shmget</samp> - управляющие операции для разделяемого сегмента</td>
+</tr>
+<tr>
+  <td align=right><a href=_shmget.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+</table>
+
+
+<p></p>
+<p><b><big>Нити и их взаимодействие</big></b><br>
+<hr>
+<p><table width=100%>
+<tr>
+  <td colspan=2><a name=pthread_cancel>
+  <samp>pthread_cancel</samp> - прекращение нити</td>
+</tr>
+<tr>
+  <td align=right><a href=_pthread_cancel.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=pthread_create>
+  <samp>pthread_create</samp> - запуск нити</td>
+</tr>
+<tr>
+  <td align=right><a href=_pthread_create.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=pthread_exit>
+  <samp>pthread_exit</samp> - завершение нити</td>
+</tr>
+<tr>
+  <td align=right><a href=_pthread_exit.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=pthread_join>
+  <samp>pthread_join</samp> - ожидание завершения нити</td>
+</tr>
+<tr>
+  <td align=right><a href=_pthread_join.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=pthread_mutex_init>
+  <samp>pthread_mutex_init</samp> - инициализация исключающего семафора</td>
+</tr>
+<tr>
+  <td align=right><a href=_pthread_mutex_init.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=pthread_mutex_lock>
+  <samp>pthread_mutex_trylock<br>
+  pthread_mutex_lock</samp> - P-операция на исключающем семафоре</td>
+</tr>
+<tr>
+  <td align=right><a href=_pthread_mutex_lock.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=pthread_mutex_unlock>
+  <samp>pthread_mutex_unlock</samp> - V-операция на исключающем семафоре</td>
+</tr>
+<tr>
+  <td align=right><a href=_pthread_mutex_unlock.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=pthread_cond_broadcast>
+  <samp>pthread_cond_broadcast</samp> - разблокирование нитей, ожидающих на сигнализирующем семафоре</td>
+</tr>
+<tr>
+  <td align=right><a href=_pthread_cond_broadcast.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=pthread_cond_init>
+  <samp>pthread_cond_init</samp> - инициализация сигнализирующего семафора</td>
+</tr>
+<tr>
+  <td align=right><a href=_pthread_cond_init.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=pthread_cond_signal>
+  <samp>pthread_cond_signal</samp> - V-операция на сигнализирующем семафоре</td>
+</tr>
+<tr>
+  <td align=right><a href=_pthread_cond_signal.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=pthread_cond_wait>
+  <samp>pthread_cond_wait</samp> - P-операция на сигнализирующем семафоре</td>
+</tr>
+<tr>
+  <td align=right><a href=_pthread_cond_wait.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=sem_getvalue>
+  <samp>sem_getvalue</samp> - получение значения семафора-счетчика</td>
+</tr>
+<tr>
+  <td align=right><a href=_sem_getvalue.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=sem_init>
+  <samp>sem_init</samp> - инициализация семафора-счетчика</td>
+</tr>
+<tr>
+  <td align=right><a href=_sem_init.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=sem_post>
+  <samp>sem_post</samp> - V-операция на семафоре-счетчике</td>
+</tr>
+<tr>
+  <td align=right><a href=_sem_post.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=sem_wait>
+  <samp>sem_wait</samp> - P-операция на семафоре-счетчике</td>
+</tr>
+<tr>
+  <td align=right><a href=_sem_wait.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+</table>
+
+<p></p>
+<p><b><big>Файлы и каналы</big></b><br>
+<hr>
+<p><table width=100%>
+
+<tr>
+  <td colspan=2><a name=chmod>
+  <samp>chmod<br>
+  fchmod</samp> - изменение прав доступа к файлу</td>
+</tr>
+<tr>
+  <td align=right><a href=_chmod.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=close>
+  <samp>close</samp> - закрытие файла</td>
+</tr>
+<tr>
+  <td align=right><a href=_close.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=creat>
+  <samp>creat</samp> - создание файла</td>
+</tr>
+<tr>
+  <td align=right><a href=_creat.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=lseek>
+  <samp>lseek</samp> - позиционирование в файле</td>
+</tr>
+<tr>
+  <td align=right><a href=_lseek.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=mknod>
+  <samp>mknod</samp> - создание специального файла</td>
+</tr>
+<tr>
+  <td align=right><a href=_mknod.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=open>
+  <samp>open</samp> - открытие файла</td>
+</tr>
+<tr>
+  <td align=right><a href=_open.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=read>
+  <samp>read</samp> - чтение из файла</td>
+</tr>
+<tr>
+  <td align=right><a href=_read.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=pipe>
+  <samp>pipe</samp> - создание неименованного канала</td>
+</tr>
+<tr>
+  <td align=right><a href=_pipe.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=umask>
+  <samp>umask</samp> - изменение режима создания файлов</td>
+</tr>
+<tr>
+  <td align=right><a href=_umask.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=unlink>
+  <samp>unlink</samp> - уничтожение файла</td>
+</tr>
+<tr>
+  <td align=right><a href=_unlink.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=write>
+  <samp>write</samp> - запись в файл</td>
+</tr>
+<tr>
+  <td align=right><a href=_write.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=fopen>
+  <samp>fopen</samp> - открытие файла</td>
+</tr>
+<tr>
+  <td align=right><a href=_fopen.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+</table>
+
+
+
+
+<p></p>
+<p><b><big>Время и дата</big></b><br>
+<hr>
+<p><table width=100%>
+
+<tr>
+  <td colspan=2><a name=gettimeofday>
+  <samp>gettimeofday</samp> - получение текущего времени</td>
+</tr>
+<tr>
+  <td align=right><a href=_gettimeofday.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=ctime>
+  <samp>asctime</samp><br>
+  <samp>ctime</samp><br>
+  <samp>gmtime</samp><br>
+  <samp>localtime</samp><br>
+  <samp>mktime</samp> - преобразование даты в строку символов</td>
+</tr>
+<tr>
+  <td align=right><a href=_localtime.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=strftime>
+  <samp>strtime</samp> - форматное преобразование даты</td>
+</tr>
+<tr>
+  <td align=right><a href=_strftime.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=time>
+  <samp>time</samp> - получение системного времени</td>
+</tr>
+<tr>
+  <td align=right><a href=_time.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+</table>
+
+<p></p>
+<p><b><big>Обработка ошибок</big></b><br>
+<hr>
+<p><table width=100%>
+<tr>
+  <td colspan=2><a name=errno>
+  <samp>errno</samp> - номер последней ошибки</td>
+</tr>
+<tr>
+  <td align=right><a href=_errno.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=perror>
+  <samp>perror</samp> - системные сообщения об ошибках </td>
+</tr>
+<tr>
+  <td align=right><a href=_perror.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+<tr>
+  <td colspan=2><a name=strerror>
+  <samp>strerror</samp> - системные сообщения об ошибках </td>
+</tr>
+<tr>
+  <td align=right><a href=_strerror.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+</table>
+
+<p></p>
+<p><b><big>Разное</big></b><br>
+<hr>
+<p><table width=100%>
+<tr>
+  <td colspan=2><a name=longjmp>
+  <samp>longjmp<br>
+  setjmp</samp> - нелокальная передача управления</td>
+</tr>
+<tr>
+  <td align=right><a href=_longjmp.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=rand>
+  <samp>srand</samp><br>
+  <samp>rand</samp> - генератор случайных чисел </td>
+</tr>
+<tr>
+  <td align=right><a href=_rand.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+<tr>
+  <td colspan=2><a name=ftok>
+  <samp>ftok</samp><br>
+  <samp>ftok</samp> - получение ключа для системных вызовов IPC</td>
+</tr>
+<tr>
+  <td align=right><a href=_ftok.html>подробнее</a>
+  <br><a href=#top>в начало</a>
+  <hr>
+</td></tr>
+
+</table>
+
+
+<hr>
+<p><a href=../index.htm>Оглавление лабораторного практикума</a>
+<hr>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,61 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>SEM _POST function.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>sem_post (3)</samp></b></big><br>
+    &nbsp;&nbsp; инкремент значения общего семафора&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;pthread.h&gt;
+
+    int sem_post(sem_t *sem);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<p>Функция <samp>sem_post</samp> увеличивает на 1 текущее значение общего семафора, на идентификатор которого указывает аргумент <samp>sem</samp>. Если прежнее значение семафора было 0 и есть нити, заблокированные в своей операции  <a href=_ sem_wait .html><samp>sem_wait</samp></a>, одна из них разблокируется, но какая именно - не определено.
+<p>
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении <samp>sem_post</samp> возвращает  0.
+В случае ошибки возвращается ненулевое значение.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_sem_getvalue.html>sem_getvalue</a>,
+<a href=_sem_init.html>sem_init</a>,
+<a href=_sem_wait.html>sem_wait</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#sem_post>Список системных вызовов</a>
+</body>
+</html>
+

@@ -1,0 +1,76 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>MKNOD system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>mknod (2)</samp></b></big><br>
+    &nbsp;&nbsp;создание файла или каталога&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;fcntl.h&gt;
+
+    int mknod (char *fname, int mode, int dev);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>mknod</samp> создает  узел в файловой системе (обычный файл или файл устройства,
+или именованный канал, или каталог)
+с именем <samp>fname</samp> (имя может включать в себя маршрут).
+<p>
+Параметр <samp>mode</samp> задает как права доступа, так  и  тип  узла,  
+который нужно создать. В  этом  параметре передается битовая комбинация 
+одного из нижеперечисленных типов файлов и прав доступа  для  нового
+узла.
+<p>
+Тип файла - это <samp>S_IFREG</samp> (обычный файл), <samp>S_IFCHR</samp>
+(символьное устройство), <samp>S_IFBLK</samp> (блочное устройство) 
+и <samp>S_IFIFO</samp> (именованный канал). В качестве типа можно передать 0,
+что создаст обычный файл.
+<p>Права доступа изменяются, используя значение <a href=_umask.html>umask</a>.
+
+</td></tr></table>
+
+<p><b>Возвращаемое значение</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном выполнении <samp>mknod</samp> возвращает 0,
+при ошибках выполнения возвращает -1 и устанавливает
+<samp><a href=_errno.html>errno</a></samp>.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_chmod.html>chmod</a>,
+<a href=_creat.html>creat</a>,
+<a href=_open.html>open</a>,
+<a href=_umask.html>umask</a>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#mknod>Список системных вызовов</a>
+</body>
+</html>

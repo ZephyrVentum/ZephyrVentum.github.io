@@ -1,0 +1,106 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>OPEN system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>open (2)</samp></b></big><br>
+    &nbsp;&nbsp; открытие файла&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;fcntl.h&gt;
+
+    int open (char *fname, int flag[, int mode]);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>open</samp> открывает файл (устройство, канал) с именем <samp>fname</samp> (имя может включать в себя маршрут) и устанавливает флаги статуса файла в соответствии со значением параметра <samp>flag</samp>. Необязательный параметр <samp>mode</samp> задает режим доступа к указанному файлу (см. <a href=_chmod.html>chmod</a>).
+<p>Значение параметра <samp>flag</samp> может задаваться как логическое ИЛИ следующих значений, определенных во включаемом файле:
+<table width=100%>
+<tr><td colspan=2><samp>O_RDONLY</samp></td></tr>
+<tr><td width=10%>&nbsp;</td>
+<td>Открыть только на чтение. </td></tr>
+<tr><td colspan=2><samp>O_WRONLY </samp></td></tr>
+<tr><td width=10%>&nbsp;</td>
+<td>Открыть только на запись. </td></tr>
+<tr><td colspan=2><samp>O_RDWR </samp></td></tr>
+<tr><td width=10%>&nbsp;</td>
+<td>Открыть на чтение/запись. </td></tr>
+<tr><td colspan=2><samp>O_NDELAY </samp></td></tr>
+<tr><td width=10%>&nbsp;</td>
+<td>Этот флаг может воздействовать на последующие операции чтения и записи (см. <a href=_read.html>read</a> и <a href=_write.html>write</a>). 
+<p>При открытии именованного канала с установленными флагами <samp>O_RDONLY</samp> или <samp>O_WRONLY</samp>: <ol>
+<li>Если установлен флаг <samp>O_NDELAY</samp>, то вызов open только на чтение завершается без задержки, а вызов open только для записи отрабатывает с сообщением об ошибке, если в данный момент нет процесса, открывшего файл для чтения; 
+<li>Если не установлен флаг <samp>O_NDELAY</samp>, то вызов open только на чтение блокируется, пока какой-либо процесс не откроет файл для записи, а вызов open только на запись блокируется, пока какой либо процесс не откроет файл на чтение. 
+</ol>
+При открытии файла, ассоциированного с линией связи: <ol>
+<li>Если установлен флаг <samp>O_NDELAY</samp>, то вызов open завершается без ожидания несущей. 
+<li>Если не установлен флаг <samp>O_NDELAY</samp>, то вызов open блокируется до появления несущей. </ol>
+</td></tr>
+<tr><td colspan=2><samp>O_APPEND </samp></td></tr>
+<tr><td width=10%>&nbsp;</td>
+<td>Перед каждой операцией записи устанавливать указатель текущей позиции на конец файла. </td></tr>
+<tr><td colspan=2><samp>O_SYNC </samp></td></tr>
+<tr><td width=10%>&nbsp;</td>
+<td>При открытии обычного файла этот флаг воздействует на последующие операции записи. Если флаг установлен, то каждый вызов <a href=_write.html>write</a> ожидает физического обновления как данных, так и статуса файла. </td></tr>
+<tr><td colspan=2><samp>O_CREAT </samp></td></tr>
+<tr><td width=10%>&nbsp;</td>
+<td>Если файл существует, то флаг игнорируется. В противном случае идентификаторы владельца и группы создаваемого файла устанавливаются равными, соответственно, действующим идентификаторам пользователя и группы процесса, а младшие 12 бит значения режима доступа к файлу устанавливаются равными значению аргумента mode, модифицированному следующим образом (см. <a href=_creat.html>creat</a>): <ol>
+<li>Биты, соответствующие единичным битам маски режима создания файлов текущего процесса (см. <a href=_umask.html>umask</a>), устанавливаются равными 0. 
+<li>Бит навязчивости (см. <a href=_chmod.html>chmod</a>) устанавливается равным 0. 
+</ol>
+</td></tr>
+<tr><td colspan=2><samp>O_TRUNC </samp></td></tr>
+<tr><td width=10%>&nbsp;</td>
+<td>Если файл существует, то он опустошается (размер становится равным 0), а режим доступа и владелец не изменяются. </td></tr>
+<tr><td colspan=2><samp>O_EXCL </samp></td></tr>
+<tr><td width=10%>&nbsp;</td>
+<td>Если установлены оба флага <samp>O_EXCL</samp> и <samp>O_CREAT</samp>, то системный вызов open завершается неудачей, если файл уже существует. </td></tr>
+</table>
+</td></tr></table>
+
+<p><b>Возвращаемое значение</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При нормальном выполнении <samp>open</samp> возвращает  файловый дескриптор, который далее идентифицирует открытый файл во всех операциях над ним.
+<p>При ошибках выполнения <samp>open</samp> возвращает -1 и устанавливает
+<samp><a href=_errno.html>errno</a></samp>.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_chmod.html>chmod</a>,
+<a href=_close.html>close</a>,
+<a href=_creat.html>creat</a>,
+<a href=_read.html>read</a>,
+<a href=_write.html>write</a>,
+<a href=_umask.html>umask</a>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#open>Список системных вызовов</a>
+</body>
+</html>

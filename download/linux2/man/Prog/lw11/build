@@ -1,0 +1,1 @@
+gcc -o ganesha3 ganesha3.c ../common/curtime.c ../common/wait.c

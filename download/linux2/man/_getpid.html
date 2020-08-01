@@ -1,0 +1,54 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>GETPID system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>getpid, getppid (2)</samp></b></big><br>
+    &nbsp;&nbsp; получение идентификатора процесса &nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>       #include &lt;unistd.h&gt;
+
+       pid_t getpid(void);
+       pid_t getppid(void); </pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+  <p><samp>getpid</samp> возвращает идентификатор текущего процесса.
+  <p><samp>getppid</samp> возвращает идентификатор родительского процесса.
+</td></tr>
+</table>
+
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_exec.html>exec</a>,
+<a href=_fork.html>fork</a>,
+<a href=_kill.html>kill</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#getpid>Список системных вызовов</a>
+</body>
+</html>

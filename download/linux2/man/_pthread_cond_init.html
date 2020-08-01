@@ -1,0 +1,61 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>PHTREAD_COND_INIT function.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>phtread_cond_init (3)</samp></b></big><br>
+    &nbsp;&nbsp; инициализация сигнального семафора&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;pthread.h&gt;
+
+    int pthread_cond_init(pthread_cond_t *cond, pthread_condattr_t *attr);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<p>Функция <samp>pthread_cond_init</samp> инициализирует сигнальный семафор, на идентификатор которого указывает аргумент <samp>cond</samp>. Аргумент <samp>attr</samp> указывает на объект атрибутов сигнального семафора. При использовании стандартных атрибутов его значение может задаваться NULL. 
+
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении <samp>pthread_cond_init</samp> возвращает  0.
+В случае ошибки возвращается ненулевое значение.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_pthread_cond_broadcast.html>pthread_cond_broadcast</a>,
+<a href=_pthread_cond_signal.html>pthread_cond_signal</a>,
+<a href=_pthread_cond_wait.html>pthread_cond_wait</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#pthread_cond_init>Список системных вызовов</a>
+</body>
+</html>
+

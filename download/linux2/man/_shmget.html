@@ -1,0 +1,71 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>SHMGET system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>shmget (2)</samp></b></big><br>
+    &nbsp;&nbsp; получение идентификатора общего сегмента памяти&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;sys/ipc.h&gt;
+    # include &lt;sys/sem.h&gt;
+
+    int shmget ( key_t key, int size, int shmflg )
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>shmget</samp> возвращает идентификатор общего сегмента памяти,
+связанного с ключом, значение которого задано аргументом 
+<samp>key</samp>. Если сегмента, связанного с таким ключом, нет и в параметре 
+<samp>shmflg</samp> имеется значение <samp>IPC_CREATE</samp> или значение 
+ключа задано <samp>IPC_PRIVATE</samp>, создается 
+новый сегмент. Значение ключа <samp>IPC_PRIVATE</samp> гарантирует уникальность 
+идентификации нового сегмента.
+<p>Значение параметра <samp>semflg</samp> формируется как логическое ИЛИ 
+одного из значений: <samp>IPC_CREATE</samp> (создать новый сегмент) или 
+<samp>IPC_EXCL</samp> (получить идентификатор существующего) и 9 бит прав 
+доступа (см. <samp><a href=_chmod.html>chmod</a></samp>).
+</td></tr></table>
+
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении возвращается неотрицательное целое число - идентификатор 
+сегманта. В случае ошибки возвращается -1 и устанавливается код ошибки в <samp><a href=_errno.html>errno</a>. 
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_shmat.html>shmat</a>,
+<a href=_shmat.html>shmdt</a>,
+<a href=_shmctl.html>shmctl</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#shmget>Список системных вызовов</a>
+</body>
+</html>

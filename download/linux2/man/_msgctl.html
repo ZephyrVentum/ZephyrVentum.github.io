@@ -1,0 +1,95 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>MSGCTL system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>msgctl (2)</samp></b></big><br>
+    &nbsp;&nbsp; управляющие операции над очередью&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;sys/ipc.h&gt;
+    # include &lt;sys/msg.h&gt;
+
+    int msgctl  (int  shmid, int cmd, struct msgid_ds *buf)    
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>msgctl</samp> выполняет управляющие операции над очередью сообщений. 
+Очередь задается аргументом <samp>msgid</samp> - идентификатором очереди. Выполняемая операция задается аргументом <samp>cmd</samp>. Аргумент <samp>buf</samp> служит представления информации о состоянии очереди:
+<pre>
+            struct msgid_ds {
+              struct ipc_perm msg_perm; /* Структура прав на выполнение операций */
+              struct msg *msg_first;    /* Указатель на первое сообщение в очереди */
+              struct msg *msg_last;     /* Указатель на последнее сообщение */
+              ushort msg_cbytes;/* Текущее число байт в очереди */
+              ushort msg_qnum;  /* Число сообщений в очереди */
+              ushort msg_qbytes;/* Макс. допустимое число байт в очереди */
+              ushort msg_lspid; /* Идентификатор последнего отправителя */
+              ushort msg_lrpid; /* Идентификатор последнего получателя */
+              time_t msg_stime; /* Время последн. отправления */
+              time_t msg_rtime; /* Время последнего получения */
+              time_t msg_ctime; /* Время последнего изменения */
+            };
+            struct ipc_perm
+            {
+              key_t  key;
+              ushort uid;   /* euid и egid владельца */
+              ushort gid;
+              ushort cuid;  /* euid и egid создателя */
+              ushort cgid;
+              ushort mode;  /* младшие 9 бит доступа */
+              ushort seq;   /* номер последовательности */
+            };
+</pre>
+<p>Операции, выполняемые системным вызовом <samp>msgctl</samp>, следующие:
+<table width=100%>
+<tr><td valign=top width=20%>&nbsp;<samp>IPC_STAT</samp>&nbsp;</td>
+<td>Копировать информацию из структуры очереди в структуру, на которую указывает <samp>buf</samp>.</td></tr>
+<tr><td valign=top width=20%>&nbsp;<samp>IPC_SET</samp>&nbsp;</td>
+<td>Присвоить полям структуры <samp>ipc_perm</samp> соответствующие значения, находящиеся в структуре, на которую указывает <samp>buf</samp>.
+<tr><td valign=top width=20%>&nbsp;<samp>IPC_RMID</samp>&nbsp;</td>
+<td>Удалить очередь.</td></tr>
+</table>
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении возвращает 0. В случае ошибки возвращается -1 и 
+устанавливается код ошибки в <samp><a href=_errno.html>errno</a>. 
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_msgget.html>msgget</a>,
+<a href=_msgrcv.html>msgrcv</a>,
+<a href=_msgsnd.html>msgsnd</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#msgctl>Список системных вызовов</a>
+</body>
+</html>

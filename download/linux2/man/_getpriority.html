@@ -1,0 +1,86 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>GETPRIORITY system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>getpriority, setpriority
+(2)</samp></b></big><br>     &nbsp;&nbsp; чтение/изменение приоритета процесса
+&nbsp;&nbsp;   </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;sys/time.h&gt;
+    #include &lt;sys/resource.h&gt;
+
+    int getpriority(int which, int who);
+    int setpriority(int which, int who, int prio);
+    </pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+  <p><samp>getpriority</samp> читает приоритет процесса, группы
+    процессов или пользователя.
+  <p><samp>setpriority</samp> устанавливает приоритет процесса, группы
+    процессов или пользователя.
+</td></tr>
+</table>
+
+<p><b>Параметры</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<p>Параметр <samp>which</samp> определяет, должен системный вызов
+   работать с приоритетом процесса, группы процессов или пользователя,
+   его возможные значения -  <samp>PRIO_PROCESS</samp>,
+   <samp>PRIO_PGRP</samp> или <samp>PRIO_USER</samp>, соответственно.
+<p>Параметр <samp>who</samp> задает идентификатор
+   процесса, группы процессов или пользователя - в зависимости от
+   значения параметра <samp>which</samp>.
+<p>Параметр <samp>prio</samp> задает значение приоритета - число
+   в пределах от -20 до +20. Большее приоритетное число означает
+   низший реальный   приоритет процесса. Начальное значение приоритета
+   - 0. Только суперпользователь может устанавливать для
+   своего процесса приоритет выше текущего .
+   </td></tr>
+</table>
+
+<p><b>Возвращаемое значение</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>Функция <samp>getpriority</samp> возвращает текущий приоритет
+    заданного объекта.
+<p>Функция <samp>setpriority</samp> при успешном завершении
+возвращает 0, иначе - возвращает  -1, и устанавливает код ошибки
+в <samp><a href=_errno.html>errno</a></samp>.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_nice.html>nice</a>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#getpriority>Список системных вызовов</a>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>FGETS system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>fgets</samp></b></big><br>
+    &nbsp;&nbsp;получает строку символов из потока&nbsp;&nbsp;
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;stdio.h&gt; 
+
+    char *fgets(char *string, int n, FILE *stream);
+</pre>
+</td></tr></table>
+
+<p><b>Параметры</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>string</samp>
+</td>
+<td>
+память для хранения данных
+</td>
+</tr>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>n</samp>
+</td>
+<td>
+число сохраняемых символов
+</td>
+</tr>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>stream</samp>
+</td>
+<td>
+указатель на структуру FILE
+</td>
+</tr>
+</table>
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>fgets</samp> читает  строку  из входного потока <samp>stream</samp> и
+         помещает ее в <samp>string</samp>. Символы считываются, начиная  с  текущей
+         позиции <samp>stream</samp>, до символа новой строки <samp>'\n'</samp>  или до конца потока,
+         либо пока число считанных символов не станет равным <samp>n-1</samp>.  Результат  размещается в <samp>string</samp>, а затем к нему добавляется символ <samp>null -'\0'</samp>. Символ новой строки также включается в <samp>string</samp>. Если в начале считывания <samp>n</samp> равнялось 1, то <samp>string</samp> будет пустой ("").
+
+</td></tr>
+</table>
+<p><b>Возвращаемое значение</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td> <samp>fgets</samp> возвращает указатель на строку <samp>string</samp>. В случае ошибки или конца файла  возвращается значение <samp>NULL</samp>. Для определения того, что произошло - ошибка или конец файла, используются функции <samp>feof</samp> и <samp>ferror</samp>.
+
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#unlink>Список системных вызовов</a>
+</body>
+</html>

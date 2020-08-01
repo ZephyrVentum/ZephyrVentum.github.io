@@ -1,0 +1,110 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>CTIME system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>strftime (3)</samp></b></big><br>
+    &nbsp;&nbsp; форматное преобразование времени и даты в цепочку символов &nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>       
+       #include &lt;time.h&gt;
+
+       size_t strftime(char *s, size_t max, const char *format,
+                           const struct tm *tm);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+Функция <samp>strftime</samp> преобразует дату, заданную параметром <samp>*tm</samp> в строку символов в соответствии с заданными спецификациями формата. 
+</td></tr></table>
+
+<p><b>Параметры</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<table>
+<tr><td width=10%>&nbsp;<samp>s</samp></td>
+<td>Указатель на символьную строку, в которую <samp>strftime</samp> записывает результат преобразования.</td></tr>
+<tr><td width=10%>&nbsp;<samp>max</samp></td>
+<td>Максимальная длина строки, в которую записывается результат преобразования.</td></tr>
+<tr><td valign=top width=10%>&nbsp;<samp>*format</samp></td>
+<td>Указатель на символьную строку, в которой задаются спецификации преобразования
+<p>Спецификации преобразования даты очень похожи на спецификации формата, применяемые в функции <samp>printf</samp>. Ниже приводятся некоторые специальные спецификации преобразования даты:
+<table>
+<tr><td width=10%>&nbsp;<samp>%b</samp></td>
+<td>аббревиатура месяца в соответствии с локализацией </td></tr>
+<tr><td width=10%>&nbsp;<samp>%B</samp></td>
+<td>полное название месяца в соответствии с локализацией </td></tr>
+<tr><td width=10%>&nbsp;<samp>%d</samp></td>
+<td>день месяца как десятичное число</td></tr>
+<tr><td width=10%>&nbsp;<samp>%H</samp></td>
+<td>часы как десятичное число</td></tr>
+<tr><td width=10%>&nbsp;<samp>%m</samp></td>
+<td>номер месяца как десятичное число</td></tr>
+<tr><td width=10%>&nbsp;<samp>%M</samp></td>
+<td>минуты как десятичное число</td></tr>
+<tr><td width=10%>&nbsp;<samp>%Y</samp></td>
+<td>год как десятичное число</td></tr>
+</table></td></tr>
+<tr><td valign=top width=10%>&nbsp;<samp>tm</samp></td>
+<td>Указатель на структуру <samp>tm</samp>, в которой задается преобразуемая дата.
+<p>Описание структуры <samp>tm</samp> выглядит так: 
+<pre>
+        struct tm {
+          int tm_sec;   /* Секунды (0-59) */
+          int tm_min;   /* Минуты (0-59) */
+          int tm_hour;  /* Часы (0-23) */
+          int tm_mday;  /* День месяца (1-31) */
+          int tm_mon;   /* Месяц года (0-11) */
+          int tm_year;  /* Год - 1900 */
+          int tm_wday;  /* День недели (Воскресенье = 0) */
+          int tm_yday;  /* День года (0-365) */
+          int tm_isdst;
+        };
+</pre>
+</td></tr>
+</table>
+</td></tr></table>
+
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>Функция возвращает размер строки, содержащей результат преобразования, или 0 - если возникли ошибки преобразования.
+лучае остаток интервала содержится в <samp>*rem</samp>.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_date.html>date</a>,
+<a href=_сtime.html>сtime</a>,
+<a href=_time.html>time</a>.
+</samp>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#strftime>Список системных вызовов</a>
+</body>
+</html>
+

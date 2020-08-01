@@ -1,0 +1,63 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>FCLOSE system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>fclose</samp></b></big><br>
+    &nbsp;&nbsp;Закрытие потока&nbsp;&nbsp;
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;stdio.h&gt; 
+
+    int fclose(FILE *stream);
+</pre>
+</td></tr></table>
+
+<p><b>Параметры</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>stream</samp>
+</td>
+<td>
+указатель на структуру FILE
+</td>
+</tr>
+</table>
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>fclose</samp> записывает в файл всю информацию, буферизованную в потоке <samp>stream</samp> (выталкивает буфера), и закрывает этот поток.
+Функция <samp>fclose</samp> вызывается автоматически для всех открытых файлов при выполнении системного вызова <samp>exit()</samp>. 
+</td></tr>
+</table>
+<p><b>Возвращаемое значение</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td> При успешном завершении результат равен 0; в случае какой-либо ошибки (например, при попытке записать в файл, не открытый на запись) возвращается <samp>EOF</samp>.
+
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#unlink>Список системных вызовов</a>
+</body>
+</html>

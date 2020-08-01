@@ -1,0 +1,67 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE> set command.</TITLE>
+</head>
+
+<body >
+
+<a name=top>
+
+<p>
+<table border align=center>
+  <tr><td align=center><big><b>set</b></big><br>
+    &nbsp;&nbsp;изменяет значения внутренних переменных сценария  &nbsp;&nbsp;
+  </tr></td>
+</table>
+<p></p>
+
+<table>
+<tr>
+<td colspan=2><b><br>СИНТАКСИС</b></td>
+</tr><tr><td width=10%>&nbsp;</td>
+  <td><pre> 
+      set [-abCefmnuvx][-h][-o option][argument...]
+
+       set [+abCefmnuvx][+h][+o option][argument...]
+
+       set -- [argument...]
+
+       set -o
+
+       set +o
+
+</pre>
+  </td>
+ </tr>
+ <tr>
+ <td colspan=2><b><br>ОПИСАНИЕ</b></td>
+ </tr><tr><td width=10%>&nbsp;</td>
+  <td>Команда <samp>set</samp>  изменяет значения внутренних переменных сценария. Она может использоваться для переключения опций 
+   (ключей, флагов), определяющих поведение скрипта. Еще одно применение (c ключом --) сброс/установка позиционных параметров (аргументов), 
+    значения которых будут восприняты как результат работы команды (set `command`).
+<p>Вызов set без параметров просто выводит список инициализированных переменных окружения.
+<p> Если команда set  используется с ключом "--", после которого следует переменная, то значение переменной переносится в
+ позиционные параметры (аргументы). Если имя переменной отсутствует, то эта команда приводит к сбросу позиционных параметров.
+ </td>
+
+ </tr>
+ </table>
+<p><b>ОПЦИИ</b>
+<pre>
+Опции см <samp>man set</samp>.
+</pre>
+<table>
+ <tr>
+  <td colspan=2><b>СМ. ТАКЖЕ</b></td>
+</tr><tr>
+<td width=10%>&nbsp;</td>
+  <td><samp>
+    <a href=_sh.html>sh</a>.
+</td>
+ </tr>
+</table>
+<p><hr>
+<a href=mind.html#set>Список команд</a>
+</body>
+</html>
+

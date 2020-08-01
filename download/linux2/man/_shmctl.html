@@ -1,0 +1,96 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>SHMCTL system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>shmctl (2)</samp></b></big><br>
+    &nbsp;&nbsp; управляющие операции над семафорами&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;sys/ipc.h&gt;
+    # include &lt;sys/sem.h&gt;
+
+    int shmctl  (int  shmid, int cmd, struct shmid_ds *buf)    
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>shmctl</samp> выполняет управляющие операции над разделяемым сегментом памяти. 
+Сегмент задается аргументом <samp>shmid</samp> - идентификатором сегмента. 
+Выполняемая операция задается аргументом <samp>cmd</samp>. 
+Аргумент <samp>buf</samp> служит представления информации о состоянии сегмента:
+<pre>
+            struct shmid_ds {
+                 struct    ipc_perm shm_perm;  /* права доступа */
+                 int  shm_segsz;          /* размер сегмента (байт) */
+                 time_t    shm_atime;          /* время последнего присоединения */
+                 time_t    shm_dtime;          /* время последнего отсоединения */
+                 time_t    shm_ctime;          /* время последнего изменения */
+                 unsigned short shm_cpid; /* pid создателя */
+                 unsigned short shm_lpid; /* pid процесса, последнего оперировавшего с сегментом */
+                 short     shm_nattch;         /* число текущих подключений */
+                 /* следующая информация недоступна */
+                 unsigned short   shm_npages;  /* размер (страниц) */
+                 unsigned long   *shm_pages;
+                 struct shm_desc *attaches;    /* дескрипторы подключений */
+            };
+            struct ipc_perm
+            {
+              key_t  key;
+              ushort uid;   /* euid и egid владельца */
+              ushort gid;
+              ushort cuid;  /* euid и egid создателя */
+              ushort cgid;
+              ushort mode;  /* младшие 9 бит доступа */
+              ushort seq;   /* номер последовательности */
+            };
+</pre>
+<p>Операции, выполняемые системным вызовом <samp>shmctl</samp>, следующие:
+<table width=100%>
+<tr><td valign=top width=20%>&nbsp;<samp>IPC_STAT</samp>&nbsp;</td>
+<td>Копировать информацию из структуры сегмента в структуру, на которую указывает <samp>buf</samp>.</td></tr>
+<tr><td valign=top width=20%>&nbsp;<samp>IPC_SET</samp>&nbsp;</td>
+<td>Присвоить полям структуры <samp>ipc_perm</samp> соответствующие значения, находящиеся в структуре, на которую указывает <samp>buf</samp>.
+<tr><td valign=top width=20%>&nbsp;<samp>IPC_RMID</samp>&nbsp;</td>
+<td>Удалить сегмент.</td></tr>
+</table>
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении возвращает 0. В случае ошибки возвращается -1 и устанавливается код ошибки d <samp><a href=_errno.html>errno</a>. 
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_shmat.html>shmat</a>,
+<a href=_shmget.html>shmget</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#shmctl>Список системных вызовов</a>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>SEM _WAIT function.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>sem_wait (3)</samp></b></big><br>
+    &nbsp;&nbsp; декремент значения общего семафора&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;pthread.h&gt;
+
+    int sem_wait(sem_t *sem);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<p>Функция <samp>sem_wait</samp> уменьшает на 1 текущее значение общего семафора, на идентификатор которого указывает аргумент <samp>sem</samp>. Если прежнее значение семафора было 0, нить, выполняющая функцию <samp>sem_wait</samp> блокируется до изменения значения семафора.
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении <samp>sem_wait</samp> возвращает  0.
+В случае ошибки возвращается ненулевое значение.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_sem_getvalue.html>sem_getvalue</a>,
+<a href=_sem_init.html>sem_init</a>,
+<a href=_sem_post.html>sem_ post</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#sem_wait>Список системных вызовов</a>
+</body>
+</html>
+

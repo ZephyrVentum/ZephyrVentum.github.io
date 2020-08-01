@@ -1,0 +1,86 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>SEMOP system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>semop (2)</samp></b></big><br>
+    &nbsp;&nbsp; управляющие операции над семафорами&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;sys/types.h&gt;
+    # include &lt;sys/ipc.h&gt;
+    # include &lt;sys/sem.h&gt;
+
+    int semop ( int semid, struct sembuf *sops, unsigned nsops )
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>semop</samp> выполняет операции над выбранными элементами массива семафоров, задаваемого идентификатором <samp>semid</samp>. Каждый из  
+<samp>nsops</samp> элементов массива, на который указывает <samp>sops</samp>,
+задает одну операцию над одним семафором и содержит поля:
+<pre>
+    short sem_num; /* Номер семафора */
+    short sem_op;  /* Операция над семафором */
+    short sem_flg; /* Флаги операции */
+</pre>
+<p>
+Значение поля <samp>sem_op</samp> возможны следующие: 
+<ol>
+<li>Если значение <samp>sem_op</samp> отрицательно, то:
+<ul>
+<li>Если значение семафора больше или равно абсолютной величине <samp>sem_op</samp>, то абсолютная величина <samp>sem_op</samp> вычитается из значения семафора. 
+<li>В противном случае процесс переводится в ожидание до тех пор, пока значение семафора не станет больше или равно абсолютной величине <samp>sem_op</samp>.
+</ul>
+<li>Если значение <samp>sem_op</samp> положительно, то оно добавляется к значению семафора.
+<li>Если значение <samp>sem_op</samp> равно нулю, то:
+<ul> 
+<li>Если значение семафора равно нулю, то управление сразу же возвращается вызывающему процессу. 
+<li>Если значение семафора не равно нулю, то выполнение вызывающего процесса приостанавливается до установки значения семафора в 0.
+</ul>
+</ol>
+<p>Флаг операции может принимать значения <samp>IPC_NOWAIT</samp> или/и
+<samp>SEM_UNDO</samp>. Первый из флагов определяет, что <samp>semop</samp> не переводит процесс  в ожидание, когда этого требует выполнение семафорной операции, а заканчивается с признаком ошибки. Второй определяет, что операция должна откатываться при завершении процесса.
+</td></tr></table>
+
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении возвращается 0. В случае ошибки возвращается -1 и устанавливается 
+код ошибки в <samp><a href=_errno.html>errno</a>. 
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_semctl.html>semctl</a>,
+<a href=_semget.html>semget</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#semop>Список системных вызовов</a>
+</body>
+</html>
+

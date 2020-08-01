@@ -1,0 +1,71 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>WRITE system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>write (2)</samp></b></big><br>
+    &nbsp;&nbsp; запись в файл&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    int write (int fd, void *buf, int nbyte);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>write</samp> записывает <samp>nbyte</samp> байтов в файл (устройство, канала), определяемый файловым дескриптором <samp>fd</samp>, из области памяти, адрес которой задается указателем <samp>buf</samp>.
+<p>При попытке записи в заблокированный файл:
+  <ul>
+    <li>если флаг <samp>O_NDELAY</samp> установлен, вызов <samp>write</samp> завершается и возвращает -1;
+    <li>если флаг <samp>O_NDELAY</samp> не установлен, вызов <samp>write</samp> приостанавливает процесс до разблокирования файла.
+  </ul>
+ <p>При попытке записи в переполненный канал:
+  <ul>
+    <li>если флаг <samp>O_NDELAY</samp> установлен, вызов <samp></samp> завершается и возвращает 0;
+    <li>если флаг <samp>O_NDELAY</samp> не установлен, вызов <samp>write</samp> приостанавливает процесс до появления данных в канале.
+  </ul>
+</ul>
+</td></tr></table>
+
+<p><b>Возвращаемое значение</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При нормальном выполнении <samp>write</samp> возвращает число реально записанных байтов.
+<p>При ошибках выполнения <samp>write</samp> возвращает -1 и устанавливает
+<samp><a href=_errno.html>errno</a></samp>.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_open.html>open</a>,
+<a href=_close.html>close</a>,
+<a href=_read.html>write</a>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#read>Список системных вызовов</a>
+</body>
+</html>
+

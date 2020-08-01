@@ -1,0 +1,63 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>PHTREAD_EXIT function.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>phtread_exit (3)</samp></b></big><br>
+    &nbsp;&nbsp; завершение нити&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;pthread.h&gt;
+
+    void pthread_exit(void *value);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<p>Функция <samp>pthread_exit</samp> завершает выполнение той нити, из которой она была вызвана. Аргумент <samp>value</samp> является указателем на данные, возвращаемые нитью, этот указатель может быть получен родительской нитью при помощи функции <a href=_pthread_join.html><samp>pthread_join</samp></a>.
+<p>Действие функции <samp>pthread_exit</samp> эквивалентно оператору:
+<pre>
+    return value;
+</pre>
+<p>Важно, чтобы те данные, на которые указывает аргумент функции сохранялись и после завершения функции и освобождения ее стека.
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>Возврат из <samp>pthread_exit</samp> не происходит.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_pthread_create.html>pthread_create</a>,
+<a href=_pthread_cancel.html>pthread_cancel</a>,
+<a href=_pthread_join.html>pthread_join</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#pthread_exit>Список системных вызовов</a>
+</body>
+</html>

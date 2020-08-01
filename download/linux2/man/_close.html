@@ -1,0 +1,57 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>CLOSE system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>close (2)</samp></b></big><br>
+    &nbsp;&nbsp; закрытие файла&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    int close(int fd);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>close</samp> закрывает файл (устройство, канал), определяемый файловым дескриптором <samp>fd</samp>, полученным ранее по системному вызову <a href=_open.html>open</a>, <a href=_creat.html>creat</a> или <a href=_pipe.html>pipe</a>.
+</td></tr></table>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном выполнении <samp>close</samp> возвращает 0.
+При ошибках выполнения  возвращает -1 и устанавливает
+<samp><a href=_errno.html>errno</a></samp>.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_creat.html>creat</a>,
+<a href=_open.html>open</a>,
+<a href=_pipe.html>pipe</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#close>Список системных вызовов</a>
+</body>
+</html>

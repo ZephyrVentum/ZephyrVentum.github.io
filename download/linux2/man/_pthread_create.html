@@ -1,0 +1,67 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>PHTREAD_CREATE function.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>phtread_create (3)</samp></b></big><br>
+    &nbsp;&nbsp; создание нити&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;pthread.h&gt;
+
+    int pthread_create(pthread_t *threadid, pthread_attr_t *attr, 
+        void *function, void *arg);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+Функция <samp>pthread_create</samp> создает новую нить и записывает ее идентификатор по адресу, содержащемуся в аргументе <samp>threadid</samp>. 
+<p>Аргумент <samp>attr</samp> указывает на объект атрибутов нити. При использовании стандартных атрибутов его значение может задаваться <samp>NULL</samp>.
+<p>Аргумент <samp>function</samp> является адресом функции, выполняемой в нити. Прототип этой функции:
+<pre>
+    void *<i>имя_функции</i>(void *);
+</pre>
+<p>Аргумент <samp>arg</samp> передается функции, выполняемой в нити.
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении <samp>pthread_create</samp> возвращает  0.
+В случае ошибки возвращается ненулевой код.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_pthread_cancel.html>pthread_cancel</a>,
+<a href=_pthread_exit.html>pthread_exit</a>,
+<a href=_pthread_join.html>pthread_join</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#pthread_create>Список системных вызовов</a>
+</body>
+</html>
+

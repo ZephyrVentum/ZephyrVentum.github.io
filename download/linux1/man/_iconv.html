@@ -1,0 +1,78 @@
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE> iconv command.</TITLE>
+</head>
+<body >
+
+<a name=top>
+<table border align=center>
+<tr><td align=center>
+<b><big>iconv</big></b><br> Преобразует указанные файлы из одной
+кодировки в другую. </td>
+</tr>
+</table>
+<p></p>
+<table>
+
+<tr>
+<td colspan=2><b><br>СИНТАКСИС</b></td>
+</tr><tr><td width=10%>&nbsp;</td>
+<td><pre>iconv [КЛЮЧ...] [ФАЙЛ...]
+ </pre></td>
+</tr>
+
+<tr>
+<td colspan=2><b><br>ОПИСАНИЕ</b></td>
+</tr><tr><td width=10%>&nbsp;</td>
+<td>Команда <samp>iconv</samp> преобразует указанные файлы из одной
+кодировки в другую.</td>
+</tr>
+</table>
+<b><br>ОПЦИИ</b>
+<pre>
+Спецификация формата ввода/вывода:
+  -f, --from-code=ФАЙЛ   кодировка оригинального
+                             текста
+  -t, --to-code=ФАЙЛ     кодировка для вывода
+
+ Информация:
+  -l, --list                 перечислить все известные
+                             встроенные кодировки
+
+ Усправление выводом:
+  -c                         пропускать на выводе
+                             недопустимые знаки
+  -o, --output=FILE          выходной файл
+  -s, --silent               не печатать предупреждения
+                            
+      --verbose              печатать информацию о ходе
+                             работы
+
+  -?, --help                 Выдает этот справочный
+                             список
+      --usage                Выдает краткую информацию
+                             об использовании
+  -V, --version              Печатает версию программы
+
+Обязательные или необязательные аргументы
+для длинных ключей также являются
+обязательными или необязательными для
+соответствующих коротких ключей.
+
+</pre>
+<table>
+<tr>
+<td colspan=2><b><br>СМ.ТАКЖЕ</b></td>
+</tr><tr><td width=10%>&nbsp;</td>
+<td>
+<a href=_comm.html><samp>comm</samp></a>, 
+<a href=_sort.html><samp>sort</samp></a>.
+</td>
+</tr>
+
+</table>
+<p><hr>
+<a href=mind.html#iconv>Список команд</a>
+</body>
+</html>

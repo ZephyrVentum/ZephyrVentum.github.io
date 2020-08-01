@@ -1,0 +1,62 @@
+<html>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <TITLE> yes command.</TITLE>
+</head>
+
+<body >
+<a name=top>
+
+<p>
+<table width=100%>
+  <tr>
+    <td width=20%>&nbsp;</td>
+    <td>
+      <table border> 
+        <tr><td align=center><big><b>yes</b></big><br>
+            &nbsp; непрерывно выводит строку &nbsp;
+        </tr></td>
+      </table>
+</td></tr></table>
+
+
+<table>
+<tr>
+<td colspan=2><b><br>СИНТАКСИС</b></td>
+</tr><tr><td width=10%>&nbsp;</td>
+  <td><pre>
+    yes [СТРОКА]...
+    yes ПАРАМЕТР  
+</pre>
+</td></tr>
+
+<tr>
+<td colspan=2><b><br>ОПИСАНИЕ</b></td>
+</tr><tr><td width=10%>&nbsp;</td>
+<td>
+<p>Команда <samp>yes</samp> непрерывно (пока не "убьют") выводит строки из указанных СТРОК(и), или `y'. 
+<p>Хотя с первого взгляда она может показаться бесполезной,
+команда yes может пригодиться для превращения интерактивных
+команд в групповые. Хотите избавиться от надоедливого сообщения
+"Вы УВЕРЕНЫ, что хотите сделать это"? Передайте выходные
+данные команды yes на вход такой команде, чтобы автоматически
+ответить на все вопросы.
+<p>$yes  | my_interactive_command 
+<p>Когда команда  my_interactive_command завершит работу, завершит работу и yes.
+
+</td></tr>
+</table>
+
+<b><br>ОПЦИИ</b>
+<pre>
+--help
+    выдает эту информацию и заканчивает работу 
+--version
+    выдает информацию о версии и заканчивает работу 
+
+
+</pre>
+<p>
+<hr>
+<a href=mind.html#yes>Список команд</a>
+</body>
+</html>

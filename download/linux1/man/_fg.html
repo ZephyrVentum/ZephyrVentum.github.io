@@ -1,0 +1,66 @@
+<html>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <TITLE> fg command.</TITLE>
+</head>
+
+<body >
+<a name=top>
+
+<p>
+<table width=100%>
+  <tr>
+    <td width=20%>&nbsp;</td>
+    <td>
+      <table border> 
+        <tr><td align=center><big><b>fg</b></big><br>
+            &nbsp; Перевести задачу в интерактивный режим выполнения&nbsp;
+        </tr></td>
+      </table>
+</td></tr></table>
+
+
+<table>
+<tr>
+<td colspan=2><b><br>СИНТАКСИС</b></td>
+</tr><tr><td width=10%>&nbsp;</td>
+  <td><pre>  
+        fg [job_id]
+  
+</pre>
+</td></tr>
+</table>
+
+<table>
+<tr>
+<td colspan=2><b><br>ОПИСАНИЕ</b></td>
+<td></td>
+</tr><tr><td width=10%>&nbsp;</td>
+<td><p>Встроенная команда <samp>fg</samp> переводит
+выполнение приостановленного или фонового задания в интерактивный режим.
+При выполнение без аргументов эта команда, как правило, выбирает
+задание, приостановленное или отправленное в фоновый режим
+последним. Чтобы задать конкретное задание (из списка, выводимого
+командой jobs), укажите номер задания.
+</td></tr>
+</table>
+<p>
+Запуск fg без параметров включит нам последнюю остановленную задачу (тот, который помечен плюсиком). 
+Этого же эффекта можно добиться выполнив команду "fg +".
+<p>
+Запуск команды "fg -" переключит нас на предпоследнюю остановленную задачу.
+<table>
+<tr>
+<td colspan=2><b><br>СМ.ТАКЖЕ</b></td>
+</tr><tr><td width=10%>&nbsp;</td>
+<td>
+  <a href=_bg.html>bg</a>
+</td>
+<td>
+  <a href=_jobs.html>jobs</a>
+</td>
+</tr></table>
+
+<p><hr>
+<a href=mind.html#fg>Список команд</a>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>CREAT system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>creat (2)</samp></b></big><br>
+    &nbsp;&nbsp; создание файла&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;fcntl.h&gt;
+
+    int open (char *fname, int mode);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>creat</samp> создает новый обычный файл или готовит для перезаписи существующий файл с именем <samp>fname</samp> (имя может включать в себя маршрут).
+<p>Если файл существует, то он опустошается (размер становится равным 0), а режим доступа и владелец не изменяются. 
+<p>Если файл не существует, то идентификаторы владельца и группы создаваемого файла устанавливаются равными, соответственно, действующим идентификаторам пользователя и группы процесса, а младшие 12 бит значения режима доступа файла устанавливаются равными значению аргумента <samp>mode</samp>.
+
+</td></tr></table>
+
+<p><b>Возвращаемое значение</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном выполнении <samp>creat</samp> возвращает дескриптор файла, открытого на запись (даже если режим доступа к файлу не разрешает запись). Указатель текущей позиции устанавливается на начало файла. 
+<p>При ошибках выполнения <samp>creat</samp> возвращает -1 и устанавливает
+<samp><a href=_errno.html>errno</a></samp>.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_chmod.html>chmod</a>,
+<a href=_open.html>open</a>,
+<a href=_umask.html>umask</a>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#creat>Список системных вызовов</a>
+</body>
+</html>

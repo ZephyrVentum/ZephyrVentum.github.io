@@ -1,0 +1,54 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>STRERROR system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>strerror (3)</samp></b></big><br>
+&nbsp;&nbsp; получение строки, описывающей ошибку&nbsp;&nbsp; </tr></td> </table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;string.h&gt;
+
+    char *strerror(int errnum);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+  <p><samp>strerror</samp> возвращает указатель на символьную строку,
+  содержащую диагностическое сообщение об ошибке, код которой задается
+  аргументом <samp>errnum</samp>. Эта строка может быть использована
+  только до следующего вызова <samp>strerror</samp>.
+</td></tr>
+</table>
+
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_errno.html>errno</a>,
+<a href=_perror.html>perror</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#strerror>Список системных вызовов</a>
+</body>
+</html>

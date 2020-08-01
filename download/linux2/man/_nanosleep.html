@@ -1,0 +1,68 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>NANOSLEEP system call.</TITLE>
+</head>
+<body>    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>nanosleep (2)</samp></b></big><br>
+    &nbsp;&nbsp; приостанов процесса &nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>       
+    #include &lt;time.h&gt;
+
+    int  nanosleep(const struct timespec *req, struct timespec *rem);</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>sleep</samp> приостанавливает выполнение процесса на время, заданное в <samp>*req</samp>. Приостанов переводит процесс в состояние ожидания, в котором он не требует использования центрального процессора. Приостановленный процесс, однако, реагирует на сигналы. 
+</td></tr></table>
+
+<p><b>Параметры</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>Структура <samp>timespeс</samp>, использующаяся для описания временного интервала приостанова описывается как:
+<pre>    struct timespec
+         {
+                time_t  tv_sec;         /* секунды */
+                long    tv_nsec;        /* наносекунды */
+          };</pre>
+<p>Заданный интервал ожидания передается функции через параметр <samp>*req</samp>. Если приостанов завершился до истечение заданного интервала (по причине получения сигнала), то в параметре <samp>*rem</samp> содержится остаток интервала. Параметр <samp>*rem</samp> может быть задан равным <samp>NULL</samp>, в этом случае остаток интервала не возвращается.
+</td></tr></table>
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>0 - если заданный интервал ожидания отработан полностью, -1 - если ожидание закончилось досрочно, в этом случае остаток интервала содержится в <samp>*rem</samp>.
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_sleep.html>sleep</a>,
+<a href=_signal.html> signal </a>.</samp>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#nanosleep>Список системных вызовов</a>
+</body>
+</html>

@@ -1,0 +1,14 @@
+ganesha3: ganesha3.o  curtime.o wait.o
+	gcc -o ganesha3 ganesha3.o curtime.o wait.o
+
+curtime.o: ../common/curtime.c ../common/curtime.h
+	gcc -c ../common/curtime.c -o curtime.o
+
+wait.o: ../common/wait.c ../common/wait.h
+	gcc -c ../common/wait.c -o wait.o
+
+ganesha3.o: ganesha3.c ../common/ganesha.h ../common/elephant.h ../common/curtime.h ../common/wait.h
+	gcc -c ganesha3.c
+
+clean:
+	rm -f ganesha3 ganesha3.o curtime.o wait.o 

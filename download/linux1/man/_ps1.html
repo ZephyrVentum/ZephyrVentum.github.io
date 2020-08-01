@@ -1,0 +1,141 @@
+<html>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <TITLE> PS1.</TITLE>
+</head>
+
+<body >
+<a name=top>
+
+<p>
+<table width=100%>
+  <tr>
+    <td width=20%>&nbsp;</td>
+    <td>
+      <table border> 
+        <tr><td align=center><big><b>PS1</b></big><br>
+            &nbsp;Первичное приглашение командного интерпретатора&nbsp;
+        </tr></td>
+      </table>
+</td></tr></table>
+
+
+
+<table>
+<tr>
+<td colspan=2><b><br>ОПИСАНИЕ</b></td>
+<td></td>
+</tr><tr><td width=10%>&nbsp;</td>
+<td><p>Первичное приглашение <samp>PS1</samp>  указывает на готовность интерпретатора к вводу команд. 
+Т.е. значение переменной окружения PS1 определяет внешний вид приглашения командной строки.
+Окончание приглашения имеет вид "$" для обычных пользователей и "#" для суперпользователя.
+По умолчанию строка первичного приглашения имеет вид 
+<p>"[\u@\h \W]\$", т.е. имя пользователя @ имя хоста Текущий рабочий каталог
+<p> Например
+<p> user@server ~$
+<p>где тильда - имя домашнего каталога пользователя
+<p>Существует несколько специальных символов (состоящих из прямой косой черты и буквы или знака), 
+включение которых в приглашение командной строки способно повлиять на его внешний вид.
+<p>Изменение значения PS1 выполняется с помощью команды export, как и и зменение любой переменной окружения.
+Например:
+<p>export PS1="[\u@\h \W]\$ "
+</table>
+<p>Список  допустимых символов, используемых для формирования первичного приглашения. 
+<pre>
+`\a'
+     A bell character.
+
+`\d'
+     The date, in "Weekday Month Date" format (e.g., "Tue May 26"). Текущая дата (день, месяц, число)
+
+`\D{FORMAT}'
+     The FORMAT is passed to `strftime'(3) and the result is inserted
+     into the prompt string; an empty FORMAT results in a
+     locale-specific time representation.  The braces are required.
+
+`\e'
+     An escape character.
+
+`\h'
+     The hostname, up to the first `.'. Сетевое имя кокпьютера, на котором выполняется командная оболочка.
+
+`\H'
+     The hostname.
+
+`\j'
+     The number of jobs currently managed by the shell.
+
+`\l'
+     The basename of the shell's terminal device name.
+
+`\n'
+     A newline.
+
+`\r'
+     A carriage return.
+
+`\s'
+     The name of the shell, the basename of `$0' (the portion following
+     the final slash). Имя текущей оболочки.
+
+`\t'
+     The time, in 24-hour HH:MM:SS format. Текущее время (часы, минуты, секунды).
+
+`\T'
+     The time, in 12-hour HH:MM:SS format.
+
+`\@'
+     The time, in 12-hour am/pm format.
+
+`\A'
+     The time, in 24-hour HH:MM format. Текущее время в формате ЧЧ:ММ
+
+`\u'
+     The username of the current user. Текущее регистрационное имя пользователя
+
+`\v'
+     The version of Bash (e.g., 2.00)
+
+`\V'
+     The release of Bash, version + patchlevel (e.g., 2.00.0)
+
+`\w'
+     The current working directory, with `$HOME' abbreviated with a
+     tilde (uses the `$PROMPT_DIRTRIM' variable). 
+      Полный путь к текущему рабочему каталогу.
+
+`\W'
+     The basename of `$PWD', with `$HOME' abbreviated with a tilde. Базовое (последнее в полном пути) 
+     имя текущего рабочего каталога.
+
+`\!'
+     The history number of this command. Номер текущей команды в истории. Список истории включает в себя
+      команды, которые были выполнены пользователем с данным регистрационным
+      именем (в т.ч. и во время предыдущих сеансов работы с системой).
+
+`\#'
+     The command number of this command.Номер текущей команды. В данном случае нумерация команд ведется с
+      начала текущего сеанса работы с системой.
+
+`\$'
+     If the effective uid is 0, `#', otherwise `$'. Стандартное приглашение на ввод команды в виде знака доллара ($) 
+    для обычного пользователя системы и знака диеза (#) для суперпользователя.
+`\NNN'
+     The character whose ASCII code is the octal value NNN.
+
+`\\'
+     A backslash. Символ обратной косой черты
+
+`\['
+     Begin a sequence of non-printing characters.  This could be used to
+     embed a terminal control sequence into the prompt.
+
+`\]'
+     End a sequence of non-printing characters.
+
+</pre>
+
+
+<p><hr>
+<a href=mind.html#top>Список команд</a>
+</body>
+</html>

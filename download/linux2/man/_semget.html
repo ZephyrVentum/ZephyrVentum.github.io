@@ -1,0 +1,65 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>SEMGET system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>semget (2)</samp></b></big><br>
+    &nbsp;&nbsp; получение идентификатора массива семафоров&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    # include &lt;sys/types.h&gt;
+    # include &lt;sys/ipc.h&gt;
+    # include &lt;sys/sem.h&gt;
+
+    int semget ( key_t key, int nsems, int semflg )
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>semget</samp> возвращает идентификатор массива из <samp>nsem</samp> семафоров, 
+связанного с ключом, значение которого задано аргументом 
+<samp>key</samp>. Если массива семафоров, связанного с таким ключом, нет и в параметре <samp>semflg</samp> имеется значение <samp>IPC_CREATE</samp> или значение ключа задано <samp>IPC_PRIVATE</samp>, создается 
+новый массив семафоров. Значение ключа <samp>IPC_PRIVATE</samp> гарантирует уникальность идентификации нового массива семафоров.
+<p>Значение параметра <samp>semflg</samp> формируется как логическое ИЛИ одного из значений: <samp>IPC_CREAT</samp> (создать новый массив семафоров) или <samp>IPC_EXCL</samp> (получить идентификатор существующего массива) и 9 бит прав доступа (см. <samp><a href=_chmod.html>chmod</a></samp>).
+</td></tr></table>
+
+
+<p><b>Возвращаемое значение </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном завершении возвращается неотрицательное целое число - идентификатор 
+множества семафоров. В случае ошибки возвращается -1 и устанавливается код ошибки в <samp><a href=_errno.html>errno</a>. 
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_semctl.html>semctl</a>,
+<a href=_semop.html>semop</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#semget>Список системных вызовов</a>
+</body>
+</html>

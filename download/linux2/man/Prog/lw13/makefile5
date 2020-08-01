@@ -1,0 +1,18 @@
+ganesha5: ganesha5.o elephant5.o curtime.o wait.o
+	gcc -o ganesha5 ganesha5.o curtime.o
+	gcc -o elephant5 elephant5.o curtime.o wait.o
+
+curtime.o: ../common/curtime.c ../common/curtime.h
+	gcc -c ../common/curtime.c -o curtime.o
+
+wait.o: ../common/wait.c ../common/wait.h
+	gcc -c ../common/wait.c -o wait.o
+
+ganesha5.o: ganesha5.c ../common/ganesha.h ../common/elephant.h ../common/curtime.h
+	gcc -c ganesha5.c
+
+elephant5.o: elephant5.c ../common/elephant.h ../common/wait.h ../common/curtime.h 
+	gcc -c elephant5.c
+
+clean:
+	rm -f elephant5 ganesha5 elephant5.o ganesha5.o curtime.o wait.o 

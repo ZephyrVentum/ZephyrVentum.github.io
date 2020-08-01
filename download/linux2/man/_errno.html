@@ -1,0 +1,100 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>ERRNO system variable.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>errno (3)</samp></b></big><br>
+&nbsp;&nbsp; номер последней ошибки&nbsp;&nbsp;
+</tr></td> </table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;errno.h&gt;
+
+    extern int errno;
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+  <p>Целая переменная <samp>errno</samp> устанавливается системными
+  вызовами и некоторыми библиотечными функциями для индикации
+  ошибочных ситуаций. Ее значение имеет смысл только когда системный
+  вызов или функция возвращает признак ошибки (обычно -1).
+  немедленно завершает текущий
+<p>Стандарт POSIX определяет следующие символьные имена ошибок:
+<ul>
+<li><samp>E2BIG</samp> - Список аргументов слишком длинный
+<li><samp>EACCES</samp> - Отказ в доступе
+<li><samp>EAGAIN</samp> - Ресурс временно недоступен
+<li><samp>EBADF</samp> - Неправильный дескриптор файла
+<li><samp>EBADMSG</samp> - Неправильное сообщение
+<li><samp>EBUSY</samp> - Ресурс занят
+<li><samp>ECANCELED</samp> - Операция отменена
+<li><samp>ECHILD</samp> - Нет дочернего процесса
+<li><samp>EDEADLK</samp> - Обход тупика ресурсов
+<li><samp>EDOM</samp> - Ошибка области определения
+<li><samp>EEXIST</samp> - Файл существует
+<li><samp>EFAULT</samp> - Неправильный адрес
+<li><samp>EFBIG</samp> - Файл слишком велик
+<li><samp>EINPROGRESS</samp> - Операция в процессе выполнения
+<li><samp>EINTR </samp> - Прерванный вызов функции
+<li><samp>EINVAL</samp> - Неправильный аргумент
+<li><samp>EIO</samp> - Ошибка ввода-вывода
+<li><samp>EISDIR</samp> - Это каталог
+<li><samp>EMFILE</samp> - Слишком много открытых файлов
+<li><samp>EMLINK</samp> - Слишком много связей
+<li><samp>EMSGSIZE</samp> - Неопределенная длина буфера сообщения
+<li><samp>ENAMETOOLONG</samp> - Имя файла слишком длинное
+<li><samp>ENFILE</samp> - Слишком много открытых файлов в системе
+<li><samp>ENODEV</samp> - Нет такого устройства
+<li><samp>ENOENT</samp> - Нет такого файла в каталоге
+<li><samp>ENOEXEC</samp> - Ошибка формата исполняемого файла
+<li><samp>ENOLCK</samp> - Блокировка недоступна
+<li><samp>ENOMEM</samp> - Недостаточно памяти
+<li><samp>ENOSPC</samp> - Памяти на устройстве не осталось
+<li><samp>ENOSYS</samp> - Функция не реализована
+<li><samp>ENOTDIR</samp> - Это не каталог
+<li><samp>ENOTEMPTY</samp> - Каталог непустой
+<li><samp>ENOTSUP</samp> - Не поддерживается
+<li><samp>ENOTTY</samp> - Неопределенная операция управления вводом-выводом
+<li><samp>ENXIO</samp> - Нет такого устройства или адреса
+<li><samp>EPERM</samp> - Операция не разрешена
+<li><samp>EPIPE</samp> - Разрушенный канал
+<li><samp>ERANGE</samp> - Результат слишком велик
+<li><samp>EROFS</samp> - Файловая система только на чтение
+<li><samp>ESPIPE</samp> - Неправильное позиционирование
+<li><samp>ESRCH</samp> - Нет такого процесса
+<li><samp>ETIMEDOUT</samp> - Операция задержана
+<li><samp>EXDEV</samp> - Неопределенная связь
+</ul>
+</td></tr></table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_perror.html>perror</a>,
+<a href=_strerror.html>strerror</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#errno>Список системных вызовов</a>
+</body>
+</html>

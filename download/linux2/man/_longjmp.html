@@ -1,0 +1,60 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>SETJMP, LONGJMO system calls.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>setjmp, longjmp (3)</samp></b></big><br>
+    &nbsp;&nbsp;"длинный" переход&nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+	#include &lt;setjmp.h&gt;
+	
+	int setjmp (jmp_buf env);
+	
+	void longjmp (jmp_buf env, int val);
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<p>Функции применяются при обработке ошибок, прерываний и исключительных ситуаций.
+<p>Функция <samp>setjmp</samp> сохраняет текущее стековое окружение в массиве <samp>env</samp> для последующего использования функцией <samp>longjmp</samp>. Результат функции <samp>setjmp</samp> равен 0. 
+<p>Функция <samp>longjmp</samp> восстанавливает окружение, сохраненное при последнем вызове <samp>setjmp</samp> с соответствующим аргументом <samp>env</samp>. После завершения <samp>longjmp</samp> выполнение программы продолжается так, как будто соответствующий вызов <samp>setjmp</samp> только что вернул значение <samp>val</samp>. 
+Если даже при вызове <samp>longjmp</samp> значение аргумента <samp>val</samp>
+было задано 0, вызов <samp>setjmp</samp>, с которого продолжится выполнение все равно вернет 1. 
+<p>В промежутке между обращениями к <samp>setjmp</samp> и <samp>longjmp</samp> не должно быть возврата из функции, вызывавшей <samp>setjmp</samp>. 
+
+</td></tr></table>
+
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_signal.html>signal</a>.
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#longjmp>Список системных вызовов</a>
+</body>
+</html>
+

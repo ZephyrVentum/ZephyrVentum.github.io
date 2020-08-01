@@ -1,0 +1,56 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>RAND system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>rand, srand (3)</samp></b></big><br>
+&nbsp;&nbsp; генератор случайных чисел &nbsp;&nbsp;
+</tr></td> </table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>       
+    #include &lt;stdlib.h&gt;
+
+    int rand(void);
+
+    void srand(unsigned int seed);
+</pre> </td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<p><samp>rand</samp> возвращает псевдослучайное число из интервала
+0 - <samp>RAND_MAX</samp>.
+<p><samp>srand</samp> инициализирует генератор случайных чисел.
+Параметр <samp>seed</samp> - начальное случайное число, в этом
+качестве можно использовать результат функции
+<samp><a href=_time.html>time</a></samp>.
+<p>Если Вы хотите получить случайное (псевдослучайное) число,
+подчиняющееся равномерному закону распределения на интервале,
+например от 1 до I, то следует употреблять функцию <samp>rand</samp>
+примерно в таком контексте:
+<pre>
+   m=1+(int) ((double)I*rand()/(RAND_MAX+1.0));
+</pre>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#rand>Список системных вызовов</a>
+</body>
+</html>
+

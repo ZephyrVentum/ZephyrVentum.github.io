@@ -1,0 +1,72 @@
+<html>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <TITLE> suspend command.</TITLE>
+</head>
+
+<body >
+<a name=top>
+
+<p>
+<table width=100%>
+  <tr>
+    <td width=20%>&nbsp;</td>
+    <td>
+      <table border> 
+        <tr><td align=center><big><b>suspend</b></big><br>
+            &nbsp; приостанавливает текущий командный процессор&nbsp;
+        </tr></td>
+      </table>
+</td></tr></table>
+
+
+<table>
+<tr>
+<td colspan=2><b><br>ОПИСАНИЕ</b></td>
+<td></td>
+</tr><tr><td width=10%>&nbsp;</td>
+<td><p>Встроенная команда <samp>suspend</samp> 
+  приостанавливает текущий командный процессор, если возможно, как если бы вы набрали Ctrl-Z в
+самом командном процессоре. 
+</td></tr>
+</table>
+<p>Например, если вы выполнили
+команду su и хотите вернуться в ваш исходный командный
+процессор.  
+<pre>
+$ whoami
+smith
+
+$ su -1
+Password: *******
+
+#whoami
+root
+
+# suspend
+[1]+ Stopped
+
+$ whoami
+smith
+
+</pre>
+
+
+<table>
+<tr>
+<td colspan=2><b><br>СМ.ТАКЖЕ</b></td>
+</tr><tr><td width=10%>&nbsp;</td>
+<td>
+  <a href=_bg.html>bg</a>
+</td>
+<td>
+  <a href=_fg.html>fg</a>
+</td>
+<td>
+  <a href=_jobs.html>jobs</a>
+</td>
+</tr></table>
+
+<p><hr>
+<a href=mind.html#suspend>Список команд</a>
+</body>
+</html>

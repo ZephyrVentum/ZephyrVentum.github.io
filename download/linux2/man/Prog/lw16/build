@@ -1,0 +1,1 @@
+gcc -o ganesha8 ganesha8.c ../common/curtime.c -lpthread

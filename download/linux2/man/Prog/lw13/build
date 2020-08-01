@@ -1,0 +1,2 @@
+gcc -o ganesha5 ganesha5.c ../common/curtime.c
+gcc -o elephant5 elephant5.c ../common/curtime.c ../common/wait.c

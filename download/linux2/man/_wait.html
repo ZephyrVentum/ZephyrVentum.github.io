@@ -1,0 +1,118 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>WAIT system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>wait, waitpid (2)</samp></b></big><br>
+&nbsp;&nbsp;ожидание завершения процесса&nbsp;&nbsp;
+</tr></td> </table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+    #include &lt;sys/types.h&gt;
+    #include &lt;sys/wait.h&gt;
+
+    pid_t wait(int *status)
+    pid_t waitpid(pid_t pid, int *status, int options);                      </pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+  <p><samp>wait</samp> приостанавливает выполнение текущего процесса
+  до завершения какого-либо из его процессов-потомков.
+  <p><samp>waitpid</samp> приостанавливает выполнение текущего процесса
+  до завершения заданного процесса или проверяет завершение
+  заданного процесса.
+  <p>Если процесс уже завершился, то приостанов текущего
+  процесса не происходит.
+</td></tr>
+</table>
+
+<p><b>Параметры</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+  <table>
+  <tr><td valign=top width=10%><samp>&nbsp;pid</samp></td>
+    <td>Если <samp>pid &gt; 0</samp>, то он задает PID процесса,
+    завершение которого ожидается/проверяется функцией
+    <samp>waitpid</samp>.
+    <br>Если <samp>pid = 0</samp>, то <samp>waitpid</samp>
+    ожидает/проверяет завершение любого процесса
+    той группы, к которой принадлежит текущий процесс.
+    <br>Если <samp>pid &lt; 0</samp>, то <samp>waitpid</samp>
+    ожидает/проверяет завершение любого процесса - своего потомка.
+    </td></tr>
+  <tr><td valign=top width=10%><samp>&nbsp;options</samp></td>
+  <td>Задает режим поведения <samp>waitpid</samp>. Может задаваться
+     одним из следующих значений или их логическим ИЛИ:
+     <table>
+      <tr><td valign=top><samp>&nbsp;WNOHANG</samp></td>
+      <td> - не приостанавливать текущий процесс, если проверяемый
+         процесс не завершился;</td></tr>
+      <tr><td valign=top><samp>&nbsp;WUNTRACED</samp></td>
+      <td> - не приостанавливать текущий процесс также для потомков,
+         которые завершились, но о состоянии которых еще не
+         доложено;</td></tr>
+      </table>
+      Значение <samp>options = 0</samp> определяет переход в ожидание,
+      если проверяемый процесс не завершился.
+    </td></tr>
+  <tr><td valign=top width=10%><samp>&nbsp;status</samp></td>
+  <td>Если этот параметр не <samp>NULL</samp>, то он указывает на
+     переменную, в которую <samp>wait</samp> или <samp>waitpid</samp>
+     заносит состояние завершившегося процесса.
+      Состояние завершившегося процесса сохраняется в 16-битную переменную следующего формата:
+
+    <p>Если процесс завершился при помощи явного или неявного вызова функции exit(), то данные выглядят так (старший бит находится слева):
+     <img src="l2_1_ris_exit.jpg">
+
+    <p>Если процесс был завершен сигналом, то данные выглядят так (старший бит находится слева):
+    <img src="l2_1_ris_sig.jpg">
+
+    </td></tr>
+  </table>
+   </td></tr>
+</table>
+
+<p><b>Возвращаемое значение</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При нормальном выполнении функции возвращают PID завершившегося процесса.
+При ошибках выполнения возвращают -1 и устанавливают
+<samp><a href=_errno.html>errno</a></samp>.
+<p>Функция <samp>waitpid</samp> возвращает 0, если она вызвана с
+<samp>options = WNOHANG</samp>, и проверяемый процесс еще не завершился.
+   </td></tr>
+</table>
+
+<p><b>См.также </b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td><samp>
+<a href=_exit.html>exit</a>,
+<a href=_signal.html>signal</a>
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#wait>Список системных вызовов</a>
+</body>
+</html>

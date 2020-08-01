@@ -1,0 +1,682 @@
+<html>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <TITLE> TAR command.</TITLE>
+</head>
+
+<body >
+<a name=top>
+
+<p>
+<table width=100%>
+  <tr>
+    <td width=20%>&nbsp;</td>
+    <td>
+      <table border> 
+        <tr><td align=center><big><b>tar</b></big><br>
+            &nbsp;&nbsp; Cохранение файлов в архив и восстановление файлов из архива. &nbsp;&nbsp;
+        </tr></td>
+      </table>
+</td></tr></table>
+
+
+<p><b>Синтаксис</b>
+<table width=100%>
+  <tr><td width=10%>&nbsp;</td>
+  <td>
+    <pre>
+tar [ОПЦИЯ...] [ФАЙЛ]...</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+  <p>Команда <samp>tar</samp> предназначена для сохранения файлов
+на магнитную ленту или в архив на диске и
+для восстановления отдельных файлов из
+архива.
+</td>
+<td></td></tr>
+<p>
+<tr><td width=20%><b>Примеры:</b></td><td>&nbsp;</td></tr>
+<tr width=20%><td>tar -cf archive.tar foo bar  
+</td>
+<td># Создание archive.tar из файлов foo и bar.
+</td></tr>
+<tr><td>  tar -tvf archive.tar 
+</td>
+<td>       # Вывод подробного списка всех файлов в архиве archive.tar.
+</td></tr>
+<tr><td>
+  tar -xf archive.tar    
+</td>
+<td>      # Извлечение всех файлов из archive.tar.
+</td>
+</tr>
+</table>
+
+<a name=top1>
+<p><b>Опции</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<p><table width=80%>
+  <tr>
+    <td width=40% valign=top><samp><i>Основной режим работы:</i></samp></td>
+    <td valign=top>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td width=40% valign=top><samp>-A, --catenate, --concatenate&nbsp;&nbsp;</samp></td>
+    <td valign=top>присоединение tar-файлов к архиву
+  </td>
+  </tr>
+  <tr>
+    <td width=40% valign=top><samp>-c, --create&nbsp;&nbsp;</samp></td>
+    <td valign=top>создание нового архива
+  </td>
+  </tr>
+  <tr>
+    <td width=40% valign=top><samp>  -d, --diff, --compare&nbsp;&nbsp;</samp></td>
+    <td valign=top>поиск различий между архивом и файловой системой
+  </td>
+  </tr>
+  <tr>
+    <td width=40% valign=top><samp>  --delete &nbsp;&nbsp;</samp></td>
+    <td valign=top>удаление из архива (не на магнитных лентах!)
+  </td>
+  </tr>
+ <tr>
+    <td width=40% valign=top><samp>    -r, --append  &nbsp;&nbsp;</samp></td>
+    <td valign=top>добавление файлов в конец  архива
+  </td>
+  </tr>
+ <tr>
+    <td width=40% valign=top><samp>   -t, --list&nbsp;&nbsp;</samp></td>
+    <td valign=top>вывод списка содержимого архива
+  </td>
+  </tr>     
+<tr>
+    <td width=40% valign=top><samp>   --test-label &nbsp;&nbsp;</samp></td>
+    <td valign=top>проверка метки тома архива  и выход
+  </td>
+  </tr>                       
+<tr>
+    <td width=40% valign=top><samp>  -u, --update  &nbsp;&nbsp;</samp></td>
+    <td valign=top>добавление в архив только более новых файлов
+  </td>
+  </tr>   
+<tr>
+    <td width=40% valign=top><samp>   -x, --extract, --get &nbsp;&nbsp;</samp></td>
+    <td valign=top>извлечение файлов из архива
+  </td>
+  </tr> 
+<tr>
+    <td width=40% valign=top><samp> &nbsp;&nbsp;</samp></td>
+    <td valign=top>   &nbsp;&nbsp;           
+  </td>
+  </tr>  
+                                                                                                                                   
+ <tr>
+    <td width=40% valign=top><samp><i>Модификаторы:</i></samp></td>
+    <td valign=top>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td width=40% valign=top><samp>--check-device&nbsp;&nbsp;</samp></td>
+    <td valign=top>проверять номера устройств при создании инкрементных архивов (по умолчанию)
+  </td>
+  </tr>
+  <tr>
+    <td width=40% valign=top><samp>  -g, --listed-incremental=ФАЙЛ&nbsp;&nbsp;</samp></td>
+    <td valign=top>обработка добавочного резервирования нового формата GNU
+  </td>
+  </tr>
+   <tr>
+    <td width=40% valign=top><samp>  -G, --incremental&nbsp;&nbsp;</samp></td>
+    <td valign=top>обработка добавочного
+                             резервирования старого
+                             формата GNU
+  </td>
+  </tr>              
+  <tr>
+    <td width=40% valign=top><samp>   --ignore-failed-read &nbsp;&nbsp;</samp></td>
+    <td valign=top> не завершать работу при
+                             ненулевом статусе для
+                             нечитаемых файлов
+  </td>
+  </tr>                                  
+  <tr>
+    <td width=40% valign=top><samp>   --level=N  &nbsp;&nbsp;</samp></td>
+    <td valign=top> dump level for created listed-incremental archive
+  </td>
+  </tr>             
+  <tr>
+    <td width=40% valign=top><samp>    -n, --seek  &nbsp;&nbsp;</samp></td>
+    <td valign=top> доступен поиск по архиву
+  </td>
+  </tr> 
+  <tr>
+    <td width=40% valign=top><samp>   --no-check-device  &nbsp;&nbsp;</samp></td>
+    <td valign=top>  не проверять номера устройств при создании инкрементных архивов
+  </td>
+  </tr>         
+  <tr>
+    <td width=40% valign=top><samp>   --no-seek  &nbsp;&nbsp;</samp></td>
+    <td valign=top>  archive is not seekable
+  </td>
+  </tr>                       
+  <tr>
+    <td width=40% valign=top><samp>  --occurrence[=N]  &nbsp;&nbsp;</samp></td>
+    <td valign=top>               обработка только N-ого
+                             вхождения для каждого
+                             файла в архиве. Эта опция
+                             верна только в сочетании с
+                             одной из подкоманд --delete,
+                             --diff, --extract или --list, и когда
+                             список файлов задан либо в
+                             командной строке, либо
+                             через опцию -T. По умолчанию
+                             N равен 1.
+  </td>
+  </tr>                    
+  <tr>
+    <td width=40% valign=top><samp>  --sparse-version=MAJOR[.MINOR]  &nbsp;&nbsp;</samp></td>
+    <td valign=top>               установить версию
+                             используемого формата
+                             разрежения (подразумевает
+                             --sparse)
+  </td>
+  </tr>                
+                    
+  <tr>
+    <td width=40% valign=top><samp>  -S, --sparse &nbsp;&nbsp;</samp></td>
+    <td valign=top>               эффективная обработка
+                             разрежённых файлов
+  </td>
+  </tr>  
+ <tr>
+    <td width=40% valign=top><samp> &nbsp;&nbsp;</samp></td>
+    <td valign=top>   &nbsp;&nbsp;           
+  </td>
+  </tr>  
+ <tr>
+    <td width=40% valign=top><samp><i>Управление перезаписью:</i></samp></td>
+    <td valign=top>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td width=40% valign=top><samp>-k, --keep-old-files&nbsp;&nbsp;</samp></td>
+    <td valign=top>не перезаписывать
+                             существующие файлы при
+                             извлечении
+  </td>
+  </tr>  
+  <tr>
+    <td width=40% valign=top><samp>--keep-newer-files&nbsp;&nbsp;</samp></td>
+    <td valign=top>не перезаписывать
+                             существующие файлы,
+                             которые более новые, чем их
+                             копии в архиве
+  </td>
+  </tr>  
+  <tr>
+    <td width=40% valign=top><samp>--no-overwrite-dir &nbsp;&nbsp;</samp></td>
+    <td valign=top>сохранение метаданных
+                             существующих каталогов
+  </td>
+  </tr>  
+  <tr>
+    <td width=40% valign=top><samp>--overwrite &nbsp;&nbsp;</samp></td>
+    <td valign=top>перезапись существующих
+                             файлов при извлечении
+  </td>
+  </tr>  
+  <tr>
+    <td width=40% valign=top><samp>--overwrite-dir &nbsp;&nbsp;</samp></td>
+    <td valign=top>перезапись существующих
+                             файлов при извлечении (по
+                             умолчанию)
+  </td>
+  </tr>  
+  <tr>
+    <td width=40% valign=top><samp>--recursive-unlink &nbsp;&nbsp;</samp></td>
+    <td valign=top>чистка всей иерархии до
+                             извлечения каталога
+  </td>
+  </tr>  
+  <tr>
+    <td width=40% valign=top><samp>--recursive-unlink &nbsp;&nbsp;</samp></td>
+    <td valign=top>oчистка всей иерархии до
+                             извлечения каталога
+  </td>
+  </tr>  
+  <tr>
+    <td width=40% valign=top><samp>--remove-files &nbsp;&nbsp;</samp></td>
+    <td valign=top>удаление файлов после их
+                             добавления в архив
+  </td>
+  </tr>  
+  <tr>
+    <td width=40% valign=top><samp>-U, --unlink-first &nbsp;&nbsp;</samp></td>
+    <td valign=top>удаление каждого файла до
+                             извлечения поверх него
+  </td>
+  </tr>  
+  <tr>
+    <td width=40% valign=top><samp>-W, --verify &nbsp;&nbsp;</samp></td>
+    <td valign=top>попытка проверить архив
+                             после его записи
+  </td>
+  </tr>  
+<tr>
+    <td width=40% valign=top><samp> &nbsp;&nbsp;</samp></td>
+    <td valign=top>   &nbsp;&nbsp;           
+  </td>
+  </tr>  
+ <tr>
+    <td width=40% valign=top><samp><i>Выбор выходного потока:</i></samp></td>
+    <td valign=top>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td width=40% valign=top><samp>--ignore-command-error&nbsp;&nbsp;</samp></td>
+    <td valign=top>игнорировать коды
+                             завершения дочерних
+                             процессов
+  </td>
+  </tr>  
+  <tr>
+    <td width=40% valign=top><samp> --no-ignore-command-error&nbsp;&nbsp;</samp></td>
+    <td valign=top>считать ненулевые коды
+                             завершения дочерних
+                             процессов как ошибку
+  </td>
+  </tr>  
+  <tr>
+    <td width=40% valign=top><samp>  -O, --to-stdout&nbsp;&nbsp;</samp></td>
+    <td valign=top>извлекать файлы на  стандартный вывод
+  </td>
+  </tr> 
+  <tr>
+    <td width=40% valign=top><samp> --to-command=КОМАНДА&nbsp;&nbsp;</samp></td>
+    <td valign=top>перенаправлять
+                             извлечённые файлы в другую
+                             программу
+  </td>
+  </tr>  
+ <tr>
+    <td width=40% valign=top><samp> &nbsp;&nbsp;</samp></td>
+    <td valign=top>   &nbsp;&nbsp;           
+  </td>
+  </tr>  
+ <tr>
+    <td width=40% valign=top><samp><i>Обработка атрибутов файлов:</i></samp></td>
+    <td valign=top>&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td width=40% valign=top><samp>--atime-preserve[=СПОСОБ]&nbsp;&nbsp;</samp></td>
+    <td valign=top>сохранять время доступа
+                             скопированных файлов путём
+                             восстановления времени
+                             после чтения (СПОСОБ='replace';
+                             используется по умолчанию)
+                             или не установки времени в
+                             первую очередь
+                             (СПОСОБ='system')
+  </td>
+  </tr>  
+
+</table>
+<pre>
+                             
+      --delay-directory-restore   не устанавливать время изменения и права доступа 
+                                  извлечённых каталогов до
+                                  завершения процесса
+                                  извлечения
+      --group=ИМЯ             принудительно
+                             устанавливать ИМЯ в
+                             качестве группы для
+                             добавленных файлов
+      --mode=РЕЖИМ           принудительно
+                             устанавливать (символьный)
+                             РЕЖИМ доступа для
+                             добавляемых файлов
+      --mtime=ДАТА-ИЛИ-ФАЙЛ
+                             устанавливать для
+                             добавленных файлов mtime из
+                             ДАТЫ-ИЛИ-ФАЙЛА
+  -m, --touch                не извлекать время
+                             изменения файла
+      --no-delay-directory-restore
+                             отменить действие опции
+                             --delay-directory-restore
+      --no-same-owner        extract files as yourself (default for ordinary
+                             users)
+      --no-same-permissions  применять umask пользователя
+                             при извлечении прав
+                             доступа из архива (по
+                             умолчанию для обычных
+                             пользователей)
+      --numeric-owner        использовать числа вместо
+                             имён владельца/группы
+      --owner=ИМЯ            принудительно
+                             устанавливать ИМЯ в
+                             качестве владельца для
+                             добавленных файлов
+  -p, --preserve-permissions, --same-permissions
+                             извлекать информацию о
+                             правах доступа к файлу (по
+                             умолчанию для
+                             суперпользователя)
+      --preserve             эквивалент -p и -s
+      --same-owner           try extracting files with the same ownership as
+                             exists in the archive (default for superuser)
+  -s, --preserve-order, --same-order
+                             сортировать извлекаемые
+                             имена в том же порядке, что
+                             и в архиве
+
+
+<i>Выбор и переключение устройств:</i>
+
+  -f, --file=АРХИВ           использовать файл или
+                             устройство АРХИВ
+      --force-local          файл архива является
+                             локальным, даже если
+                             содержит двоеточие
+  -F, --info-script=ИМЯ, --new-volume-script=ИМЯ
+                             запустить скрипт по
+                             окончании каждой ленты
+                             (подразумевается
+                             использование -М)
+  -L, --tape-length=N        сменить ленту после записи
+                             ЧИСЛО x 1024 байт
+  -M, --multi-volume
+                             создание/листинг/извлечение
+                             многотомных архивов
+      --rmt-command=КОМАНДА
+                             использовать указанную
+                             КОМАНДУ rmt вместо rmt
+      --rsh-command=КОМАНДА
+                             использовать удалённую
+                             КОМАНДУ вместо rsh
+      --volno-file=ФАЙЛ      использовать/обновлять
+                             номера тома в ФАЙЛЕ
+<i>Разбиение на блоки: </i>
+
+  -b, --blocking-factor=БЛОКИ
+                             число БЛОКОВ x 512 байт на
+                             запись
+  -B, --read-full-records    заново разбивать на блоки
+                             при чтении (для каналов
+                             4.2BSD)
+  -i, --ignore-zeros         игнорировать нулевые блоки
+                             в архиве (т.е. EOF)
+      --record-size=N        ЧИСЛО байт на запись,
+                             кратное 512
+
+<i> Формата архива: </i>
+
+  -H, --format=ФОРМАТ        создать архив в указанном
+                             формате
+<i> ФОРМАТОМ может быть:</i>
+
+    gnu                      формат GNU tar 1.13.х
+    oldgnu                   формат GNU как в tar <= 1.12
+    pax                      формат POSIX 1003.1-2001 (pax)
+    posix                    эквивалент pax
+    ustar                    формат POSIX 1003.1-1988 (ustar)
+    v7                       старый формат tar V7
+
+      --old-archive, --portability
+                             эквивалент --format=v7
+
+      --pax-option=keyword[[:]=значение][,keyword[[:]=значение]]...                             
+                             управляющие ключевые слова
+                             pax
+      --posix                эквивалент --format=posix
+  -V, --label=ТЕКСТ          создать архив с именем тома
+                             ТЕКСТ; при
+                             листинге/извлечении
+                             использовать ТЕКСТ в
+                             качестве шаблона
+                             подстановки
+
+<i>Опции сжатия:</i>
+
+  -a, --auto-compress        использовать суффикс
+                             архива для определения
+                             программы сжатия
+  -I, --use-compress-program=ПРОГ
+                             пропустить архив через
+                             ПРОГ (должна поддерживать
+                             -d)
+  -j, --bzip2                filter the archive through bzip2
+  -J, --xz                   filter the archive through xz
+      --lzip                 filter the archive through lzip
+      --lzma                 filter the archive through lzma
+      --lzop
+      --no-auto-compress     не использовать суффикс
+                             архива для определения
+                             программы сжатия
+  -z, --gzip, --gunzip, --ungzip   filter the archive through gzip
+  -Z, --compress, --uncompress   filter the archive through compress
+
+<i> Выбор локальных файлов:</i>
+
+      --add-file=ФАЙЛ    добавить указанный ФАЙЛ в
+                             архив (полезно, если имя
+                             начинается с дефиса)
+      --backup[=УПРАВЛЕНИЕ]
+                             делать копию перед
+                             удалением, УПРАВЛЕНИЕ
+                             выбора версий
+  -C, --directory=КАТАЛОГ   перейти в КАТАЛОГ
+      --exclude=ШАБЛОН исключать файлы,
+                             определённые ШАБЛОНОМ
+      --exclude-backups      exclude backup and lock files
+      --exclude-caches       исключать содержимое
+                             каталогов с файлом CACHEDIR.TAG
+                             за исключением самого
+                             файла с тегами
+      --exclude-caches-all   исключать каталоги,
+                             содержащие файл CACHEDIR.TAG
+      --exclude-caches-under исключать всё содержимое
+                             каталогов, содержащих файл
+                             CACHEDIR.TAG
+      --exclude-tag=ФАЙЛ исключать каталоги,
+                             содержащие ФАЙЛ, за
+                             исключением самого ФАЙЛА
+      --exclude-tag-all=ФАЙЛ   исключать каталоги с
+                             ФАЙЛОМ
+      --exclude-tag-under=ФАЙЛ
+                             исключать всё содержимое
+                             каталогов, содержащих ФАЙЛ
+      --exclude-vcs          исключать каталоги CVS
+  -h, --dereference          следовать по символьным
+                             ссылкам и сохранять файлы,
+                             на которые они указывают
+      --hard-dereference     следовать по жёстким
+                             ссылкам и сохранять файлы,
+                             на которые они указывают
+  -K, --starting-file=ИМЯ-ЧЛЕНА
+                             начинать с члена ИМЯ-ЧЛЕНА
+                             в архиве
+      --newer-mtime=ДАТА сравнивать дату и время,
+                             только если изменены
+                             данные
+      --no-null              выключить воздействие
+                             предыдущей опции --null
+      --no-recursion         отключить автоматический
+                             спуск в каталоги
+      --no-unquote           не убирать кавычки с имён
+                             файлов, прочитанных с
+                             опцией -T
+      --null                 -T читает строки,
+                             оканчивающиеся нулём,
+                             отключает опцию -C
+  -N, --newer=ДАТА-ИЛИ-ФАЙЛ, --after-date=ДАТА-ИЛИ-ФАЙЛ
+                             сохранять только те файлы,
+                             которые новее
+                             ДАТЫ-ИЛИ-ФАЙЛА
+      --one-file-system      оставаться в локальной
+                             файловой системе при
+                             создании архива
+  -P, --absolute-names       не удалять начальные `/' из
+                             имен файлов
+      --recursion            рекурсивный спуск по
+                             каталогам (по умолчанию)
+      --suffix=СТРОКА  делать копию перед
+                             удалением, переопределяет
+                             обычный суффикс ('~', если
+                             только он не переопределён
+                             переменной окружения
+                             SIMPLE_BACKUP_SUFFIX)
+  -T, --files-from=ФАЙЛ  загрузить из ФАЙЛА имена
+                             для извлечения или
+                             создания
+      --unquote              убрать кавычки с имён
+                             файлов, прочитанных с
+                             опцией -T (по умолчанию)
+  -X, --exclude-from=ФАЙЛ   исключать шаблоны,
+                             перечисленных в ФАЙЛЕ
+
+ <i>Преобразование имён файлов:</i>
+
+      --strip-components=N   удалять указанное ЧИСЛО
+                             начальных компонентов из
+                             имён файлов перед
+                             извлечением
+      --transform=РАСШИРЕНИЕ, --xform=РАСШИРЕНИЕ
+                             использовать замену
+                             РАСШИРЕНИЯ sed'ом для
+                             преобразования имён файлов
+                            
+
+ Опции шаблонов подстановки для имён
+ файлов (влияют на шаблоны включения и
+ исключения):
+
+      --anchored             шаблоны начала имени файла
+      --ignore-case          игнорировать регистр
+      --no-anchored          шаблоны после любого '/' (по
+                             умолчанию для исключаемых)
+      --no-ignore-case       с учётом регистра (по
+                             умолчанию)
+      --no-wildcards         точное соответствие строке
+                            
+      --no-wildcards-match-slash   маски не соответствуют
+                             '/'
+      --wildcards            использовать маски (по
+                             умолчанию для исключаемых)
+      --wildcards-match-slash   маски соответствуют '/' (по
+                             умолчанию для исключаемых)
+
+ <i> Вывод информации:</i>
+
+      --checkpoint[=N]       вывод сообщений о ходе
+                             выполнения через каждые
+                             ЧИСЛО записей (по умолчанию
+                             10)
+      --checkpoint-action=ДЕЙСТВИЕ
+                             выполнять ДЕЙСТВИЕ на
+                             каждой контрольной точке
+      --index-file=ФАЙЛ  отправить подробный вывод
+                             данных в FILE
+  -l, --check-links          вывод сообщений, если
+                             сохранены не все ссылки
+      --no-quote-chars=СТРОКА
+                             отключить цитирование
+                             символов из СТРОКИ
+      --quote-chars=СТРОКА   дополнительно
+                             цитировать символы из
+                             СТРОКИ
+      --quoting-style=СТИЛЬ   установить стиль
+                             цитирования имён. Значения
+                             для СТИЛЯ см. ниже
+-R, --block-number         выводить номера блоков
+                             архива в каждом сообщении
+      --show-defaults        показать значения tar по
+                             умолчанию
+      --show-omitted-dirs    при выводе листинга или
+                             извлечении показывать все
+                             каталоги, не
+                             соответствующем условию
+                             поиска
+      --show-transformed-names, --show-stored-names
+                             показывать имена файлов
+                             или архивов после
+                             преобразования
+      --totals[=СИГНАЛ]   вывод общего числа байт
+                             после обработки архива; с
+                             аргументом - вывод общего
+                             числа байт после доставки
+                             этого СИГНАЛА. Разрешённые
+                             сигналы: SIGHUP, SIGQUIT, SIGINT, SIGUSR1
+                             и SIGUSR2. Также разрешается
+                             использовать имена без
+                             префикса SIG
+      --utc                  вывод даты изменения файла
+                             в формате UTC
+  -v, --verbose              подробный листинг
+                             обрабатываемых файлов
+      --warning=KEYWORD      warning control
+  -w, --interactive, --confirmation
+                             запрашивать подтверждение
+                             для каждого действия
+
+ <i>Опции совместимости:</i>
+
+  -o                         при создании, эквивалент
+                             --old-archive; при извлечении,
+                             эквивалент --no-same-owner
+
+<i> Другие опции:</i>
+
+  -?, --help                 вывод этой справки
+      --restrict             отключить использование
+                             некоторых потенциально
+                             опасных опций
+      --usage                вывод короткого сообщения
+                             об использовании
+      --version              вывод версии программы
+
+
+Обязательные или необязательные аргументы
+для длинный опций также являются
+обязательными или необязательными для
+соответствующих коротких опций.
+
+
+Суффикс для резервных копий - `~', если он не
+установлен через --suffix
+или SIMPLE_BACKUP_SUFFIX. Управление версиями может
+быть установлено
+через --backup или VERSION_CONTROL. Значениями могут
+быть:
+
+  none, off       не создавать резервные копии
+  t, numbered     создавать нумерованные
+		  резервные копии
+  nil, existing   нумерованные, если существуют
+		  нумерованные копии, иначе простые
+  never, simple   всегда создавать простые
+		  резервные копии
+
+Valid arguments for the --quoting-style option are:
+
+  literal
+  shell
+  shell-always
+  c
+  c-maybe
+  escape
+  locale
+  clocale
+
+</pre>
+
+</td></tr></table>
+<p><hr>
+<a href=mind.html#tar>Список команд</a>
+<p>&nbsp;</p>
+</body>
+</html>

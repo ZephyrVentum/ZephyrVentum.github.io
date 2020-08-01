@@ -1,0 +1,68 @@
+<html>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <TITLE>FTOK system call.</TITLE>
+</head>
+<body >    
+
+<a name=top>
+
+<p>
+<table width=100%>
+<tr><td width=20%>&nbsp;</td>
+<td>
+<table border> 
+  <tr><td align=center><big><b><samp>ftok</samp></b></big><br>
+    &nbsp;&nbsp;преобразовывает имя файла и идентификатор проекта в ключ для системных вызовов  &nbsp;&nbsp;
+  </tr></td>
+</table>
+</td></tr></table>
+
+<p><b>Синтаксис</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<pre>
+# include &lt;sys/types.h&gt;
+# include &lt;sys/ipc.h&gt;
+
+key_t ftok(const char *pathname, int proj_id);
+
+</pre>
+</td></tr></table>
+
+<p><b>Описание</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+<samp>ftok</samp>  использует файл с именем <samp>pathname</samp> (которое должно указывать на существующий файл к которому есть доступ) и младшие 8 бит <samp>proj_id</samp> (который должен быть отличен от нуля) для создания ключа с типом <samp>key_t</samp>, используемого в System V IPC для работы с <a href=./_msgget.html><samp>msgget(2)</samp> </a>, <a href=./_semget.html><samp>semget(2)</samp></a>, и <a href=./_shmget.html><samp>shmget(2)</samp></a>.
+
+Возвращаемое значение одинаково для всех имен, указывающих на один и тот же файл при одинаковом значении <samp>proj_id</samp>. Возвращаемое значение должно отличаться, когда (одновременно существующие) файлы или идентификаторы проекта различаются. 
+</td></tr></table>
+
+<p><b>Возвращаемое значение</b>
+
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>При успешном выполнении <samp>ftok</samp> возвращает значение созданного ключа <samp>key_t</samp>.
+при ошибках выполнения возвращает -1 и устанавливает
+<samp><a href=_errno.html>errno</a></samp>.
+</td></tr></table>
+
+<p><b>Замечания</b>
+<table width=100%>
+<tr><td width=10%>&nbsp;</td>
+<td>
+В libc4 и libc5 (а также под SunOS 4.x) прототип функции выглядел так:
+<pre>
+    key_t ftok(char *pathname, char proj_id); 
+</pre>
+В наши дни <samp>proj_id</samp> имеет тип <samp>int</samp>, хотя, как правило, используются только 8 бит. Обычно при вызове этой функции в качестве <samp>proj_id</samp> передается символ <samp>ASCII</samp>, именно поэтому поведение функции считается не определенным в случае, если <samp>proj_id</samp> равен нулю.
+
+Естественно, не гарантируется, что возвращаемый ключ <samp>key_t</samp> уникален. Обычно производится объединение указанного байта <samp>proj_id</samp> с младшими 16 битами номера <samp>i-node</samp> и младшими 8 битам номера устройства в 32-битный результат. Легко могут возникать конфликты, например мужду файлами на <samp>/dev/hda1</samp> и файлами на <samp>/dev/sda1</samp>. 
+</td></tr></table>
+
+<p><hr>
+<a href=mind.html#mknod>Список системных вызовов</a>
+</body>
+</html>
