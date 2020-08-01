@@ -177,6 +177,34 @@ border-right: 4px dashed #67d3fd;
 
 	vertical-align: bottom;
 }
+#right_bottom_linux1{
+	background-image: url(img/linux1.png);
+	background-size: 100% 100%;
+	padding: 10px;
+	line-height: 1.5;
+	width: 15px;
+	right: 92px;
+	bottom: 0;
+	text-align: right;
+	height: 15px;
+	position: fixed;
+
+	vertical-align: bottom;
+}
+#right_bottom_linux2{
+	background-image: url(img/linux2.png);
+	background-size: 100% 100%;
+	padding: 10px;
+	line-height: 1.5;
+	width: 15px;
+	right: 140px;
+	bottom: 0;
+	text-align: right;
+	height: 15px;
+	position: fixed;
+
+	vertical-align: bottom;
+}
 #last_version{
 	width: 100%;
 	text-align: center;
