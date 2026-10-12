@@ -56,7 +56,7 @@
   <body>
     <main>
       <h1>Oraclia Privacy Policy</h1>
-      <p class="eyebrow">Effective date: May 10, 2026</p>
+      <p class="eyebrow">Effective date: October 11, 2026</p>
 
       <p>This Privacy Policy explains how Oleksandr Klymenko ("we", "us", or "our") handles information in Oraclia (the "App").</p>
       <p>Oraclia is a personal-divination app. It helps users record their dreams and the symbolic signs they notice during the day, and weaves those entries into evolving, time-bound prophecies about their near future. Oraclia is intended for personal reflection and entertainment. It is not a substitute for medical, psychological, legal, financial, or other professional advice.</p>
@@ -65,22 +65,22 @@
       <p>We may collect and process the following categories of information:</p>
       <ul>
         <li>Account information, such as your Firebase user ID, sign-in method, email address, and profile information made available by the authentication provider you choose.</li>
-        <li>Oracle profile data you provide to personalize your readings, including display name, date of birth, time of birth, place of birth, eye color, hair color, zodiac data, chosen life themes, and similar symbolic preferences.</li>
+        <li>Seeker profile data you choose to share during the onboarding ritual or later under Profile → Personal information, so Oraclia can personalize your readings. A few answers are required: a name to be called by (any name or nickname you like) and an answer to the gender, relationship and children questions, each of which offers "Prefer not to say"; every other answer, including your date of birth, is optional. The profile may include: the name you want to be called, gender, date of birth and the zodiac sign and age derived from it, relationship status, whether you have children, eye color; your sleep habits (bedtime, falling asleep, night waking, how rested you feel); your inner weather (how often you feel stress or sadness, how often you do things that bring you joy, mental-health conditions that have been named in your life, whether you currently live with symptoms of them, significant recent life events); when you record your signs; your dream patterns (recurring dreams, nightmares, how your mornings feel); and what brought you to Oraclia. Until you create an account, these answers are kept only on your device; once you sign in they are stored in your user record so they follow you across devices, and you can change any of them, and clear the optional ones, at any time under Profile → Personal information.</li>
         <li>Narrative content you create in the App, including dream entries, omen entries, prophecy records, personal interpretations, and the textual signs and reflections you log.</li>
-        <li>Engagement data, such as Oracle Rank, Insight Points, streak-related data, prophecy lifespans, reinforcement events, and similar progression state.</li>
+        <li>Engagement data, such as Seeker Rank, Insight Points, streak-related data, prophecy lifespans, reinforcement events, and similar progression state.</li>
         <li>App settings and preference data, such as locale, notification settings, onboarding flags, reminder configuration, and similar user-level configuration.</li>
+        <li>Your device's time-zone offset (its difference from UTC, not your location), stored with each sign you record and sent when you edit one, so Oraclia counts a prophecy's window of manifestation in your own days.</li>
         <li>Subscription and donation data, such as subscription state, trial timing, purchase product identifiers, store source, and renewal/expiration timestamps needed to manage paid access.</li>
         <li>Diagnostics and usage data, such as analytics events, crash reports, device/app version data, and limited technical information used to operate and improve the App.</li>
         <li>Support information, including encrypted support-log bundles that you choose to export, share, or send when contacting support.</li>
       </ul>
-
       <p>Oraclia also supports anonymous sign-in. If you use the App without creating a full account first, we may still associate your data with an anonymous Firebase account until you sign in with another method or delete that account.</p>
 
       <h2>How We Collect Information</h2>
       <p>We collect information when you:</p>
       <ul>
         <li>sign in with email/password, Google, Apple, or anonymous auth,</li>
-        <li>complete the oracle-profile onboarding (birth details, symbolic preferences, life themes),</li>
+        <li>complete the onboarding ritual that builds your seeker profile or edit your answers under Profile → Personal information,</li>
         <li>log dreams, omens, signs, or other narrative entries,</li>
         <li>receive, reinforce, reinterpret, or close prophecies,</li>
         <li>enable notifications and reminder-related features,</li>
@@ -94,15 +94,15 @@
       <p>We use collected information to:</p>
       <ul>
         <li>create and maintain your account,</li>
-        <li>save and sync your oracle profile, dream and omen entries, and prophecy history,</li>
-        <li>generate and evolve symbolic prophecies and personal interpretations,</li>
-        <li>schedule reminders, oracle messages, and other opt-in notifications,</li>
+        <li>save and sync your seeker profile, dream and omen entries, and prophecy history,</li>
+        <li>generate and evolve symbolic prophecies and personal interpretations — your sign entries, your related earlier signs, your living prophecies, and the seeker profile answers you shared are sent together to our AI interpretation provider so each reading is written for you; unanswered profile fields are simply omitted,</li>
+        <li>schedule reminders, messages from Oraclia, and other opt-in notifications,</li>
         <li>deliver subscription, donation, restore, and redemption features,</li>
         <li>improve reliability, diagnose crashes, and understand feature usage,</li>
         <li>respond to support requests and investigate reported problems,</li>
         <li>comply with legal obligations and protect the App, users, and our rights.</li>
       </ul>
-      <p>We do not sell your personal information. We do not use your dream or omen entries to train external machine-learning models outside what is required to operate the App.</p>
+      <p>We do not sell your personal information. We do not use your dream or omen entries or your seeker profile to train external machine-learning models outside what is required to operate the App.</p>
 
       <h2>Third-Party Services</h2>
       <p>Oraclia relies on third-party services that process data under their own terms and privacy policies. Depending on the platform and the features you use, these may include:</p>
@@ -116,11 +116,15 @@
         <li><a href="https://www.apple.com/legal/privacy/">Sign in with Apple</a></li>
         <li>Apple App Store / Google Play billing and subscription infrastructure</li>
         <li><a href="https://www.revenuecat.com/privacy/">RevenueCat</a> (subscription receipt validation, restore, and entitlement management; the App passes your Firebase user id to RevenueCat as the subscription owner identifier)</li>
+        <li><a href="https://openai.com/policies/privacy-policy/">OpenAI</a> (the AI models that validate, summarize, and interpret your signs run through OpenAI's API from our Cloud Functions; the text of the sign, summaries of your related earlier signs, your living prophecies, and the seeker profile answers you chose to share are sent as the reading's context, without your name on the account, email address, or Firebase user id)</li>
       </ul>
       <p>These providers may process information needed to authenticate you, store your App data, deliver and validate subscriptions, or provide analytics, diagnostics, and platform services.</p>
 
       <h2>Notifications</h2>
-      <p>If you enable notifications, Oraclia stores notification preferences and scheduling-related data so the App can deliver oracle messages, prophecy updates, dream-logging reminders, and similar communications. Notification delivery may also depend on Apple, Google, and device-level notification services. You can disable notifications at any time in your device settings.</p>
+      <p>If you enable notifications, Oraclia stores notification preferences and scheduling-related data so the App can deliver messages from Oraclia, prophecy updates, dream-logging reminders, and similar communications. Notification delivery may also depend on Apple, Google, and device-level notification services. You can disable notifications at any time in your device settings.</p>
+
+      <h2>Sharing Prophecy Cards</h2>
+      <p>If you share a prophecy card, the App draws the card's face as an image on your device and hands it, with a short line of text, to your device's share sheet. Where it goes is your choice, and the app or service you pick handles it under its own terms. Saving the image to your photos asks for add-only access to your photo library; the App never reads your photo library.</p>
 
       <h2>Support Logs</h2>
       <p>If you choose to export or share support logs, the App prepares an encrypted support bundle before sharing it. These bundles may include technical diagnostics, app version information, device details, and redacted log content needed to troubleshoot issues.</p>
@@ -132,6 +136,7 @@
       <h2>Account Deletion and Your Choices</h2>
       <p>You can stop future collection by uninstalling the App.</p>
       <p>You can also delete your account from inside the App at any time. The Profile screen exposes a "Delete account" action. Confirming it removes your Firebase Auth account and the top-level Firestore user record associated with your account. The flow requires you to reauthorize before the deletion is performed (with Google, Apple, or your email and password, depending on how you sign in) so that no one else can delete your account from an unattended device. This process does not currently guarantee recursive removal of every Firestore subcollection or related record.</p>
+      <p>The Profile screen also exposes an "Erase all readings" action that wipes your accumulated divination data (every dream, omen, sign, prophecy, and the symbolic vector embeddings derived from them) while keeping your sign-in account active. Confirming this action triggers a server-side process that batch-deletes the relevant records from our database. Your account itself, your sign-in method, and your in-app preferences (such as language) are not affected; you can continue using Oraclia immediately and begin a fresh divination history. This action is irreversible — once your past readings are erased, we cannot restore them.</p>
       <p>If you need help with additional deletion, export, or other privacy requests, contact us at <code>oraclia.help@gmail.com</code>.</p>
 
       <h2>Security</h2>
@@ -147,6 +152,7 @@
       <p>We may update this Privacy Policy from time to time. If we do, we will publish the updated version at the same location and update the effective date above. Continued use of the App after changes become effective means you accept the updated policy.</p>
 
       <h2>Contact Us</h2>
+      <p>If you have questions or privacy requests, contact:</p>
       <ul>
         <li>Email: <code>oraclia.help@gmail.com</code></li>
         <li>Service provider: Oleksandr Klymenko</li>
