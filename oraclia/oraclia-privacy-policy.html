@@ -56,7 +56,7 @@
   <body>
     <main>
       <h1>Oraclia Privacy Policy</h1>
-      <p class="eyebrow">Effective date: October 14, 2026</p>
+      <p class="eyebrow">Effective date: October 17, 2026</p>
 
       <p>This Privacy Policy explains how Oleksandr Klymenko ("we", "us", or "our") handles information in Oraclia (the "App").</p>
       <p>Oraclia is a personal-divination app. It helps users record their dreams and the symbolic signs they notice during the day, and weaves those entries into evolving, time-bound prophecies about their near future. Oraclia is intended for personal reflection and entertainment. It is not a substitute for medical, psychological, legal, financial, or other professional advice.</p>
@@ -70,6 +70,7 @@
         <li>Engagement data, such as Seeker Rank, Insight Points, streak-related data, prophecy lifespans, reinforcement events, and similar progression state.</li>
         <li>App settings and preference data, such as locale, notification settings, onboarding flags, reminder configuration, and similar user-level configuration.</li>
         <li>Your device's time-zone offset (its difference from UTC, not your location), stored with each sign you record and sent when you edit one, so Oraclia counts a prophecy's window of manifestation in your own days.</li>
+        <li>The times of the readings you started during the last day, each with the sign it was for, kept only to limit how many readings one account can start in a day; older entries are dropped as new readings are counted, and the record is deleted with your account.</li>
         <li>Subscription and donation data, such as subscription state, trial timing, purchase product identifiers, store source, and renewal/expiration timestamps needed to manage paid access.</li>
         <li>Diagnostics and usage data, such as analytics events, crash reports, device/app version data, and limited technical information used to operate and improve the App.</li>
         <li>Support information, including encrypted support-log bundles that you choose to export, share, or send when contacting support.</li>
@@ -109,6 +110,7 @@
       <ul>
         <li><a href="https://firebase.google.com/support/privacy">Firebase Auth</a></li>
         <li><a href="https://firebase.google.com/support/privacy">Cloud Firestore</a></li>
+        <li><a href="https://firebase.google.com/support/privacy">Firebase App Check</a> (confirms that requests to our servers come from the genuine App: on iPhone through Apple's <a href="https://www.apple.com/legal/privacy/">App Attest</a>, on Android through <a href="https://policies.google.com/privacy">Google Play Integrity</a>; these check the device and the App installation and give Firebase a signed verdict, which carries none of your content or account details)</li>
         <li><a href="https://firebase.google.com/support/privacy">Firebase Analytics</a></li>
         <li><a href="https://firebase.google.com/support/privacy">Firebase Crashlytics</a></li>
         <li><a href="https://policies.google.com/privacy">Google Play Services</a></li>
@@ -117,6 +119,7 @@
         <li>Apple App Store / Google Play billing and subscription infrastructure</li>
         <li><a href="https://www.revenuecat.com/privacy/">RevenueCat</a> (subscription receipt validation, restore, and entitlement management; the App passes your Firebase user id to RevenueCat as the subscription owner identifier)</li>
         <li><a href="https://openai.com/policies/privacy-policy/">OpenAI</a> (the AI models that validate, summarize, and interpret your signs run through OpenAI's API from our Cloud Functions; the text of the sign, summaries of your related earlier signs, your living prophecies, the seeker profile answers you chose to share, and your Seeker Rank are sent as the reading's context, without your name on the account, email address, or Firebase user id)</li>
+        <li>Your device's speech recognition (Apple's speech recognition on iPhone, the device's recognition service on Android), when you dictate a sign instead of typing it: it turns your voice into text and may process the audio on its provider's servers. The App receives only the text and does not record or store audio.</li>
       </ul>
       <p>These providers may process information needed to authenticate you, store your App data, deliver and validate subscriptions, or provide analytics, diagnostics, and platform services.</p>
 
@@ -135,7 +138,7 @@
 
       <h2>Account Deletion and Your Choices</h2>
       <p>You can stop future collection by uninstalling the App.</p>
-      <p>You can also delete your account from inside the App at any time. The Profile screen exposes a "Delete account" action. Confirming it removes your Firebase Auth account and the top-level Firestore user record associated with your account. The flow requires you to reauthorize before the deletion is performed (with Google, Apple, or your email and password, depending on how you sign in) so that no one else can delete your account from an unattended device. This process does not currently guarantee recursive removal of every Firestore subcollection or related record.</p>
+      <p>You can also delete your account from inside the App at any time. The Profile screen exposes a "Delete account" action. Confirming it deletes everything stored under your account — your seeker profile, every dream, omen and sign you recorded with its readings, your prophecies, your preferences and drafts — and then your Firebase Auth account. To make sure nothing can be written back to a deleted account from another device that is still signed in to it, we keep only a record of the account's random identifier and the time it was deleted, with none of your content. The flow requires you to reauthorize before the deletion is performed (with Google, Apple, or your email and password, depending on how you sign in) so that no one else can delete your account from an unattended device; our server carries out the deletion only right after you have signed in again. Purchase records kept by Apple, Google and RevenueCat are retained as their terms and the law require.</p>
       <p>The Profile screen also exposes an "Erase all readings" action that wipes your accumulated divination data (every dream, omen, sign, prophecy, and the symbolic vector embeddings derived from them) while keeping your sign-in account active. Confirming this action triggers a server-side process that batch-deletes the relevant records from our database. Your account itself, your sign-in method, and your in-app preferences (such as language) are not affected; you can continue using Oraclia immediately and begin a fresh divination history. This action is irreversible — once your past readings are erased, we cannot restore them.</p>
       <p>If you need help with additional deletion, export, or other privacy requests, contact us at <code>oraclia.help@gmail.com</code>.</p>
 
